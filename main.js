@@ -7,3 +7,6 @@ $('.nav-link').on('mouseleave', function() {
 });
 
 // SECTION 1
+$('[sect-1-hover]').on('mouseenter mouseleave', function() {
+    $('.sect-1-card-1').toggleClass('swaphover');
+});
