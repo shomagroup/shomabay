@@ -18,3 +18,14 @@ $('.m-button').on('click', function() {
         $('.body').addClass('no-scroll');
     }
 });
+
+// CONTACTPOP
+$('[contact-pop]').on('click', function() {
+    $('.connect-pop').addClass('active');
+    $('.body').addClass('no-scroll');
+});
+
+$('[closepop]').on('click', function() {
+    $(this).closest('[popup]').removeClass('active');
+    $('.body').removeClass('no-scroll');
+});
