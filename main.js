@@ -29,3 +29,8 @@ $('[closepop]').on('click', function() {
     $(this).closest('[popup]').removeClass('active');
     $('.body').removeClass('no-scroll');
 });
+
+// Floorplan / Residences 
+$('[sect-1-hover]').on('mouseenter mouseleave', function() {
+    $(this).find('.sect-1-card-1, .sect-1-card-2').toggleClass('swaphover');
+});
