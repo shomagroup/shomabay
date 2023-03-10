@@ -5,13 +5,17 @@ $('.fp-control-link').on('click', function() {
     $('.floorplan').removeClass('next');
     $(this).addClass('selected');
 
-    if ($(this).is('[studio]')) { $('.studio-wrapper').addClass('selected'); }
-    if ($(this).is('[bed-1]')) { $('.onebed-wrapper').addClass('selected'); }
-    if ($(this).is('[bed-2]')) { $('.twobed-wrapper').addClass('selected'); }
-    if ($(this).is('[penth]')) { $('.penth-wrapper').addClass('selected'); }
+    if ($(this).is('[studio]')) { $('.studio-wrapper').addClass('selected');
+        $('.fp-selector').attr('selector', 'stu'); }
+    if ($(this).is('[bed-1]')) { $('.onebed-wrapper').addClass('selected');
+        $('.fp-selector').attr('selector', 'bed-1'); }
+    if ($(this).is('[bed-2]')) { $('.twobed-wrapper').addClass('selected');
+        $('.fp-selector').attr('selector', 'bed-2'); }
+    if ($(this).is('[penth]')) { $('.penth-wrapper').addClass('selected');
+        $('.fp-selector').attr('selector', 'penth'); }
 
     $('[wrapper].selected .floorplan:first-child').addClass('selected');
-    $('[wrapper].selected .floorplan:last-child').addClass('prev');
+    $('[wrapper].selected .floorplan').last().addClass('prev');
     $('.floorplan.selected').next().addClass('next');
 });
 
