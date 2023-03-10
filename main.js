@@ -19,6 +19,11 @@ $('.m-button').on('click', function() {
     }
 });
 
+// CONTACT FORM
+$('[form-trigger]').on('click', function() {
+    $('.button-contact').trigger('click');
+});
+
 // CONTACTPOP
 $('[contact-pop]').on('click', function() {
     $('.connect-pop').addClass('active');
