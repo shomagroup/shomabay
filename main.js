@@ -19,6 +19,11 @@ $('.m-button').on('click', function() {
     }
 });
 
+// Floorplan / Residences 
+$('[sect-1-hover]').on('mouseenter mouseleave', function() {
+    $(this).find('.sect-1-card-1, .sect-1-card-2').toggleClass('swaphover');
+});
+
 // CONTACT FORM
 $('[form-trigger]').on('click', function() {
     $('.button-contact').trigger('click');
@@ -35,7 +40,12 @@ $('[closepop]').on('click', function() {
     $('.body').removeClass('no-scroll');
 });
 
-// Floorplan / Residences 
-$('[sect-1-hover]').on('mouseenter mouseleave', function() {
-    $(this).find('.sect-1-card-1, .sect-1-card-2').toggleClass('swaphover');
-});
+
+// TIMESTAMPER
+var DateTime = luxon.DateTime;
+
+function time() {
+    const timestamper = DateTime.now().setZone('America/New_York').toFormat("ccc LLL dd (HH:mm) yyyy");
+    $("input[timestamper]").val(timestamper);
+}
+const timer = setInterval(time, 1000);
