@@ -29,16 +29,6 @@ $('[form-trigger]').on('click', function() {
     $('.button-contact').trigger('click');
 });
 
-if (url.includes('/es')) {
-    $('input#form-id').val('es-landing');
-} else if (url.includes('/amenities')) {
-    $('input#form-id').val('amenities');
-} else if (url.includes('/residences')) {
-    $('input#form-id').val('residences');
-} else if (url.includes('/floorplans')) {
-    $('input#form-id').val('floorplans');
-} else { $('input#form-id').val('en-landing'); }
-
 
 // CONTACTPOP
 $('[contact-pop]').on('click', function() {
