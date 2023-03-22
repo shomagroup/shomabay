@@ -24,11 +24,6 @@ $('[sect-1-hover]').on('mouseenter mouseleave', function() {
     $(this).find('.sect-1-card-1, .sect-1-card-2').toggleClass('swaphover');
 });
 
-// CONTACT FORM
-$('[form-trigger]').on('click', function() {
-    $('.button-contact').trigger('click');
-});
-
 
 // CONTACTPOP
 $('[contact-pop]').on('click', function() {
@@ -40,6 +35,26 @@ $('[closepop]').on('click', function() {
     $(this).closest('[popup]').removeClass('active');
     $('.body').removeClass('no-scroll');
 });
+
+// CONTACT FORM
+$('[form-trigger]').on('click', function() {
+    $('.button-contact').trigger('click');
+});
+
+if ($('input#form-id').closest('.connect-section').is('[connect-section]')) {
+    $('input#form-ider').val('connect-section');
+} else { $('input#form-ider').val('connect-pop'); }
+
+let url = window.location.href;
+if (url.includes('/es')) {
+    $('input#form-id').val('es-landing');
+} else if (url.includes('/amenities')) {
+    $('input#form-id').val('amenities');
+} else if (url.includes('/residences')) {
+    $('input#form-id').val('residences');
+} else if (url.includes('/floorplans')) {
+    $('input#form-id').val('floorplans');
+} else { $('input#form-id').val('en-landing'); }
 
 
 // TIMESTAMPER
