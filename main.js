@@ -29,11 +29,6 @@ $('[form-trigger]').on('click', function() {
     $('.button-contact').trigger('click');
 });
 
-let url = window.location.href;
-if ($('input#form-id').closest('section').is('.connect-section')) {
-    $('input#form-ider').val('connect-section');
-} else { $('input#form-ider').val('connect-pop'); }
-
 if (url.includes('/es')) {
     $('input#form-id').val('es-landing');
 } else if (url.includes('/amenities')) {
