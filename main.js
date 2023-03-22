@@ -37,13 +37,11 @@ $('[closepop]').on('click', function() {
 });
 
 // CONTACT FORM
+$('.connect-pop').find('input#form-ider').val('popup');
+$('.connect-section').find('input#form-ider').val('section');
 $('[form-trigger]').on('click', function() {
     $('.button-contact').trigger('click');
 });
-
-if ($('input#form-id').closest('.connect-section').is('[connect-section]')) {
-    $('input#form-ider').val('connect-section');
-} else { $('input#form-ider').val('connect-pop'); }
 
 let url = window.location.href;
 if (url.includes('/es')) {
