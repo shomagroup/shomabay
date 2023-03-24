@@ -54,11 +54,9 @@ $('[amen-next]').on('click', function() {
         } else if ($(this).closest('.amenity').find('.amen-slider-item.selected').is(':nth-last-of-type(3)')) {
             $(this).closest('.amenity').find('.amen-slider-item').last().addClass('next');
             $(this).closest('.amenity').find('.amen-slider-item').first().addClass('next-next');
-
         } else if ($(this).closest('.amenity').find('.amen-slider-item.selected').is(':nth-last-of-type(2)')) {
             $(this).closest('.amenity').find('.amen-slider-item').first().addClass('next');
             $(this).closest('.amenity').find('.amen-slider-item').first().next().addClass('next-next');
-
         } else {
             $(this).closest('.amenity').find('.amen-slider-item.selected').next().addClass('next');
             $(this).closest('.amenity').find('.amen-slider-item.selected').next().next().addClass('next-next');
@@ -115,5 +113,4 @@ $('[amen-prev]').on('click', function() {
             $(this).closest('.amenity').find('.amen-slider-item.selected').next().next().addClass('next-next');
         }
     }
-
 });
