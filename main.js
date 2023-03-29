@@ -195,7 +195,6 @@ function setUTMformValues() {
     var utm_medium_nodes = $("input[name='utm_medium']");
     var utm_campaign_nodes = $("input[name='utm_campaign']");
     var utm_term_nodes = $("input[name='utm_term']");
-    $("input[name='utm_term']").val('UPDATED!');
 
     /* 1 of 3 change all utm_source form feilds */
     if (utm_source_nodes != null && utm_source_value !== undefined) {
