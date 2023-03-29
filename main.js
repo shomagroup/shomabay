@@ -32,7 +32,7 @@ $('[contact-pop]').on('click', function() {
 });
 
 $('[closepop]').on('click', function() {
-    $(this).closest('.connect-pop').removeClass('active');
+    $(this).closest('[popup]').removeClass('active');
     $('.body').removeClass('no-scroll');
 });
 
