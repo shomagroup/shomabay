@@ -66,6 +66,7 @@ const timer = setInterval(time, 1000);
 
 
 // COOKIES & UTM PARAM
+
 function getAllUrlParams(url) {
     // get query string from url (optional) or window
     var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
@@ -191,11 +192,11 @@ function setUTMformValues() {
     <input type="text" class="utm_campaign" placeholder="utm_campaign" name="utm_campaign">
     */
 
-    var utm_source_nodes = $("input.utm_source");
-    var utm_medium_nodes = $("input.utm_medium");
-    var utm_campaign_nodes = $("input.utm_campaign");
-    var utm_term_nodes = $("input.utm_term");
-
+    var utm_source_nodes = $("input[name='utm_source']");
+    var utm_medium_nodes = $("input[name='utm_medium']");
+    var utm_campaign_nodes = $("input[name='utm_campaign']");
+    var utm_term_nodes = $("input[name='utm_term']");
+    $("input[name='utm_term']").val('UPDATED!');
     /* 1 of 3 change all utm_source form feilds */
     if (utm_source_nodes != null && utm_source_value !== undefined) {
         for (var i = 0; i < utm_source_nodes.length; i++) {
