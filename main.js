@@ -62,10 +62,9 @@ function time() {
     const timestamper = DateTime.now().setZone('America/New_York').toFormat("ccc LLL dd (HH:mm) yyyy");
     $("input[timestamper]").val(timestamper);
 }
-const timer = setInterval(time, 1000);
+const timer = setInterval(time, 5000);
 
 // COOKIES & UTM PARAM
-
 function getAllUrlParams(url) {
     // get query string from url (optional) or window
     var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
