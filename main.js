@@ -64,7 +64,61 @@ function time() {
 }
 const timer = setInterval(time, 5000);
 
+
+//---- GOOGLE
+if ($("input[name='utm_source']").is("[value*='google']")) {
+    //- Organic
+    if ($('.utm_medium').is("[value*='organic']")) {
+        $('[phoneNum]').attr('href', 'tel:+17868825350');
+        //-------------
+    } else if ($('.utm_medium').is("[value*='paid']")) {
+        //- Paid
+        $('[phoneNum]').attr('href', 'tel:+17863860647');
+        //-------------
+    } else {
+        $('[phoneNum]').attr('href', 'tel:+17868825350');
+        //-------------
+    }
+} else if ($("input[name='utm_source']").is("[value*='facebook']")) {
+    //---- FACEBOOK
+    $('[phoneNum]').attr('href', 'tel:+17868768185');
+    //-------------
+} else if ($("input[name='utm_source']").is("[value*='newsletter']")) {
+    //---- EBLAST
+    $('[phoneNum]').attr('href', 'tel:+17868861787');
+    //-------------
+} else if ($("input[name='utm_source']").is("[value*='mailer']")) {
+    //---- DIRECT MAILER
+    $('[phoneNum]').attr('href', 'tel:+17868337421');
+    //-------------
+} else if ($("input[name='utm_source']").is("[value*='insta']")) {
+    //---- INSTAGRAM
+    $('[phoneNum]').attr('href', 'tel:+17868826213');
+    //-------------
+} else if ($("input[name='utm_source']").is("[value*='printed']")) {
+    //---- PRINTED MATERIALS
+    $('[phoneNum]').attr('href', 'tel:+17868337421');
+    //-------------
+} else if ($("input[name='utm_source']").is("[value*='tiktok']")) {
+    //---- TIKTOK
+    $('[phoneNum]').attr('href', 'tel:+17868826213');
+    //-------------
+} else if ($("input[name='utm_source']").is("[value*='twitter']")) {
+    //---- TWITTER
+    $('[phoneNum]').attr('href', 'tel:+17868826213');
+    //-------------
+} else if ($("input[name='utm_source']").is("[value*='youtube']")) {
+    //---- YOUTUBE
+    $('[phoneNum]').attr('href', 'tel:+17868826213');
+    //-------------
+} else {
+    //---- PROPERTY WEBSITE
+    $('[phoneNum]').attr('href', 'tel:+17868825887');
+}
+
+
 // COOKIES & UTM PARAM
+
 function getAllUrlParams(url) {
     // get query string from url (optional) or window
     var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
