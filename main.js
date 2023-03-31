@@ -87,10 +87,6 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+17868861787');
     //-------------
-} else if ($("input[name='utm_source']").is("[value*='mailer']")) {
-    //---- DIRECT MAILER
-    $('[phoneNum]').attr('href', 'tel:+17868337421');
-    //-------------
 } else if ($("input[name='utm_source']").is("[value*='insta']")) {
     //---- INSTAGRAM
     $('[phoneNum]').attr('href', 'tel:+17868826213');
@@ -99,12 +95,12 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     //---- PRINTED MATERIALS
     $('[phoneNum]').attr('href', 'tel:+17868337421');
     //-------------
+} else if ($("input[name='utm_source']").is("[value*='mailer']")) {
+    //---- DIRECT MAILER
+    $('[phoneNum]').attr('href', 'tel:+17868337421');
+    //-------------
 } else if ($("input[name='utm_source']").is("[value*='tiktok']")) {
     //---- TIKTOK
-    $('[phoneNum]').attr('href', 'tel:+17868826213');
-    //-------------
-} else if ($("input[name='utm_source']").is("[value*='twitter']")) {
-    //---- TWITTER
     $('[phoneNum]').attr('href', 'tel:+17868826213');
     //-------------
 } else if ($("input[name='utm_source']").is("[value*='youtube']")) {
