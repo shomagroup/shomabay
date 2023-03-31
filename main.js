@@ -44,6 +44,7 @@ $('[form-trigger]').on('click', function() {
 });
 
 let url = window.location.href;
+$("input[name='url']").val(url);
 if (url.includes('/es')) {
     $('input#form-id').val('es-landing');
 } else if (url.includes('/amenities')) {
