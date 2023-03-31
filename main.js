@@ -1,3 +1,6 @@
+// WEBSITE CODE VERSION
+console.log('shomabay.com ver. 1');
+
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
     $(this).siblings('.nav-link').addClass('nothover');
