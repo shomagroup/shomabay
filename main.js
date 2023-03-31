@@ -44,7 +44,6 @@ $('[form-trigger]').on('click', function() {
 });
 
 let url = window.location.href;
-$("input[name='url']").val(url);
 if (url.includes('/es')) {
     $('input#form-id').val('es-landing');
 } else if (url.includes('/amenities')) {
@@ -125,6 +124,7 @@ $.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
     if (results == null) { return null; } else { return results[1] || 0; }
 }
+if (!results == null) { Cookies.set('url', url + "in" + time, { expires: 30 }); }
 
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
     var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
@@ -146,6 +146,7 @@ if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
     Cookies.set('term', term, { expires: 30 });
 }
 
+$("input[name='url']").val(Cookies.get('url'));
 $("input[name='utm_source']").val(Cookies.get('source'));
 $("input[name='utm_medium']").val(Cookies.get('medium'));
 $("input[name='utm_campaign']").val(Cookies.get('campaign'));
