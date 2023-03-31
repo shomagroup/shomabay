@@ -89,7 +89,7 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+17868861787');
     //-------------
-} else if ($("input[name='utm_source']").is("[value*='insta']")) {
+} else if ($("input[name='utm_source']").is("[value*='ig']")) {
     //---- INSTAGRAM
     $('[phoneNum]').attr('href', 'tel:+17868826213');
     //-------------
