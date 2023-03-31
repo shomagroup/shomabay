@@ -40,7 +40,7 @@ $('[closepop]').on('click', function() {
 $('.connect-pop').find('input#form-ider').val('popup');
 $('.connect-section').find('input#form-ider').val('section');
 $('[form-trigger]').on('click', function() {
-    $('.button-contact').trigger('click');
+    $(this).siblings('.button-contact').trigger('click');
 });
 
 let url = window.location.href;
