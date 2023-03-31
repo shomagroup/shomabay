@@ -146,7 +146,7 @@ if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
     Cookies.set('term', term, { expires: 30 });
 }
 
-$("input[name='url']").val(Cookies.get('url'));
+$("input[name='utm_url']").val(Cookies.get('url'));
 $("input[name='utm_source']").val(Cookies.get('source'));
 $("input[name='utm_medium']").val(Cookies.get('medium'));
 $("input[name='utm_campaign']").val(Cookies.get('campaign'));
