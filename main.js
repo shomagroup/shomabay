@@ -85,6 +85,10 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     //---- FACEBOOK
     $('[phoneNum]').attr('href', 'tel:+17868768185');
     //-------------
+} else if ($("input[name='utm_source']").is("[value*='fb']")) {
+    //---- FACEBOOK SOCIALMEDIA
+    $('[phoneNum]').attr('href', 'tel:+17868826213');
+    //-------------
 } else if ($("input[name='utm_source']").is("[value*='newsletter']")) {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+17868861787');
