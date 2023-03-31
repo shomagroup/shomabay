@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('shomabay.com ver. 1');
+
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -127,7 +127,9 @@ $.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
     if (results == null) { return null; } else { return results[1] || 0; }
 }
-if (!$.urlParam == null) { Cookies.set('url', url, { expires: 30 }); }
+
+console.log('1' + $.urlParam.toString());
+if ($.urlParam == null) { Cookies.set('url', url, { expires: 30 }); }
 
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
     var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
