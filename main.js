@@ -65,6 +65,8 @@ function time() {
 const timer = setInterval(time, 5000);
 
 
+//==== PHONE NUMBER FILTER ====//
+
 //---- GOOGLE
 if ($("input[name='utm_source']").is("[value*='google']")) {
     //- Organic
@@ -111,3 +113,35 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     //---- PROPERTY WEBSITE
     $('[phoneNum]').attr('href', 'tel:+17868825887');
 }
+
+// === UTM TRACKER === //
+
+$.urlParam = function(name) {
+    var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
+    if (results == null) { return null; } else { return results[1] || 0; }
+}
+
+if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
+    var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
+    Cookies.set('source', source, { expires: 30 });
+}
+
+if (!$.urlParam('utm_medium') == null || !$.urlParam('utm_medium') == "") {
+    var medium = $.urlParam('utm_medium').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
+    Cookies.set('medium', medium, { expires: 30 });
+}
+
+if (!$.urlParam('utm_campaign') == null || !$.urlParam('utm_campaign') == "") {
+    var campaign = $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
+    Cookies.set('campaign', campaign, { expires: 30 });
+}
+
+if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
+    var term = $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
+    Cookies.set('term', term, { expires: 30 });
+}
+
+$("input[name='utm_source']").val(Cookies.get('source'));
+$("input[name='utm_medium']").val(Cookies.get('medium'));
+$("input[name='utm_campaign']").val(Cookies.get('campaign'));
+$("input[name='utm_term']").val(Cookies.get('term'));
