@@ -124,7 +124,7 @@ $.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
     if (results == null) { return null; } else { return results[1] || 0; }
 }
-if (!results == null) { Cookies.set('url', url + "in" + time, { expires: 30 }); }
+if (!$.urlParam == null) { Cookies.set('url', url + "in" + time, { expires: 30 }); }
 
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
     var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
