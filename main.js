@@ -83,11 +83,11 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     }
 } else if ($("input[name='utm_source']").is("[value*='facebook']")) {
     //---- FACEBOOK
-    $('[phoneNum]').attr('href', 'tel:+17868768185');
-    //-------------
-} else if ($("input[name='utm_source']").is("[value*='fb']")) {
-    //---- FACEBOOK SOCIALMEDIA
-    $('[phoneNum]').attr('href', 'tel:+17868826213');
+    if ($("input[name='utm_medium']").is("[value*='socialmedia']")) {
+        //---- FACEBOOK SOCIALMEDIA
+        $('[phoneNum]').attr('href', 'tel:+17868826213');
+        //----- FACEBOOK AD
+    } else { $('[phoneNum]').attr('href', 'tel:+17868768185'); }
     //-------------
 } else if ($("input[name='utm_source']").is("[value*='newsletter']")) {
     //---- EBLAST
@@ -105,7 +105,7 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     //---- DIRECT MAILER
     $('[phoneNum]').attr('href', 'tel:+17868337421');
     //-------------
-} else if ($("input[name='utm_source']").is("[value*='tiktok']")) {
+} else if ($("input[name='utm_source']").is("[value*='tik']")) {
     //---- TIKTOK
     $('[phoneNum]').attr('href', 'tel:+17868826213');
     //-------------
