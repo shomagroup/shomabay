@@ -98,7 +98,6 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     //-------------
     //---- SOCIAL MEDIA ----//
 } else if ($("input[name='utm_medium']").is("[value*='socialmedia']")) {
-    //---- SOCIALMEDIA
     $('[phoneNum]').attr('href', 'tel:+17868826213');
     // } else if ($("input[name='utm_source']").is("[value*='instagram']")) {
     //     //---- INSTAGRAM
