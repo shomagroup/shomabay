@@ -96,7 +96,7 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+17868861787');
     //-------------
-} else if ($("input[name='utm_source']").is("[value*='ig']")) {
+} else if ($("input[name='utm_source']").is("[value*='instagram']")) {
     //---- INSTAGRAM
     $('[phoneNum]').attr('href', 'tel:+17868826213');
     //-------------
@@ -108,7 +108,7 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     //---- DIRECT MAILER
     $('[phoneNum]').attr('href', 'tel:+17868337421');
     //-------------
-} else if ($("input[name='utm_source']").is("[value*='tik']")) {
+} else if ($("input[name='utm_source']").is("[value*='tiktok']")) {
     //---- TIKTOK
     $('[phoneNum]').attr('href', 'tel:+17868826213');
     //-------------
