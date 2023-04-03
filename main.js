@@ -137,6 +137,7 @@ $.urlParam = function(name) {
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
     var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
     Cookies.set('source', source, { expires: 30 });
+    Cookies.set('url', url, { expires: 30 });
 }
 
 if (!$.urlParam('utm_medium') == null || !$.urlParam('utm_medium') == "") {
@@ -154,6 +155,7 @@ if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
     Cookies.set('term', term, { expires: 30 });
 }
 
+$("input[name='current_url']").val(url);
 $("input[name='utm_url']").val(Cookies.get('url'));
 $("input[name='utm_source']").val(Cookies.get('source'));
 $("input[name='utm_medium']").val(Cookies.get('medium'));
