@@ -96,10 +96,22 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+17868861787');
     //-------------
-} else if ($("input[name='utm_source']").is("[value*='instagram']")) {
-    //---- INSTAGRAM
+    //---- SOCIAL MEDIA ----//
+} else if ($("input[name='utm_medium']").is("[value*='socialmedia']")) {
+    //---- SOCIALMEDIA
     $('[phoneNum]').attr('href', 'tel:+17868826213');
-    //-------------
+    // } else if ($("input[name='utm_source']").is("[value*='instagram']")) {
+    //     //---- INSTAGRAM
+    //     $('[phoneNum]').attr('href', 'tel:+17868826213');
+    //     //-------------
+    // } else if ($("input[name='utm_source']").is("[value*='tiktok']")) {
+    //     //---- TIKTOK
+    //     $('[phoneNum]').attr('href', 'tel:+17868826213');
+    //     //-------------
+    // } else if ($("input[name='utm_source']").is("[value*='youtube']")) {
+    //     //---- YOUTUBE
+    //     $('[phoneNum]').attr('href', 'tel:+17868826213');
+    //     //-------------
 } else if ($("input[name='utm_source']").is("[value*='printed']")) {
     //---- PRINTED MATERIALS
     $('[phoneNum]').attr('href', 'tel:+17868337421');
@@ -108,14 +120,8 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     //---- DIRECT MAILER
     $('[phoneNum]').attr('href', 'tel:+17868337421');
     //-------------
-} else if ($("input[name='utm_source']").is("[value*='tiktok']")) {
-    //---- TIKTOK
-    $('[phoneNum]').attr('href', 'tel:+17868826213');
-    //-------------
-} else if ($("input[name='utm_source']").is("[value*='youtube']")) {
-    //---- YOUTUBE
-    $('[phoneNum]').attr('href', 'tel:+17868826213');
-    //-------------
+
+
 } else {
     //---- PROPERTY WEBSITE
     $('[phoneNum]').attr('href', 'tel:+17868825887');
