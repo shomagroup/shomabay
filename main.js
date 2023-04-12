@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-
+console.log('ver 1')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -46,16 +46,20 @@ $('[form-trigger]').on('click', function() {
     $(this).siblings('.button-contact').trigger('click');
 });
 
+
 let url = window.location.href;
+
+// what page is form being submited
+
 if (url.includes('/es')) {
-    $('input#form-id').val('es-landing');
-} else if (url.includes('/amenities')) {
-    $('input#form-id').val('amenities');
-} else if (url.includes('/residences')) {
+    $('input#form-id').val('home');
+} else if (url.includes('residences') || url.includes('residencias')) {
     $('input#form-id').val('residences');
-} else if (url.includes('/floorplans')) {
+} else if (url.includes('floorplans') || url.includes('planos')) {
     $('input#form-id').val('floorplans');
-} else { $('input#form-id').val('en-landing'); }
+} else if (url.includes('amenities') || url.includes('comodidades')) {
+    $('input#form-id').val('amenities');
+} else { $('input#form-id').val('home'); }
 
 
 // TIMESTAMPER
@@ -92,7 +96,7 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
         //----- FACEBOOK AD
     } else { $('[phoneNum]').attr('href', 'tel:+17868768185'); }
     //-------------
-} else if ($("input[name='utm_source']").is("[value*='newsletter']")) {
+} else if ($("input[name='utm_source']").is("[value*='eblast']")) {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+17868861787');
     //-------------
@@ -119,7 +123,6 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     //---- DIRECT MAILER
     $('[phoneNum]').attr('href', 'tel:+17868337421');
     //-------------
-
 
 } else {
     //---- PROPERTY WEBSITE
