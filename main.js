@@ -51,15 +51,19 @@ let url = window.location.href;
 
 // what page is form being submited
 
-if (url.includes('/es')) {
-    $('input#form-id').val('home');
-} else if (url.includes('residences') || url.includes('residencias')) {
-    $('input#form-id').val('residences');
+if (url.includes('residences') || url.includes('residencias')) {
+    $('input#form-id').val('Residences');
+
 } else if (url.includes('floorplans') || url.includes('planos')) {
-    $('input#form-id').val('floorplans');
+    $('input#form-id').val('Floorplans');
+
 } else if (url.includes('amenities') || url.includes('comodidades')) {
-    $('input#form-id').val('amenities');
-} else { $('input#form-id').val('home'); }
+    $('input#form-id').val('Amenities');
+
+} else if (url.includes('/es')) {
+    $('input#form-id').val('Home');
+
+} else { $('input#form-id').val('Home'); }
 
 
 // TIMESTAMPER
