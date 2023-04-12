@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 1')
+console.log('ver 1.1')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -51,13 +51,13 @@ let url = window.location.href;
 
 // what page is form being submited
 
-if (url.includes('residences') || url.includes('residencias')) {
+if (url.includes('/residences') || url.includes('/residencias')) {
     $('input#form-id').val('Residences');
 
-} else if (url.includes('floorplans') || url.includes('planos')) {
+} else if (url.includes('/floorplans') || url.includes('/planos')) {
     $('input#form-id').val('Floorplans');
 
-} else if (url.includes('amenities') || url.includes('comodidades')) {
+} else if (url.includes('/amenities') || url.includes('/comodidades')) {
     $('input#form-id').val('Amenities');
 
 } else if (url.includes('/es')) {
