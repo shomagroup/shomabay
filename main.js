@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 1.1')
+console.log('ver 1.1.1.0')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -134,21 +134,19 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
 }
 
 // === UTM TRACKER === //
-let cleanUrl = url.replace('https://www.shomabay.com/', '/').replace('https://shomabay.webflow.io/', '/');
-let option2 = RegExp('[\?&]').exec(url);
-console.log(cleanUrl);
+
 
 
 $.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
     if (results == null) { return null; } else { return results[1] || 0; }
 }
-console.log(results);
+let cleanUrl = url.replace('https://www.shomabay.com/?', '').replace('https://shomabay.webflow.io/?', '/');
 
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
     var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
     Cookies.set('source', source, { expires: 30 });
-    Cookies.set('url', url, { expires: 30 });
+    Cookies.set('url', cleanUrl, { expires: 30 });
 }
 
 if (!$.urlParam('utm_medium') == null || !$.urlParam('utm_medium') == "") {
