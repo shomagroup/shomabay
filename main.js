@@ -134,14 +134,11 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
 }
 
 // === UTM TRACKER === //
-
-
-
 $.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
     if (results == null) { return null; } else { return results[1] || 0; }
 }
-let cleanUrl = url.replace('https://www.shomabay.com/?', '').replace('https://shomabay.webflow.io/?', '/');
+let cleanUrl = url.replace('https://www.shomabay.com/?', '').replace('https://shomabay.webflow.io/?', '');
 
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
     var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
