@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230414 1.2')
+console.log('ver 230414 1.3')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -80,7 +80,7 @@ if (url.includes('/residences') || url.includes('/residencias')) {
 var DateTime = luxon.DateTime;
 
 function time() {
-    const timestamper = DateTime.now().setZone('America/New_York').toFormat("ccc LLL dd (HH:mm) yyyy");
+    const timestamper = DateTime.now().setZone('America/New_York').toFormat("(HH:mm) ccc LLL dd yyyy");
     $("input[timestamper]").val(timestamper);
 }
 const timer = setInterval(time, 5000);
