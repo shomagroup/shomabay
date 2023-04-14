@@ -135,7 +135,9 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
 
 // === UTM TRACKER === //
 let cleanUrl = url.replace('https://www.shomabay.com/', '/').replace('https://shomabay.webflow.io/', '/');
-console.log(cleanUrl)
+let option2 = RegExp('[\?&]').exec(url);
+console.log(cleanUrl);
+console.log(option2);
 
 $.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
