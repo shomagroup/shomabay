@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 1.2')
+console.log('ver 1.3')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -134,6 +134,8 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
 }
 
 // === UTM TRACKER === //
+let cleanUrl = url.replace('https://www.shomabay.com/?', ' ');
+console.log(cleanUrl)
 
 $.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
