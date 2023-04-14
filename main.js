@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 1.1.1.0')
+console.log('ver 1.1.1.1')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -44,6 +44,14 @@ $('.connect-pop').find('input#form-ider').val('popup');
 $('.connect-section').find('input#form-ider').val('section');
 $('[form-trigger]').on('click', function() {
     $(this).siblings('.button-contact').trigger('click');
+});
+
+$('[preference]').on('click', function() {
+    $(this).toggleClass('checked');
+    let preference = $('[preference]').filter('.checked').map((k, box) => box.name).toArray().join(', ');
+    if ($('.checked[preference]').length) {
+        $("input[name='preference']").val(preference);
+    } else { $("input[name='preference']").val('No Preference') }
 });
 
 
