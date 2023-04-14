@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 1.1.1.1')
+console.log('ver 230414 1.1')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -49,7 +49,9 @@ $('[form-trigger]').on('click', function() {
 $('[preference]').on('click', function() {
     $(this).toggleClass('checked');
     let preference = $('[preference]').filter('.checked').map((k, box) => box.name).toArray().join(', ');
-    if ($('.checked[preference]').length) {
+    if (preference = "Studio, 1-Bed, 2-Bed, 3-Bed, Penthouse") {
+        $("input[name='preference']").val('All')
+    } else if ($('.checked[preference]').length) {
         $("input[name='preference']").val(preference);
     } else { $("input[name='preference']").val('No Preference') }
 });
