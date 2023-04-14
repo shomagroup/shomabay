@@ -137,13 +137,13 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
 let cleanUrl = url.replace('https://www.shomabay.com/', '/').replace('https://shomabay.webflow.io/', '/');
 let option2 = RegExp('[\?&]').exec(url);
 console.log(cleanUrl);
-console.log(option2);
+
 
 $.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
     if (results == null) { return null; } else { return results[1] || 0; }
 }
-
+console.log(results);
 
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
     var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
