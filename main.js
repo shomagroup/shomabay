@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230414 1.3')
+console.log('ver 230419 1.0')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -112,8 +112,10 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
         $('[phoneNum]').attr('href', 'tel:+17868826213');
         $('[phoneTx]').text('17868826213');
         //----- FACEBOOK AD
-    } else { $('[phoneNum]').attr('href', 'tel:+17868768185');
-        $('[phoneTx]').text('17868768185'); }
+    } else {
+        $('[phoneNum]').attr('href', 'tel:+17868768185');
+        $('[phoneTx]').text('17868768185');
+    }
     //-------------
 } else if ($("input[name='utm_source']").is("[value*='eblast']")) {
     //---- EBLAST
