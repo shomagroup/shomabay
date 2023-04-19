@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230419 1.0')
+console.log('ver 230419 1.0.1')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -93,16 +93,16 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     //- Organic
     if ($('.utm_medium').is("[value*='organic']")) {
         $('[phoneNum]').attr('href', 'tel:+17868825350');
-        $('[phoneTx]').text('17868825350');
+        $('[phoneTx]').text('786-882-5350');
         //-------------
     } else if ($('.utm_medium').is("[value*='paid']")) {
         //- Paid
         $('[phoneNum]').attr('href', 'tel:+17863860647');
-        $('[phoneTx]').text('17863860647');
+        $('[phoneTx]').text('786-386-0647');
         //-------------
     } else {
         $('[phoneNum]').attr('href', 'tel:+17868825350');
-        $('[phoneTx]').text('17868825350');
+        $('[phoneTx]').text('786-882-5350');
         //-------------
     }
 } else if ($("input[name='utm_source']").is("[value*='facebook']")) {
@@ -110,22 +110,22 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
     if ($("input[name='utm_medium']").is("[value*='socialmedia']")) {
         //---- FACEBOOK SOCIALMEDIA
         $('[phoneNum]').attr('href', 'tel:+17868826213');
-        $('[phoneTx]').text('17868826213');
+        $('[phoneTx]').text('786-882-6213');
         //----- FACEBOOK AD
     } else {
         $('[phoneNum]').attr('href', 'tel:+17868768185');
-        $('[phoneTx]').text('17868768185');
+        $('[phoneTx]').text('786-876-8185');
     }
     //-------------
 } else if ($("input[name='utm_source']").is("[value*='eblast']")) {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+17868861787');
-    $('[phoneTx]').text('17868861787');
+    $('[phoneTx]').text('786-886-1787');
     //-------------
     //---- SOCIAL MEDIA ----//
 } else if ($("input[name='utm_medium']").is("[value*='socialmedia']")) {
     $('[phoneNum]').attr('href', 'tel:+17868826213');
-    $('[phoneTx]').text('17868826213');
+    $('[phoneTx]').text('786-882-6213');
     // } else if ($("input[name='utm_source']").is("[value*='instagram']")) {
     //     //---- INSTAGRAM
     //     $('[phoneNum]').attr('href', 'tel:+17868826213');
@@ -141,18 +141,18 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
 } else if ($("input[name='utm_source']").is("[value*='printed']")) {
     //---- PRINTED MATERIALS
     $('[phoneNum]').attr('href', 'tel:+17868337421');
-    $('[phoneTx]').text('17868337421');
+    $('[phoneTx]').text('786-833-7421');
     //-------------
 } else if ($("input[name='utm_source']").is("[value*='mailer']")) {
     //---- DIRECT MAILER
     $('[phoneNum]').attr('href', 'tel:+17868337421');
-    $('[phoneTx]').text('17868337421');
+    $('[phoneTx]').text('786-833-7421');
     //-------------
 
 } else {
     //---- PROPERTY WEBSITE
     $('[phoneNum]').attr('href', 'tel:+17868825887');
-    $('[phoneTx]').text('17868825887');
+    $('[phoneTx]').text('786-882-5887');
 }
 
 // === UTM TRACKER === //
