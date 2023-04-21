@@ -10,7 +10,7 @@ $('.broker-button').on('click', function() {
     if ($('.broker-button').is('.clicked')) {
         $('.broker-form-section').addClass('open');
         $('.broker-form-section input[broker]').attr('required', '1');
-    } else {
+    } else if (!$('.broker-button').is('.clicked')) {
         $('.broker-form-section').removeClass('open');
         $('.broker-form-section input[broker]').removeAttr('required');
     }
