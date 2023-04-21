@@ -50,7 +50,7 @@ $('[preference]').on('click', function() {
     $(this).toggleClass('checked');
     let preference = $('[preference]').filter('.checked').map((k, box) => box.name).toArray().join(', ');
     if ($('.checked[preference]').length === 4) {
-        $("input[name='preference']").val('All');
+        $("input[name='preference']").val('No Preference');
     } else if ($('.checked[preference]').length) {
         $("input[name='preference']").val(preference);
     } else { $("input[name='preference']").val('No Preference'); }
