@@ -49,7 +49,7 @@ $('[form-trigger]').on('click', function() {
 $('[preference]').on('click', function() {
     $(this).toggleClass('checked');
     let preference = $('[preference]').filter('.checked').map((k, box) => box.name).toArray().join(', ');
-    if (preference == "Studio, 1-Bed, 2-Bed, 3-Bed, Penthouse") {
+    if ($('.checked[preference]').length === 4) {
         $("input[name='preference']").val('All');
     } else if ($('.checked[preference]').length) {
         $("input[name='preference']").val(preference);
