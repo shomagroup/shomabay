@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230424 0.6')
+console.log('ver 230424 0.7')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -51,7 +51,7 @@ $("input[name='preference']").val('No Preference');
 $('[preference]').on('click', function() {
     $(this).toggleClass('checked');
     let preference = $('[preference]').filter('.checked').map((k, box) => box.name).toArray().join(', ');
-    if ($('.checked[preference]').length === 4) {
+    if ($('.checked[preference]').length === 5) {
         $("input[name='preference']").val('No Preference');
     } else if ($('.checked[preference]').length) {
         $("input[name='preference']").val(preference);
@@ -60,7 +60,8 @@ $('[preference]').on('click', function() {
 
 $("input[name='broker']").val('false');
 $('[broker]').on('click', function() {
-    if ($('[broker]').siblings('.only-option').is('w--redirected-checked')) {
+    $(this).toggleClass('checked');
+    if ($('[broker]').is('.checked')) {
         $("input[name='broker']").val('true');
     } else { $("input[name='broker']").val('false'); }
 });
