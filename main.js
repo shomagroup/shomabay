@@ -46,6 +46,8 @@ $('[form-trigger]').on('click', function() {
     $(this).siblings('.button-contact').trigger('click');
 });
 
+
+$("input[name='preference']").val('No Preference');
 $('[preference]').on('click', function() {
     $(this).toggleClass('checked');
     let preference = $('[preference]').filter('.checked').map((k, box) => box.name).toArray().join(', ');
@@ -56,6 +58,10 @@ $('[preference]').on('click', function() {
     } else { $("input[name='preference']").val('No Preference'); }
 });
 
+// HIDDEN stuff
+$('.hidden-form-fields input').attr('type', 'hidden');
+$('.hidden-form-fields input').attr('readonly', 'readonly');
+
 
 let url = window.location.href;
 
@@ -63,16 +69,12 @@ let url = window.location.href;
 
 if (url.includes('/residences') || url.includes('/residencias')) {
     $('input#form-id').val('Residences');
-
 } else if (url.includes('/floorplans') || url.includes('/planos')) {
     $('input#form-id').val('Floorplans');
-
 } else if (url.includes('/amenities') || url.includes('/comodidades')) {
     $('input#form-id').val('Amenities');
-
 } else if (url.includes('/es')) {
     $('input#form-id').val('Home');
-
 } else { $('input#form-id').val('Home'); }
 
 
