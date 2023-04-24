@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230424 0.4')
+console.log('ver 230424 0.5')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -59,8 +59,8 @@ $('[preference]').on('click', function() {
 });
 
 $("input[name='broker']").val('false');
-$('[broker]').on('click', function() {
-    if ($('broker .only-option').is('w--redirected-checked')) {
+$('[broker] .only-option').on('click', function() {
+    if ($('[broker] .only-option').is('w--redirected-checked')) {
         $("input[name='broker']").val('true');
     } else { $("input[name='broker']").val('false'); }
 });
