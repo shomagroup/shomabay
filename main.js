@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230424 0.2')
+console.log('ver 230424 0.3')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -65,17 +65,18 @@ $('.hidden-form-fields input').attr('readonly', 'readonly');
 
 let url = window.location.href;
 
+if (url.includes('/es')) { $("input[name='lang']").val('ES'); } else { $("input[name='lang']").val('EN'); }
 // what page is form being submited
 
 if (url.includes('/residences') || url.includes('/residencias')) {
-    $('input#form-id').val('Residences');
+    $("input[name='form-id']").val('Residences');
 } else if (url.includes('/floorplans') || url.includes('/planos')) {
-    $('input#form-id').val('Floorplans');
+    $("input[name='form-id']").val('Floorplans');
 } else if (url.includes('/amenities') || url.includes('/comodidades')) {
-    $('input#form-id').val('Amenities');
+    $("input[name='form-id']").val('Amenities');
 } else if (url.includes('/es')) {
-    $('input#form-id').val('Home');
-} else { $('input#form-id').val('Home'); }
+    $("input[name='form-id']").val('Home');
+} else { $("input[name='form-id']").val('Home'); }
 
 
 // TIMESTAMPER
