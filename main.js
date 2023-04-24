@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230424 0.1')
+console.log('ver 230424 0.2')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -59,7 +59,7 @@ $('[preference]').on('click', function() {
 });
 
 // HIDDEN stuff
-$('.hidden-form-fields input').attr('type', 'hidden');
+$('.hidden-form-fields:not(.show) input').attr('type', 'hidden');
 $('.hidden-form-fields input').attr('readonly', 'readonly');
 
 
