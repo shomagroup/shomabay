@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230424 0.7')
+console.log('ver 230424 0.8')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -59,8 +59,8 @@ $('[preference]').on('click', function() {
 });
 
 $("input[name='broker']").val('false');
-$('[broker]').on('click', function() {
-    $(this).toggleClass('checked');
+$('[broker]').closest('label').on('click', function() {
+    $('[broker]').toggleClass('checked');
     if ($('[broker]').is('.checked')) {
         $("input[name='broker']").val('true');
     } else { $("input[name='broker']").val('false'); }
