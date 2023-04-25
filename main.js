@@ -60,7 +60,7 @@ $('[preference]').on('click', function() {
 
 $("input[name='broker']").val('false');
 $('[broker]').closest('label').on('click', function() {
-    $('[broker]').toggleClass('checked');
+    $('input[broker]').toggleClass('checked');
     if ($('[broker]').is('.checked')) {
         $("input[name='broker']").val('true');
     } else { $("input[name='broker']").val('false'); }
