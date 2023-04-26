@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230425 0.0')
+console.log('ver 230426 0.0')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
