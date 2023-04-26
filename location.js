@@ -21,7 +21,7 @@ $('.nearby-link').on('click', function() {
 });
 
 $('.map-selector').on('click', function() {
-    $$(this).siblings('.map-selector').removeClass('active');
+    $(this).siblings('.map-selector').removeClass('active');
     if ($(this).is('.active')) {
         $(this).removeClass('active');
         $('.iframe-map iframe').attr('src', '');
