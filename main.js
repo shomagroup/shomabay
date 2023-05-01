@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230501 0.2')
+console.log('ver 230501 0.3')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -64,6 +64,10 @@ $('[agent]').closest('label').on('click', function() {
     if ($('[agent]').is('.checked')) {
         $("input[name='agent']").val('true');
     } else { $("input[name='agent']").val('false'); }
+});
+
+$('[name="country"]').on('click', function() {
+    $('[name="country"]').val($(this).find('option:selected').index());
 });
 
 // HIDDEN stuff
