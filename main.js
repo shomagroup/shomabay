@@ -58,12 +58,12 @@ $('[preference]').on('click', function() {
     } else { $("input[name='preference']").val('No Preference'); }
 });
 
-$("input[name='broker']").val('false');
-$('[broker]').closest('label').on('click', function() {
-    $('input[broker]').toggleClass('checked');
-    if ($('[broker]').is('.checked')) {
-        $("input[name='broker']").val('true');
-    } else { $("input[name='broker']").val('false'); }
+$("input[name='agent']").val('false');
+$('[agent]').closest('label').on('click', function() {
+    $('input[agent]').toggleClass('checked');
+    if ($('[agent]').is('.checked')) {
+        $("input[name='agent']").val('true');
+    } else { $("input[name='agent']").val('false'); }
 });
 
 // HIDDEN stuff
