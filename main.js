@@ -67,7 +67,7 @@ $('[agent]').closest('label').on('click', function() {
 });
 
 $('[name="country"]').on('click', function() {
-    $('[name="country"]').val($(this).find('option:selected').index());
+    $('[name="countryID"]').val($(this).find('option:selected').index());
 });
 
 // HIDDEN stuff
