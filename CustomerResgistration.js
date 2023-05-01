@@ -33,3 +33,10 @@ $('.broker-button').on('click', function() {
         $('.broker-form-section input[broker]').removeAttr('required');
     }
 });
+
+// EVENT UTM
+
+Cookies.set('source', 'Customer Registration');
+Cookies.set('medium', 'Event', { expires: 2 });
+Cookies.set('campaign', 'ISG Brazilian Team', { expires: 2 });
+Cookies.set('term', '05-1 05-2 23', { expires: 2 });
