@@ -9,7 +9,7 @@ $('.broker-button').on('click', function() {
     $(this).toggleClass('clicked');
     if ($('.broker-button').is('.clicked')) {
         $('.broker-form-section').addClass('open');
-        $("input[name='is-broker']").trigger('click');
+        $("input[name='is-broker']").siblings('div').addClass('w--redirected-checked');
         $('.broker-form-section input[agent-broker]').attr('required', '1');
     } else if (!$('.broker-button').is('.clicked')) {
         $('.broker-form-section').removeClass('open');
