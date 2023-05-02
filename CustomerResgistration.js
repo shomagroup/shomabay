@@ -10,13 +10,18 @@ $('.broker-button').on('click', function() {
     if ($('.broker-button').is('.clicked')) {
         $('.broker-form-section').addClass('open');
         $("input[name='is-broker']").closest('label').trigger('click');
-        $('.broker-form-section input[broker]').attr('required', '1');
+        $('.broker-form-section input[agent-broker]').attr('required', '1');
     } else if (!$('.broker-button').is('.clicked')) {
         $('.broker-form-section').removeClass('open');
-        $('.broker-form-section input[broker]').removeAttr('required');
+        $("input[name='is-broker']").closest('label').trigger('click');
+        $('.broker-form-section input[agent-broker]').removeAttr('required');
     }
 });
 
+
+$('[name="agent-country"]').on('click', function() {
+    $(this).closest('form').find('[name="agentcountryID"]').val($(this).find('option:selected').index());
+});
 // EVENT UTM
 
 Cookies.set('source', 'Customer Registration');

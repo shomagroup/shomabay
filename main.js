@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230501 0.4')
+console.log('ver 230502 0.0')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -67,7 +67,7 @@ $('[agent]').closest('label').on('click', function() {
 });
 
 $('[name="country"]').on('click', function() {
-    $('[name="countryID"]').val($(this).find('option:selected').index());
+    $(this).closest('form').find('[name="countryID"]').val($(this).find('option:selected').index());
 });
 
 // HIDDEN stuff
