@@ -5,19 +5,6 @@ $('.acknowledgement').on('click', function() {
     }
 });
 
-$('.broker-button').on('click', function() {
-    if (!$('.broker-button').is('.clicked')) {
-        $('.broker-form-section').removeClass('open');
-        $("input[name='is-broker']").closest('label').trigger('click');
-        $('.broker-form-section input[agent-broker]').removeAttr('required');
-        $(this).addClass('clicked');
-    } else if ($('.broker-button').is('.clicked')) {
-        $('.broker-form-section').addClass('open');
-        $("input[name='has-broker']").closest('label').trigger('click');
-        $('.broker-form-section input[agent-broker]').attr('required', '1');
-        $(this).removeClass('clicked');
-    }
-});
 
 
 $('[name="agent-country"]').on('click', function() {
