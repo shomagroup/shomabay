@@ -8,12 +8,12 @@ $('.acknowledgement').on('click', function() {
 $('.broker-button').on('click', function() {
     if (!$('.broker-button').is('.clicked')) {
         $(this).addClass('clicked');
-        $('.broker-form-section').removeClass('open');
+        $('.broker-form-section').addClass('open');
         $("input[name='has-broker']").trigger('click');
         $('.broker-form-section input[agent-broker]').removeAttr('required');
     } else if ($('.broker-button').is('.clicked')) {
         $(this).removeClass('clicked');
-        $('.broker-form-section').addClass('open');
+        $('.broker-form-section').removeClass('open');
         $("input[name='has-broker']").trigger('click');
         $('.broker-form-section input[agent-broker]').attr('required', '1');
     }
