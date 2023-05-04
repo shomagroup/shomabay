@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230504 0.9')
+console.log('ver 230504 1.0')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -212,7 +212,7 @@ if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
 
 $("input[name='current_url']").val(url);
 $("input[name='utm_url']").val(Cookies.get('url'));
-if (Cookies.get('source').length) {
+if (!Cookies.get('source') == null || !Cookies.get('source') == "" || !Cookies.get('source').length) {
     $("input[name='utm_source']").val(Cookies.get('source'));
 } else { $("input[name='utm_source']").val('Organic'); }
 $("input[name='utm_medium']").val(Cookies.get('medium'));
