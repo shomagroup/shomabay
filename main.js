@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230504 0.7')
+console.log('ver 230504 0.8')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -90,6 +90,14 @@ if (url.includes('/residences') || url.includes('/residencias')) {
     $("input[name='form-id']").val('Floorplans');
 } else if (url.includes('/amenities') || url.includes('/comodidades')) {
     $("input[name='form-id']").val('Amenities');
+} else if (url.includes('/location') || url.includes('/localizacion')) {
+    $("input[name='form-id']").val('location');
+} else if (url.includes('/team') || url.includes('/equipo')) {
+    $("input[name='form-id']").val('team');
+} else if (url.includes('/blog')) {
+    $("input[name='form-id']").val('blog');
+} else if (url.includes('/press') || url.includes('/prensa')) {
+    $("input[name='form-id']").val('press');
 } else if (url.includes('/es')) {
     $("input[name='form-id']").val('Home');
 } else { $("input[name='form-id']").val('Home'); }
