@@ -25,9 +25,9 @@ $('[name="agent-country"]').on('click', function() {
 // EVENT UTM
 
 Cookies.set('source', 'Customer Registration');
-Cookies.set('medium', 'Event', { expires: 2 });
-Cookies.set('campaign', 'ISG Brazilian Team', { expires: 2 });
-Cookies.set('term', '05-1 05-2 23', { expires: 2 });
+// Cookies.set('medium', 'Event', { expires: 2 });
+// Cookies.set('campaign', 'ISG Brazilian Team', { expires: 1/5 });
+// Cookies.set('term', '05-1 05-2 23', { expires: 2 });
 $("input[name='utm_source']").val(Cookies.get('source'));
 $("input[name='utm_medium']").val(Cookies.get('medium'));
 $("input[name='utm_campaign']").val(Cookies.get('campaign'));

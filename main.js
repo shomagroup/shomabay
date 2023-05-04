@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230504 0.0')
+console.log('ver 230504 0.1')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -59,9 +59,9 @@ $('[preference]').on('click', function() {
 });
 
 $("input[name='agent']").val('false');
-$('[agent]').closest('label').on('click', function() {
-    $('input[agent]').toggleClass('checked');
-    if ($('[agent]').is('.checked')) {
+$('[agent]').on('click', function() {
+    $('label[agent] input').toggleClass('checked');
+    if ($('label[agent] input').is('.checked')) {
         $("input[name='agent']").val('true');
     } else { $("input[name='agent']").val('false'); }
 });
