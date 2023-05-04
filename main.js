@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230504 0.5')
+console.log('ver 230504 0.6')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -59,12 +59,15 @@ $('[preference]').on('click', function() {
 });
 
 $("input[name='agent']").val('false');
+$("input[name='ratingID']").val('43584');
 $('[agent]').on('click', function() {
     if (!$('label[agent] .w-checkbox-input').is('.w--redirected-checked')) {
         $("input[name='agent']").val('true');
         $("input[name='ratingID']").val('43585');
-    } else { $("input[name='agent']").val('false');
-        $("input[name='ratingID']").val('43584'); }
+    } else {
+        $("input[name='agent']").val('false');
+        $("input[name='ratingID']").val('43584');
+    }
 });
 
 $('[name="country"]').on('click', function() {
