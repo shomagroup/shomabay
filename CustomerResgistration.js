@@ -10,12 +10,12 @@ $('.broker-button').on('click', function() {
         $(this).addClass('clicked');
         $('.broker-form-section').addClass('open');
         $("input[name='has-broker']").trigger('click');
-        $('.broker-form-section input[agent-broker]').removeAttr('required');
+        $('.broker-form-section input[agent-broker]').attr('required', '1');
     } else if ($('.broker-button').is('.clicked')) {
         $(this).removeClass('clicked');
         $('.broker-form-section').removeClass('open');
         $("input[name='has-broker']").trigger('click');
-        $('.broker-form-section input[agent-broker]').attr('required', '1');
+        $('.broker-form-section input[agent-broker]').removeAttr('required');
     }
 });
 
