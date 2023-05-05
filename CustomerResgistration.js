@@ -21,7 +21,7 @@ $('.broker-button').on('click', function() {
 
 $('[name="agent-country"]').on('click', function() {
     $(this).closest('form').find('[name="agentcountryID"]').val($(this).find('option:selected').index());
-    if ($('[name="agentcountryID"]').val() === "0" || $('[name="agentcountryID"]').val() < "0") { $('[name="agentcountryID"]').val('214'); }
+    if ($('[name="agentcountryID"]').val() === "0" || $('[name="agentcountryID"]').val() < "0" || $('[name="agentcountryID"]').val() === null) { $('[name="agentcountryID"]').val('214'); }
 });
 // EVENT UTM
 

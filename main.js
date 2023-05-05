@@ -72,7 +72,7 @@ $('[agent]').on('click', function() {
 
 $('[name="country"]').on('click', function() {
     $(this).closest('form').find('[name="countryID"]').val($(this).find('option:selected').index());
-    if ($('[name="countryID"]').val() === "0" || $('[name="countryID"]').val() < "0") { $('[name="countryID"]').val('214'); }
+    if ($('[name="countryID"]').val() === "0" || $('[name="countryID"]').val() < "0" || $('[name="countryID"]').val() === null) { $('[name="countryID"]').val('214'); }
 });
 
 // HIDDEN stuff
