@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230504 1.0')
+console.log('ver 230505 0.1')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -72,6 +72,7 @@ $('[agent]').on('click', function() {
 
 $('[name="country"]').on('click', function() {
     $(this).closest('form').find('[name="countryID"]').val($(this).find('option:selected').index());
+    if ($('[name="countryID"]').val() == 0 || $('[name="countryID"]').val() > 0) { $('[name="countryID"]').val('214'); }
 });
 
 // HIDDEN stuff
@@ -212,7 +213,7 @@ if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
 
 $("input[name='current_url']").val(url);
 $("input[name='utm_url']").val(Cookies.get('url'));
-if (!Cookies.get('source') == null || !Cookies.get('source') == "" || !Cookies.get('source').length) {
+if (!Cookies.get('source') == null || !Cookies.get('source') == "") {
     $("input[name='utm_source']").val(Cookies.get('source'));
 } else { $("input[name='utm_source']").val('Organic'); }
 $("input[name='utm_medium']").val(Cookies.get('medium'));
