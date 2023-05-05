@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230505 0.6')
+console.log('ver 230505 0.7')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -78,6 +78,7 @@ $('[name="country"]').on('click', function() {
 $('.hidden-form-fields:not(.show) input').attr('type', 'hidden');
 $('.hidden-form-fields input').attr('readonly', 'readonly');
 
+let url = window.location.href;
 
 // SOMETHING FUNKY
 if (url.includes('?sbroker') || url.includes('?First') || url.includes('?Last') || url.includes('?Email') || url.includes('?Phone') || url.includes('?country') || url.includes('?Message') || url.includes('?preference') ||
@@ -90,8 +91,6 @@ if (url.includes('?sbroker') || url.includes('?First') || url.includes('?Last') 
 
 }
 
-
-let url = window.location.href;
 
 if (url.includes('/es')) { $("input[name='lang']").val('ES'); } else { $("input[name='lang']").val('EN'); }
 // what page is form being submited
