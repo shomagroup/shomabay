@@ -213,9 +213,11 @@ if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
 
 $("input[name='current_url']").val(url);
 $("input[name='utm_url']").val(Cookies.get('url'));
+
 if (!Cookies.get('source') == null || !Cookies.get('source') == "") {
     $("input[name='utm_source']").val(Cookies.get('source'));
 } else { $("input[name='utm_source']").val('Organic'); }
+
 $("input[name='utm_medium']").val(Cookies.get('medium'));
 $("input[name='utm_campaign']").val(Cookies.get('campaign'));
 $("input[name='utm_term']").val(Cookies.get('term'));
