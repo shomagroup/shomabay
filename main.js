@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230505 0.5')
+console.log('ver 230505 0.6')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -188,6 +188,7 @@ $.urlParam = function(name) {
     if (results == null) { return null; } else { return results[1] || 0; }
 }
 let cleanUrl = url.replace('https://www.shomabay.com/?', '').replace('https://shomabay.webflow.io/?', '');
+
 
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
     var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
