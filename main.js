@@ -83,12 +83,11 @@ let url = window.location.href;
 // SOMETHING FUNKY
 if (url.includes('?sbroker') || url.includes('?First') || url.includes('?Last') || url.includes('?Email') || url.includes('?Phone') || url.includes('?country') || url.includes('?Message') || url.includes('?preference') ||
     url.includes('?lang') || url.includes('?agent') || url.includes('?ratingID') || url.includes('?timestamper') || url.includes('?form') || url.includes('?utm_url') || url.includes('?current_url')) {
+    window.open("https://www.shomabay.com/", "_top");
     Cookies.remove('source');
     Cookies.remove('medium');
     Cookies.remove('campaign');
     Cookies.remove('term');
-    window.open("https://www.shomabay.com/", "_top");
-
 }
 
 
