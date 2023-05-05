@@ -216,7 +216,7 @@ $("input[name='utm_url']").val(Cookies.get('url'));
 
 if (!Cookies.get('source') == null || !Cookies.get('source') == "") {
     $("input[name='utm_source']").val(Cookies.get('source'));
-} else { $("input[name='utm_source']").val('Organic'); }
+} else { $("input[name='utm_source']").val('Direct'); }
 
 $("input[name='utm_medium']").val(Cookies.get('medium'));
 $("input[name='utm_campaign']").val(Cookies.get('campaign'));
