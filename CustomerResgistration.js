@@ -19,9 +19,16 @@ $('.broker-button').on('click', function() {
     }
 });
 
-$('[name="agent-country"]').on('click', function() {
-    $(this).closest('form').find('[name="agentcountryID"]').val($(this).find('option:selected').index());
+
+
+$('select[name="agent-country"] option').each(function() {
+    $(this).attr('countryid', $(this).index());
 });
+$('select[name="agent-country"]').on('click', function() {
+    $(this).closest('form').find('[name="agentcountryID"]').val($(this).closest('form').find('select[name="agent-country"] option:selected').attr('countryid'));
+});
+
+
 // EVENT UTM
 
 // Cookies.set('medium', 'Event', { expires: 2 });
