@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230505 0.7')
+console.log('ver 230508 0.0')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -70,8 +70,10 @@ $('[agent]').on('click', function() {
     }
 });
 
+
+
 $('[name="country"]').on('click', function() {
-    $(this).closest('form').find('[name="countryID"]').val($(this).find('option:selected').index());
+    $(this).closest('form').find('[name="countryID"]').val($(this).closest('form').find('select[name="country"] option:selected').index());
 });
 
 // HIDDEN stuff
@@ -91,7 +93,7 @@ if (url.includes('?sbroker') || url.includes('?First') || url.includes('?Last') 
         Cookies.remove('campaign');
         Cookies.remove('term');
     }
-    const cleansertime = setInterval(cleanse, 5000);
+    const cleanserTime = setInterval(cleanse, 5000);
 
 }
 
