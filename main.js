@@ -76,6 +76,7 @@ $('[agent]').on('click', function() {
 $('select[name="country"] option').each(function() {
     $(this).attr('countryid', $(this).index());
 });
+
 $('select[name="country"]').on('touchstart click', function() {
     $(this).closest('form').find('[name="countryID"]').val($(this).closest('form').find('select[name="country"] option:selected').attr('countryid'));
 });
