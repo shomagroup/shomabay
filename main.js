@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230508 0.2')
+console.log('ver 230508 0.4')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -70,17 +70,13 @@ $('[agent]').on('click', function() {
     }
 });
 
-
-
-
 $('select[name="country"] option').each(function() {
     $(this).attr('countryid', $(this).index());
 });
 
-$('select[name="country"]').on('touchstart click', function() {
-    $(this).closest('form').find('[name="countryID"]').val($(this).closest('form').find('select[name="country"] option:selected').attr('countryid'));
+$('form').on('click touchstart', function() {
+    $(this).find('[name="countryID"]').val($(this).find('select[name="country"] option:selected').attr('countryid'));
 });
-
 
 // HIDDEN stuff
 $('.hidden-form-fields:not(.show) input').attr('type', 'hidden');
