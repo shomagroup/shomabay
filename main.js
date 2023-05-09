@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230508 0.4')
+console.log('ver 230509 0.0')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -85,8 +85,9 @@ $('.hidden-form-fields input').attr('readonly', 'readonly');
 let url = window.location.href;
 
 // SOMETHING FUNKY
-if (url.includes('?sbroker') || url.includes('?First') || url.includes('?Last') || url.includes('?Email') || url.includes('?Phone') || url.includes('?country') || url.includes('?Message') || url.includes('?preference') ||
-    url.includes('?lang') || url.includes('?agent') || url.includes('?ratingID') || url.includes('?timestamper') || url.includes('?form') || url.includes('?utm_url') || url.includes('?current_url')) {
+if (url.includes('?sbroker') || url.includes('?First') || url.includes('?Last') || url.includes('?Email') || url.includes('?Phone') || url.includes('?country') || url.includes('?Message') ||
+    url.includes('?preference') || url.includes('?countryID') || url.includes('?lang') || url.includes('?agent') || url.includes('?ratingID') || url.includes('?timestamper') ||
+    url.includes('?form') || url.includes('?utm_url') || url.includes('?current_url')) {
     window.open("https://www.shomabay.com/", "_top");
 
     function cleanse() {
