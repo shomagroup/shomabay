@@ -20,12 +20,12 @@ $('.broker-button').on('click', function() {
 });
 
 
-
 $('select[name="agent-country"] option').each(function() {
     $(this).attr('countryid', $(this).index());
 });
-$('select[name="agent-country"]').on('click', function() {
-    $(this).closest('form').find('[name="agentcountryID"]').val($(this).closest('form').find('select[name="agent-country"] option:selected').attr('countryid'));
+
+$('form').on('click touchstart', function() {
+    $(this).find('[name="agentcountryID"]').val($(this).find('select[name="agent-country"] option:selected').attr('countryid'));
 });
 
 
