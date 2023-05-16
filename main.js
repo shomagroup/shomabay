@@ -9,6 +9,8 @@ $('.nav-link').on('mouseleave', function() {
     $(this).siblings('.nav-link').removeClass('nothover');
 });
 
+let url = window.location.href;
+
 // MOBILE NAV POPUP
 $('.m-button').on('click', function() {
     if ($(this).is('.active')) {
@@ -47,6 +49,11 @@ $('[form-trigger]').on('click', function() {
 });
 
 
+if (url.includes('#contact-form')) {
+    $('.connect-pop').addClass('active');
+    $('.body').addClass('no-scroll');
+}
+
 $("input[name='preference']").val('No Preference');
 $('[preference]').on('click', function() {
     $(this).toggleClass('checked');
@@ -82,7 +89,7 @@ $('form').on('click touchstart', function() {
 $('.hidden-form-fields:not(.show) input').attr('type', 'hidden');
 $('.hidden-form-fields input').attr('readonly', 'readonly');
 
-let url = window.location.href;
+
 
 // SOMETHING FUNKY
 if (url.includes('?sbroker') || url.includes('?First') || url.includes('?Last') || url.includes('?Email') || url.includes('?Phone') || url.includes('?country') || url.includes('?Message') ||
