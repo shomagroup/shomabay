@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230518 0.0')
+console.log('ver 230518 0.1')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -145,18 +145,14 @@ const timer = setInterval(time, 5000);
 //==== PHONE NUMBER FILTER ====//
 
 //---- GOOGLE
-if ($("input[name='utm_source']").is("[value='google']")) {
-    //- Organic
-    if ($('.utm_medium').is("[value*='organic']")) {
-        $('[phoneNum]').attr('href', 'tel:+17868825350');
-        $('[phoneTx]').text('786-882-5350');
-        //-------------
-    } else if ($('.utm_medium').is("[value='paid']")) {
+if ($.urlParam('utm_source') == 'google') {
+
+    if ($.urlParam('utm_medium') == 'paid') {
         //- Paid
         $('[phoneNum]').attr('href', 'tel:+17863860647');
         $('[phoneTx]').text('786-386-0647');
-        //-------------
     } else {
+        //- Organic
         $('[phoneNum]').attr('href', 'tel:+17868825350');
         $('[phoneTx]').text('786-882-5350');
         //-------------
