@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230518 0.2')
+console.log('ver 230518 0.3')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -187,9 +187,9 @@ $("input[name='utm_term']").val(Cookies.get('term'));
 //==== PHONE NUMBER FILTER ====//
 
 //---- GOOGLE
-if ($.urlParam('utm_source') == 'google') {
+if (Cookies.get('source') == 'google') {
 
-    if ($.urlParam('utm_medium') == 'paid') {
+    if (Cookies.get('medium') == 'paid') {
         //- Paid
         $('[phoneNum]').attr('href', 'tel:+17863860647');
         $('[phoneTx]').text('786-386-0647');
