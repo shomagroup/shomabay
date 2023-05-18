@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230509 0.0')
+console.log('ver 230518 0.0')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -8,6 +8,8 @@ $('.nav-link').on('mouseenter', function() {
 $('.nav-link').on('mouseleave', function() {
     $(this).siblings('.nav-link').removeClass('nothover');
 });
+
+
 
 let url = window.location.href;
 
@@ -143,13 +145,13 @@ const timer = setInterval(time, 5000);
 //==== PHONE NUMBER FILTER ====//
 
 //---- GOOGLE
-if ($("input[name='utm_source']").is("[value*='google']")) {
+if ($("input[name='utm_source']").is("[value='google']")) {
     //- Organic
     if ($('.utm_medium').is("[value*='organic']")) {
         $('[phoneNum]').attr('href', 'tel:+17868825350');
         $('[phoneTx]').text('786-882-5350');
         //-------------
-    } else if ($('.utm_medium').is("[value*='paid']")) {
+    } else if ($('.utm_medium').is("[value='paid']")) {
         //- Paid
         $('[phoneNum]').attr('href', 'tel:+17863860647');
         $('[phoneTx]').text('786-386-0647');
@@ -159,9 +161,9 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
         $('[phoneTx]').text('786-882-5350');
         //-------------
     }
-} else if ($("input[name='utm_source']").is("[value*='facebook']")) {
+} else if ($("input[name='utm_source']").is("[value='facebook']")) {
     //---- FACEBOOK
-    if ($("input[name='utm_medium']").is("[value*='socialmedia']")) {
+    if ($("input[name='utm_medium']").is("[value='socialmedia']")) {
         //---- FACEBOOK SOCIALMEDIA
         $('[phoneNum]').attr('href', 'tel:+17868826213');
         $('[phoneTx]').text('786-882-6213');
@@ -171,13 +173,13 @@ if ($("input[name='utm_source']").is("[value*='google']")) {
         $('[phoneTx]').text('786-876-8185');
     }
     //-------------
-} else if ($("input[name='utm_source']").is("[value*='eblast']")) {
+} else if ($("input[name='utm_source']").is("[value='eblast']")) {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+17868861787');
     $('[phoneTx]').text('786-886-1787');
     //-------------
     //---- SOCIAL MEDIA ----//
-} else if ($("input[name='utm_medium']").is("[value*='socialmedia']")) {
+} else if ($("input[name='utm_medium']").is("[value='socialmedia']")) {
     $('[phoneNum]').attr('href', 'tel:+17868826213');
     $('[phoneTx]').text('786-882-6213');
     // } else if ($("input[name='utm_source']").is("[value*='instagram']")) {
