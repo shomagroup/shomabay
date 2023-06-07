@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-console.log('ver 230518 0.3')
+console.log('ver 230607 0.0')
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -127,6 +127,8 @@ if (url.includes('/residences') || url.includes('/residencias')) {
     $("input[name='form-id']").val('blog');
 } else if (url.includes('/press') || url.includes('/prensa')) {
     $("input[name='form-id']").val('press');
+} else if (url.includes('/customer-registration')) {
+    $("input[name='form-id']").val('customer-registration');
 } else if (url.includes('/es')) {
     $("input[name='form-id']").val('Home');
 } else { $("input[name='form-id']").val('Home'); }
