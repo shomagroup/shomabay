@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230609 0.0';
+const codeVer = '230609 0.1';
 console.log(codeVer);
 
 // NAV CONFIG
@@ -45,8 +45,9 @@ $('[closepop]').on('click', function() {
 });
 
 // CONTACT FORM
-$('.connect-pop').find('input#form-ider').val('popup');
-$('.connect-section').find('input#form-ider').val('section');
+$('.connect-section').find("input[name=formIDER]").val('section');
+$('.connect-pop').find("").val('popup');
+$('.connect-section').find("input[name=formIDER]").val('section');
 $('[form-trigger]').on('click', function() {
     $(this).siblings('.button-contact').trigger('click');
 });
@@ -85,7 +86,7 @@ $('select[name="country"] option').each(function() {
 });
 
 $('form').on('click touchstart', function() {
-    $(this).find('[name="countryID"]').val($(this).find('select[name="country"] option:selected').attr('countryid'));
+    $(this).find('input[name="countryID"]').val($(this).find('select[name="country"] option:selected').attr('countryid'));
 });
 
 // HIDDEN stuff
@@ -110,7 +111,10 @@ if (url.includes('?sbroker') || url.includes('?First') || url.includes('?Last') 
 
 }
 
+//
 
+
+// URL Language
 if (url.includes('/es')) {
     $("input[name='lang']").val('ES');
 
@@ -118,8 +122,8 @@ if (url.includes('/es')) {
     $("input[name='lang']").val('PT');
 
 } else { $("input[name='lang']").val('EN'); }
-// what page is form being submited
 
+// what page is form being submited
 if (url.includes('/residences') || url.includes('/residencias')) {
     $("input[name='form-id']").val('Residences');
 } else if (url.includes('/floorplans') || url.includes('/planos') || url.includes('/plantas')) {
@@ -195,7 +199,6 @@ $("input[name='utm_term']").val(Cookies.get('term'));
 
 //---- GOOGLE
 if (Cookies.get('source') == 'google') {
-
     if (Cookies.get('medium') == 'paid') {
         //- Paid
         $('[phoneNum]').attr('href', 'tel:+17863860647');
