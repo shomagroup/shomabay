@@ -1,5 +1,6 @@
 // WEBSITE CODE VERSION
-console.log('ver 230607 0.0')
+const codeVer = '230609 0.0'
+console.log(codeVer)
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
@@ -110,18 +111,24 @@ if (url.includes('?sbroker') || url.includes('?First') || url.includes('?Last') 
 }
 
 
-if (url.includes('/es')) { $("input[name='lang']").val('ES'); } else { $("input[name='lang']").val('EN'); }
+if (url.includes('/es')) {
+    $("input[name='lang']").val('ES');
+
+} else if (url.includes('/pt')) {
+    $("input[name='lang']").val('PT');
+
+} else { $("input[name='lang']").val('EN'); }
 // what page is form being submited
 
 if (url.includes('/residences') || url.includes('/residencias')) {
     $("input[name='form-id']").val('Residences');
-} else if (url.includes('/floorplans') || url.includes('/planos')) {
+} else if (url.includes('/floorplans') || url.includes('/planos') || url.includes('/plantas')) {
     $("input[name='form-id']").val('Floorplans');
-} else if (url.includes('/amenities') || url.includes('/comodidades')) {
+} else if (url.includes('/amenities') || url.includes('/amenidades') || url.includes('/comodidades')) {
     $("input[name='form-id']").val('Amenities');
-} else if (url.includes('/location') || url.includes('/localizacion')) {
+} else if (url.includes('/location') || url.includes('/localizacion') || url.includes('/localizacao')) {
     $("input[name='form-id']").val('location');
-} else if (url.includes('/team') || url.includes('/equipo')) {
+} else if (url.includes('/team') || url.includes('/equipo') || url.includes('/equipe')) {
     $("input[name='form-id']").val('team');
 } else if (url.includes('/blog')) {
     $("input[name='form-id']").val('blog');
@@ -129,8 +136,6 @@ if (url.includes('/residences') || url.includes('/residencias')) {
     $("input[name='form-id']").val('press');
 } else if (url.includes('/customer-registration')) {
     $("input[name='form-id']").val('customer-registration');
-} else if (url.includes('/es')) {
-    $("input[name='form-id']").val('Home');
 } else { $("input[name='form-id']").val('Home'); }
 
 
