@@ -1,6 +1,6 @@
 // WEBSITE CODE VERSION
-const codeVer = '230609 0.0'
-console.log(codeVer)
+const codeVer = '230609 0.0';
+console.log(codeVer);
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
