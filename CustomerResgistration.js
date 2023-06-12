@@ -19,9 +19,15 @@ $('.broker-button').on('click', function() {
     }
 });
 
-
+$('select[name="country"] option').each(function() {
+    $(this).attr('countryid', $(this).index());
+});
 $('select[name="agent-country"] option').each(function() {
     $(this).attr('countryid', $(this).index());
+});
+
+$('form').on('click touchstart', function() {
+    $(this).find('[name="countryID"]').val($(this).find('select[name="country"] option:selected').attr('countryid'));
 });
 
 $('form').on('click touchstart', function() {
