@@ -49,6 +49,9 @@ $('[closepop]').on('click', function() {
 $('.connect-section').find("input[name=formIDER]").val('section');
 $('.connect-pop').find("").val('popup');
 $('.connect-section').find("input[name=formIDER]").val('section');
+
+
+
 $('[form-trigger]').on('click', function() {
     $(this).siblings('.button-contact').trigger('click');
 });
@@ -84,20 +87,14 @@ $('[agent]').on('click', function() {
 
 // COUNTRY CODE
 
-$('select[name="country"] option').each(function() {
-    $(this).attr('countryid', $(this).index());
-});
-
 if (navigator.geolocation) {
     fetch('https://ipapi.co/json')
         .then((response) => response.json())
         .then((data) => {
             $("input[name='countryISO']").val(data.country_code_iso3);
             $("input[name='countryAlt']").val(data.country_name);
-
         })
 } else { $("input[name='countryISO']").val('error'); }
-
 $('form').on('click touchstart', function() {
     $(this).find('select[name="country"] option').removeAttr('selected');
 
@@ -1001,7 +998,7 @@ $('form').on('click touchstart', function() {
         $(this).find('select[name="country"] option[value="Zimbabwe"]').attr('selected', '');
         $(this).find('input[name="countryID"]').val('226');
 
-    }
+    } else { $(this).find('input[name="countryID"]').val('undefined'); }
 
 });
 //
