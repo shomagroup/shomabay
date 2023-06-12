@@ -92,7 +92,8 @@ if (navigator.geolocation) {
     fetch('https://ipapi.co/json')
         .then((response) => response.json())
         .then((data) => {
-            $("input[name='countryISO']").val(data.country_code_iso);
+            $("input[name='countryISO']").val(data.country_code_iso3);
+            $("input[name='countryAlt']").val(data.country_name);
 
         })
 } else { $("input[name='countryISO']").val('error'); }
