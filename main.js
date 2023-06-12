@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230612 0.2';
+const codeVer = '230612 0.3';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -92,10 +92,8 @@ if (navigator.geolocation) {
     fetch('https://ipapi.co/json')
         .then((response) => response.json())
         .then((data) => {
-            var countryISO = data.country_code_iso;
-            var countryAlt = data.country_name;
-            $("input[name='countryISO']").val('countryISOLITO');
-            $("input[name='countryAlt']").val(countryAlt);
+            $("input[name='countryISO']").val(data.country_code_iso);
+            $("input[name='countryAlt']").val(data.country_name);
         })
 } else { $("input[name='countryISO']").val('error'); }
 
