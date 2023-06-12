@@ -28,12 +28,8 @@ $('select[name="agent-country"] option').each(function() {
 
 $('form').on('click touchstart', function() {
     $(this).find('[name="countryID"]').val($(this).find('select[name="country"] option:selected').attr('countryid'));
-});
-
-$('form').on('click touchstart', function() {
     $(this).find('[name="agentcountryID"]').val($(this).find('select[name="agent-country"] option:selected').attr('countryid'));
 });
-
 
 // EVENT UTM
 
