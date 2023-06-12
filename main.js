@@ -93,7 +93,7 @@ if (navigator.geolocation) {
         .then((response) => response.json())
         .then((data) => {
             $("input[name='countryISO']").val(data.country_code_iso);
-            $("input[name='countryAlt']").val(data.country_name);
+
         })
 } else { $("input[name='countryISO']").val('error'); }
 
