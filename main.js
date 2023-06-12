@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230612 0.1';
+const codeVer = '230612 0.2';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -94,7 +94,7 @@ if (navigator.geolocation) {
         .then((data) => {
             var countryISO = data.country_code_iso;
             var countryAlt = data.country_name;
-            $("input[name='countryISO']").val(countryISO);
+            $("input[name='countryISO']").val('countryISOLITO');
             $("input[name='countryAlt']").val(countryAlt);
         })
 } else { $("input[name='countryISO']").val('error'); }
