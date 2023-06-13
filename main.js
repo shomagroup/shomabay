@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230612 0.6';
+const codeVer = '230613 0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -45,10 +45,9 @@ $('[closepop]').on('click', function() {
     $('.body').removeClass('no-scroll');
 });
 
-// CONTACT FORM
+// CONTACT FORM IDER
 $('.connect-section').find("input[name=formIDER]").val('section');
-$('.connect-pop').find("").val('popup');
-$('.connect-section').find("input[name=formIDER]").val('section');
+$('.connect-pop').find("input[name=formIDER]").val('popup');
 
 
 
@@ -779,12 +778,6 @@ $('form').on('click touchstart', function() {
 //
 
 
-// HIDDEN stuff
-$('.hidden-form-fields:not(.show) input').attr('type', 'hidden');
-$('.hidden-form-fields input').attr('readonly', 'readonly');
-
-
-
 // SOMETHING FUNKY
 if (url.includes('?sbroker') || url.includes('?First') || url.includes('?Last') || url.includes('?Email') || url.includes('?Phone') || url.includes('?country') || url.includes('?Message') ||
     url.includes('?preference') || url.includes('?countryID') || url.includes('?lang') || url.includes('?agent') || url.includes('?ratingID') || url.includes('?timestamper') ||
@@ -829,6 +822,9 @@ if (url.includes('/residences') || url.includes('/residencias')) {
     $("input[name='form-id']").val('customer-registration');
 } else { $("input[name='form-id']").val('Home'); }
 
+// HIDDEN stuff
+$('.hidden-form-fields:not(.show) input').attr('type', 'hidden');
+$('.hidden-form-fields input').attr('readonly', 'readonly');
 
 // TIMESTAMPER
 var DateTime = luxon.DateTime;
