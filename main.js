@@ -819,7 +819,7 @@ if (url.includes('/residences') || url.includes('/residencias')) {
 } else if (url.includes('/press') || url.includes('/prensa')) {
     $("input[name='form-id']").val('press');
 } else if (url.includes('/customer-registration')) {
-    $("input[name='form-id']").val('customer-registration');
+    $("input[name='form-id']").val('customer registration');
 } else { $("input[name='form-id']").val('Home'); }
 
 // HIDDEN stuff
