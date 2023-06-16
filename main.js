@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230613 0.0';
+const codeVer = '230616 0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -94,7 +94,7 @@ if (navigator.geolocation) {
             $("input[name='countryAlt']").val(data.country_name);
         })
 } else { $("input[name='countryISO']").val('error'); }
-$('form').on('click touchstart', function() {
+$('form').not('[data-name="customer-registration"]').on('click touchstart', function() {
     $(this).find('select[name="country"] option').removeAttr('selected');
 
     if ($("input[name='countryISO']").val() === 'AFG') {
