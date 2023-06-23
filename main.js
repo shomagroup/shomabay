@@ -95,8 +95,6 @@ if (navigator.geolocation) {
         })
 } else { $("input[name='countryISO']").val('error'); }
 $('form').not('[data-name="customer-registration"]').on('click touchstart', function() {
-    $(this).find('select[name="country"] option').removeAttr('selected');
-
     if ($("input[name='countryISO']").val() === 'AFG') {
         $(this).find('input[name="countryID"]').val('1');
 
