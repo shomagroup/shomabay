@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230616 0.0';
+const codeVer = '230626 0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -46,8 +46,8 @@ $('[closepop]').on('click', function() {
 });
 
 // CONTACT FORM IDER
-$('.connect-section').find("input[name=formIDER]").val('section');
-$('.connect-pop').find("input[name=formIDER]").val('popup');
+$('.connect-section').find("input[name='formIDER']").val('section');
+$('.connect-pop').find("input[='formIDER']").val('popup');
 
 
 
@@ -776,7 +776,7 @@ $('form').not('[data-name="customer-registration"]').on('click touchstart', func
 //
 
 
-// SOMETHING FUNKY
+// Blocking some Attempt spam
 if (url.includes('?sbroker') || url.includes('?First') || url.includes('?Last') || url.includes('?Email') || url.includes('?Phone') || url.includes('?country') || url.includes('?Message') ||
     url.includes('?preference') || url.includes('?countryID') || url.includes('?lang') || url.includes('?agent') || url.includes('?ratingID') || url.includes('?timestamper') ||
     url.includes('?form') || url.includes('?utm_url') || url.includes('?current_url')) {
