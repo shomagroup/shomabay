@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230626 0.1';
+const codeVer = '230629 0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -197,7 +197,7 @@ $('form').not('[data-name="customer-registration"]').on('click touchstart', func
     } else if ($("input[name='countryISO']").val() === 'CMR') {
         $(this).find('input[name="countryID"]').val('34');
 
-    } else if ($("input[name='countryISO']").val() === 'CDN') {
+    } else if ($("input[name='countryISO']").val() === 'CAN') {
         $(this).find('input[name="countryID"]').val('35');
 
     } else if ($("input[name='countryISO']").val() === 'CPV') {
