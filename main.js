@@ -842,13 +842,13 @@ $.urlParam = function(name) {
 }
 let cleanUrl = url.replace('https://www.shomabay.com/?', '').replace('https://shomabay.webflow.io/?', '');
 
-var intwoMins = new Date(new Date().getTime() + 2 * 60 * 1000);
+var inTwoMins = new Date(new Date().getTime() + 2 * 60 * 1000);
 
 
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
     var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
     if (source == "presentation") {
-        Cookies.set('source', source, { expires: intwoMins });
+        Cookies.set('source', source, { expires: inTwoMins });
     } else {
     Cookies.set('source', source, { expires: 30 });
     Cookies.set('url', cleanUrl, { expires: 30 });
