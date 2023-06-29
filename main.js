@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230629 0.0';
+const codeVer = '230629 0.1';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -845,8 +845,12 @@ let cleanUrl = url.replace('https://www.shomabay.com/?', '').replace('https://sh
 
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
     var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
+    if (source == "presentation") {
+        Cookies.set('source', source, { expires: .1 });
+    } else {
     Cookies.set('source', source, { expires: 30 });
     Cookies.set('url', cleanUrl, { expires: 30 });
+    }
 }
 
 if (!$.urlParam('utm_medium') == null || !$.urlParam('utm_medium') == "") {
