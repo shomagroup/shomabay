@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230629 0.2';
+const codeVer = '230629 0.3';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -842,7 +842,7 @@ $.urlParam = function(name) {
 }
 let cleanUrl = url.replace('https://www.shomabay.com/?', '').replace('https://shomabay.webflow.io/?', '');
 
-var inTwoMins = new Date(new Date().getTime() + 2 * 60 * 1000);
+var inTwoMins = new Date(new Date().getTime() + 2 * 60);
 
 
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
