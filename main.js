@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230629 0.5';
+const codeVer = '230629 0.6';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -842,13 +842,17 @@ $.urlParam = function(name) {
 }
 let cleanUrl = url.replace('https://www.shomabay.com/?', '').replace('https://shomabay.webflow.io/?', '');
 
-var inFifteenMinutes = new Date().getTime() + 15 * 60 * 1000;
-console.log(inFifteenMinutes);
+function WriteCookie() {
+    var now = new Date();
+    var minutes = 30;
+    now.setTime(now.getTime() + (minutes * 60 * 1000));
+}
 
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
     var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
     if (source == "presentation") {
-        Cookies.set('source', source, { expires: inFifteenMinutes });
+        
+        Cookies.set('source', source, { expires: now });
     } else {
     Cookies.set('source', source, { expires: 30 });
     Cookies.set('url', cleanUrl, { expires: 30 });
