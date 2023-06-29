@@ -842,7 +842,7 @@ $.urlParam = function(name) {
 }
 let cleanUrl = url.replace('https://www.shomabay.com/?', '').replace('https://shomabay.webflow.io/?', '');
 
-var inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000);
+var inFifteenMinutes = new Date().getTime() + 15 * 60 * 1000;
 console.log(inFifteenMinutes);
 
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
