@@ -195,12 +195,12 @@ $('.broker-button').on('click', function() {
 $('form[data-name="customer-registration"] select[country] option')
 .each(function() {$(this).attr('countryid', $(this).index());});
 
-$('select[name="agentCountry"]').on('change', function() {
+$('select[agentCountry]').on('change', function() {
 $(this).closest('form').find('input[name="agentCountryID"]').val($(this)
 .find('option:selected').attr('countryid'));
 });
 
-$('select[name="clientCountry"]').on('change', function() {
+$('select[clientCountry]').on('change', function() {
 $(this).closest('form').find('input[name="clientCountryID"]').val($(this)
 .find('option:selected').attr('countryid'));
 });
