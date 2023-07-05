@@ -51,20 +51,15 @@ $('form[data-name="customer-registration"]').on('click touchstart', function() {
 // EVENT UTM
 
 //term
-const dateStamper = DateTime.now().setZone('America/New_York').toFormat("LL'-'dd'-'yy");
-$("input[name='utm_term']").val(dateStamper);
 
 // Cookies.set('medium', 'Event', { expires: 2 });
 // Cookies.set('campaign', 'ISG Brazilian Team', { expires: 1/5 });
 // Cookies.set('term', '05-1 05-2 23', { expires: 1/5 });
 
-if (!Cookies.get('source') == null || !Cookies.get('source') == "") {
-    $("input[name='utm_source']").val(Cookies.get('source'));
-} else { $("input[name='utm_source']").val('Customer Registration'); }
-
-$("input[name='utm_medium']").val(Cookies.get('medium'));
-$("input[name='utm_campaign']").val(Cookies.get('campaign'));
-$("input[name='utm_term']").val(Cookies.get('term'));
+//$("input[name='utm_source']").val('Customer Registration');
+//$("input[name='utm_medium']").val(Cookies.get('medium'));
+//$("input[name='utm_campaign']").val(Cookies.get('campaign'));
+//$("input[name='utm_term']").val(Cookies.get('term'));
 
 
 
