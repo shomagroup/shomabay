@@ -34,7 +34,7 @@ $('select[name="utmHandler"]').on('change', function() {
 if (!($('select[name="utmHandler"] option:selected').val() == '')) {
 if (!($(this).find('option:selected').val() == 'No')) {
 $('.associate').addClass('open');
-
+$('input[name="dateStamer"]').attr('required', '1');
 if (!($('select[name="salesAssociate"]')
 .find('option:selected').val() == 'noSA')) {
 $('select[name="salesAssociate"]').closest('form')
@@ -64,6 +64,7 @@ $(this).closest('form').find('input[name="utm_medium"]').val('');
 cleanDeny();
 $('.associate:not(:last-child)').addClass('open');
 $('.associate:last-child').removeClass('open');
+$('input[name="dateStamer"]').removeAttr('required');
 $(this).closest('form').find('input[name="utm_source"]').val('');
 $(this).closest('form').find('input[name="utm_medium"]').val('');
 $(this).closest('form').find('input[name="utm_campaign"]').val('');
