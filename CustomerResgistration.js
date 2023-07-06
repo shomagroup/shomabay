@@ -207,6 +207,8 @@ $('.broker-button').on('click', function() {
 $('form[data-name="customer-registration"] select[country] option')
 .each(function() {$(this).attr('countryid', $(this).index());});
 
+$('select[buyerCountry], select[agentCountry]').val('0');
+
 $('select[agentCountry]').on('change', function() {
 $(this).closest('form').find('input[name="agentCountryID"]').val($(this)
 .find('option:selected').attr('countryid'));
