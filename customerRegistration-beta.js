@@ -200,8 +200,8 @@ $(this).closest('form').find('input[name="agentCountryID"]').val($(this)
 .find('option:selected').attr('countryid'));
 });
 
-$('select[clientCountry]').on('change', function() {
-$(this).closest('form').find('input[name="clientCountryID"]').val($(this)
+$('select[buyerCountry]').on('change', function() {
+$(this).closest('form').find('input[name="buyerCountryID"]').val($(this)
 .find('option:selected').attr('countryid'));
 });
 
