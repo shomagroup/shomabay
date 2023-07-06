@@ -833,8 +833,6 @@ function time() {
 }
 const timer = setInterval(time, 5000);
 
-
-
 // === UTM TRACKER === //
 $.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
