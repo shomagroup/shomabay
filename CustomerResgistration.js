@@ -171,6 +171,7 @@ $('.cr-sect-1').addClass('open');
 $('[required]').removeAttr('required');
 $('.restart-form').removeClass('open');
 $('.associate').removeClass('open');
+$('[broker-form]').addClass('hidden');
 $('.agent-registration-wrapper, .buyer-registration-wrapper')
 .removeClass('open');
 });
