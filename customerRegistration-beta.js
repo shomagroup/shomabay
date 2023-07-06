@@ -97,7 +97,7 @@ if (!($('select[name="utmHandler"] option:selected').val() == '')) {
   $('.cr-sect-1').removeClass('open');
   $('.agent-registration-wrapper').addClass('open');
   $('.agent-registration-wrapper.open [agent-required]').attr('required', '1');
-  $('.agent-registration-wrapper.open .acknowledgement').attr('required', '1');
+  $('.agent-registration-wrapper.open .acknowledgement input').attr('required', '1');
   $("input[name='isbroker']").trigger('click');
   $('.restart-form').addClass('open');
   } else if (
@@ -108,7 +108,7 @@ if (!($('select[name="utmHandler"] option:selected').val() == '')) {
   $('.cr-sect-1').removeClass('open');
   $('.agent-registration-wrapper').addClass('open');
   $('.agent-registration-wrapper.open [agent-required]').attr('required', '1');
-  $('.agent-registration-wrapper.open .acknowledgement').attr('required', '1');
+  $('.agent-registration-wrapper.open .acknowledgement input').attr('required', '1');
   $("input[name='isbroker']").trigger('click');
   $('.restart-form').addClass('open');
   } else {
@@ -130,7 +130,7 @@ if (!($('select[name="utmHandler"] option:selected').val() == '')) {
   $('.cr-sect-1').removeClass('open');
   $('.buyer-registration-wrapper').addClass('open');
   $('.buyer-registration-wrapper.open [buyer-required]').attr('required', '1');
-  $('.buyer-registration-wrapper.open .acknowledgement').attr('required', '1');
+  $('.buyer-registration-wrapper.open .acknowledgement input').attr('required', '1');
   $('.restart-form').addClass('open');
   } else if (
   !($('select[name="salesAssociate"] option:selected').val() == '') &&
@@ -140,7 +140,7 @@ if (!($('select[name="utmHandler"] option:selected').val() == '')) {
   $('.cr-sect-1').removeClass('open');
   $('.buyer-registration-wrapper').addClass('open');
   $('.buyer-registration-wrapper.open [buyer-required]').attr('required', '1');
-  $('.buyer-registration-wrapper.open .acknowledgement').attr('required', '1');
+  $('.buyer-registration-wrapper.open .acknowledgement input').attr('required', '1');
   $('.restart-form').addClass('open');
   } else {
   //deny
