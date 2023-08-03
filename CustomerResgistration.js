@@ -58,6 +58,9 @@ $(this).closest('form').find('input[name="utm_medium"]').val('');
 } else if ($(this).find('option:selected').val() == 'Dinner') {
 $(this).closest('form').find('input[name="utm_source"]').val('Dinner');
 $(this).closest('form').find('input[name="utm_medium"]').val('');
+} else if ($(this).find('option:selected').val() == 'BrokerPreview') {
+$(this).closest('form').find('input[name="utm_source"]').val('Broker Preview');
+$(this).closest('form').find('input[name="utm_medium"]').val('');
 }
 
 } else if ($(this).find('option:selected').val() == 'No'){
