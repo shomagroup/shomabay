@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230803 0.0';
+const codeVer = '230804 0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -846,7 +846,7 @@ var inTwoMins = new Date(new Date().getTime() + 2 * 60 * 1000);
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
     var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
     
-    if (source == "Presentation") {
+    if (source == "Presentation" || source == "mls") {
     Cookies.set('source', source, { expires: inTwoMins});
     } else {
     Cookies.set('source', source, { expires: 30 });
