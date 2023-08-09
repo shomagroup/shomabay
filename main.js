@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230804 0.0';
+const codeVer = '230809 0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -15,22 +15,21 @@ let url = window.location.href;
 
 // MOBILE NAV POPUP
 $('.m-button').on('click', function() {
-    if ($(this).is('.active')) {
-        $(this).removeClass('active');
-        $('.nav-container').removeClass('active');
-        $('.body').removeClass('no-scroll');
-    } else {
-        $(this).addClass('active');
-        $('.nav-container').addClass('active');
-        $('.body').addClass('no-scroll');
-    }
+if ($(this).is('.active')) {
+    $(this).removeClass('active');
+    $('.nav-container').removeClass('active');
+    $('.body').removeClass('no-scroll');
+} else {
+    $(this).addClass('active');
+    $('.nav-container').addClass('active');
+    $('.body').addClass('no-scroll');
+}
 });
 
 // Floorplan / Residences 
 $('[sect-1-hover]').on('mouseenter mouseleave', function() {
-    $(this).find('.sect-1-card-1, .sect-1-card-2').toggleClass('swaphover');
+$(this).find('.sect-1-card-1, .sect-1-card-2').toggleClass('swaphover');
 });
-
 
 // CONTACTPOP
 $('[contact-pop]').on('click', function() {
@@ -72,13 +71,13 @@ $("input[name='preference']").val(preference);
 $("input[name='agent']").val('false');
 $("input[name='ratingID']").val('43584');
 $('[agent]').on('click', function() {
-    if (!$('label[agent] .w-checkbox-input').is('.w--redirected-checked')) {
-        $("input[name='agent']").val('true');
-        $("input[name='ratingID']").val('43585');
-    } else {
-        $("input[name='agent']").val('false');
-        $("input[name='ratingID']").val('43584');
-    }
+if (!$('label[agent] .w-checkbox-input').is('.w--redirected-checked')) {
+    $("input[name='agent']").val('true');
+    $("input[name='ratingID']").val('43585');
+} else {
+    $("input[name='agent']").val('false');
+    $("input[name='ratingID']").val('43584');
+}
 });
 
 // COUNTRY CODE
@@ -772,7 +771,6 @@ $('form').not('[data-name="customer-registration"]').on('click touchstart', func
 });
 //
 
-
 // Blocking some Attempt spam
 if (url.includes('?sbroker') || url.includes('?First') || url.includes('?Last') || url.includes('?Email') || url.includes('?Phone') || url.includes('?country') || url.includes('?Message') ||
     url.includes('?preference') || url.includes('?countryID') || url.includes('?lang') || url.includes('?agent') || url.includes('?ratingID') || url.includes('?timestamper') ||
@@ -828,6 +826,7 @@ function time() {
     const timestamper = DateTime.now().setZone('America/New_York').toFormat("(HH:mm) ccc LLL dd yyyy");
     $("input[timestamper]").val(timestamper);
 }
+
 const timer = setInterval(time, 5000);
 
 // === UTM TRACKER === //
