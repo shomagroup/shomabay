@@ -5,13 +5,11 @@ $('div.codever').text(codeVer);
 
 // NAV CONFIG
 $('.nav-link').on('mouseenter', function() {
-    $(this).siblings('.nav-link').addClass('nothover');
+$(this).siblings('.nav-link').addClass('nothover');
 });
 $('.nav-link').on('mouseleave', function() {
-    $(this).siblings('.nav-link').removeClass('nothover');
+$(this).siblings('.nav-link').removeClass('nothover');
 });
-
-
 
 let url = window.location.href;
 
@@ -36,13 +34,13 @@ $('[sect-1-hover]').on('mouseenter mouseleave', function() {
 
 // CONTACTPOP
 $('[contact-pop]').on('click', function() {
-    $('.connect-pop').addClass('active');
-    $('.body').addClass('no-scroll');
+$('.connect-pop').addClass('active');
+$('.body').addClass('no-scroll');
 });
 
 $('[closepop]').on('click', function() {
-    $(this).closest('.connect-pop').removeClass('active');
-    $('.body').removeClass('no-scroll');
+$(this).closest('.connect-pop').removeClass('active');
+$('.body').removeClass('no-scroll');
 });
 
 // CONTACT FORM IDER
@@ -50,9 +48,8 @@ $('.connect-section').find("input[name='formIDER']").val('section');
 $('.connect-pop').find("input[name='formIDER']").val('popup');
 
 
-
 $('[form-trigger]').on('click', function() {
-    $(this).siblings('.button-contact').trigger('click');
+$(this).siblings('.button-contact').trigger('click');
 });
 
 
@@ -63,13 +60,13 @@ if (url.includes('#contact-form')) {
 
 $("input[name='preference']").val('No Preference');
 $('[preference]').on('click', function() {
-    $(this).toggleClass('checked');
-    let preference = $('[preference]').filter('.checked').map((k, box) => box.name).toArray().join(', ');
-    if ($('.checked[preference]').length === 5) {
-        $("input[name='preference']").val('No Preference');
-    } else if ($('.checked[preference]').length) {
-        $("input[name='preference']").val(preference);
-    } else { $("input[name='preference']").val('No Preference'); }
+$(this).toggleClass('checked');
+let preference = $('[preference]').filter('.checked').map((k, box) => box.name).toArray().join(', ');
+if ($('.checked[preference]').length === 5) {
+$("input[name='preference']").val('No Preference');
+} else if ($('.checked[preference]').length) {
+$("input[name='preference']").val(preference);
+} else { $("input[name='preference']").val('No Preference'); }
 });
 
 $("input[name='agent']").val('false');
@@ -938,7 +935,6 @@ if (Cookies.get('source') == 'google') {
     $('[phoneNum]').attr('href', 'tel:+17868337421');
     $('[phoneTx]').text('786-833-7421');
     //-------------
-
 } else {
     //---- PROPERTY WEBSITE
     $('[phoneNum]').attr('href', 'tel:+17868825887');

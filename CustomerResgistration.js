@@ -61,6 +61,9 @@ $(this).closest('form').find('input[name="utm_medium"]').val('');
 } else if ($(this).find('option:selected').val() == 'BrokerPreview') {
 $(this).closest('form').find('input[name="utm_source"]').val('Broker Preview');
 $(this).closest('form').find('input[name="utm_medium"]').val('');
+} else if ($(this).find('option:selected').val() == 'PresentationInt') {
+$(this).closest('form').find('input[name="utm_source"]').val('Presentation');
+$(this).closest('form').find('input[name="utm_medium"]').val('International');
 }
 
 } else if ($(this).find('option:selected').val() == 'No'){
