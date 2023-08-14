@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230814 0.0';
+const codeVer = '230814 0.1';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -74,7 +74,7 @@ fetch('https://ipapi.co/json')
 .then((data) => {
 $("input[name='countryISO']").val(data.country_code_iso3);
 $("input[name='countryName']").val(data.country_name);
-$("input[name='ip']").val(data.country_name);
+$("input[name='ip']").val(data.ip);
 });
 } else { $("input[name='countryISO']").val('error'); }
 }
