@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230809 0.0';
+const codeVer = '230810 0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -47,49 +47,44 @@ $('.connect-section').find("input[name='formIDER']").val('section');
 $('.connect-pop').find("input[name='formIDER']").val('popup');
 
 
-$('[form-trigger]').on('click', function() {
+$('.form-trigger').on('click', function() {
+timestamper();
+locator();
+setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
+}, 850);
 });
-
+    
+// timestamp setup
+function timestamper() {
+const date = new Date();
+const year = new Intl.DateTimeFormat('en',{year:'2-digit'}).format(date);
+const month = new Intl.DateTimeFormat('en',{month:'short'}).format(date);
+const weekday = new Intl.DateTimeFormat('en',{weekday:'short'}).format(date);
+const day = new Intl.DateTimeFormat('en',{day:'2-digit'}).format(date);
+const time = new Intl.DateTimeFormat('en',{hour:'2-digit', minute:'2-digit', hour12:false}).format(date);
+var timestamp = `${time} ${weekday} ${month} ${day} ${year}`;
+$("input[timestamper]").val(timestamp);
+}
+// locator setup
+function locator() {
+if (navigator.geolocation) {
+fetch('https://ipapi.co/json')
+.then((response) => response.json())
+.then((data) => {
+$("input[name='countryISO']").val(data.country_code_iso3);
+$("input[name='countryName']").val(data.country_name);
+$("input[name='ip']").val(data.country_name);
+});
+} else { $("input[name='countryISO']").val('error'); }
+}
 
 if (url.includes('#contact-form')) {
     $('.connect-pop').addClass('active');
     $('.body').addClass('no-scroll');
 }
 
-$("input[name='preference']").val('No Preference');
-$('[preference]').on('click', function() {
-$(this).toggleClass('checked');
-let preference = $('[preference]').filter('.checked').map((k, box) => box.name).toArray().join(', ');
-if ($('.checked[preference]').length === 5) {
-$("input[name='preference']").val('No Preference');
-} else if ($('.checked[preference]').length) {
-$("input[name='preference']").val(preference);
-} else { $("input[name='preference']").val('No Preference'); }
-});
-
-$("input[name='agent']").val('false');
-$("input[name='ratingID']").val('43584');
-$('[agent]').on('click', function() {
-if (!$('label[agent] .w-checkbox-input').is('.w--redirected-checked')) {
-    $("input[name='agent']").val('true');
-    $("input[name='ratingID']").val('43585');
-} else {
-    $("input[name='agent']").val('false');
-    $("input[name='ratingID']").val('43584');
-}
-});
-
 // COUNTRY CODE
-
-if (navigator.geolocation) {
-    fetch('https://ipapi.co/json')
-        .then((response) => response.json())
-        .then((data) => {
-            $("input[name='countryISO']").val(data.country_code_iso3);
-            $("input[name='countryAlt']").val(data.country_name);
-        })
-} else { $("input[name='countryISO']").val('error'); }
 $('form').not('[data-name="customer-registration"]').on('click touchstart', function() {
     if ($("input[name='countryISO']").val() === 'AFG') {
         $(this).find('input[name="countryID"]').val('1');
@@ -771,6 +766,30 @@ $('form').not('[data-name="customer-registration"]').on('click touchstart', func
 });
 //
 
+$("input[name='preference']").val('No Preference');
+$('[preference]').on('click', function() {
+$(this).toggleClass('checked');
+let preference = $('[preference]').filter('.checked').map((k, box) => box.name).toArray().join(', ');
+if ($('.checked[preference]').length === 5) {
+$("input[name='preference']").val('No Preference');
+} else if ($('.checked[preference]').length) {
+$("input[name='preference']").val(preference);
+} else { $("input[name='preference']").val('No Preference'); }
+});
+
+$("input[name='agent']").val('false');
+$("input[name='ratingID']").val('43584');
+$('[agent]').on('click', function() {
+if (!$('label[agent] .w-checkbox-input').is('.w--redirected-checked')) {
+    $("input[name='agent']").val('true');
+    $("input[name='ratingID']").val('43585');
+} else {
+    $("input[name='agent']").val('false');
+    $("input[name='ratingID']").val('43584');
+}
+});
+
+
 // Blocking some Attempt spam
 if (url.includes('?sbroker') || url.includes('?First') || url.includes('?Last') || url.includes('?Email') || url.includes('?Phone') || url.includes('?country') || url.includes('?Message') ||
     url.includes('?preference') || url.includes('?countryID') || url.includes('?lang') || url.includes('?agent') || url.includes('?ratingID') || url.includes('?timestamper') ||
@@ -784,7 +803,6 @@ if (url.includes('?sbroker') || url.includes('?First') || url.includes('?Last') 
         Cookies.remove('term');
     }
     const cleanserTime = setInterval(cleanse, 5000);
-
 }
 
 // URL Language
@@ -819,15 +837,6 @@ if (url.includes('/residences') || url.includes('/residencias')) {
 $('.hidden-form-fields:not(.show) input').attr('type', 'hidden');
 $('.hidden-form-fields input').attr('readonly', 'readonly');
 
-// TIMESTAMPER
-var DateTime = luxon.DateTime;
-
-function time() {
-    const timestamper = DateTime.now().setZone('America/New_York').toFormat("(HH:mm) ccc LLL dd yyyy");
-    $("input[timestamper]").val(timestamper);
-}
-
-const timer = setInterval(time, 5000);
 
 // === UTM TRACKER === //
 $.urlParam = function(name) {
