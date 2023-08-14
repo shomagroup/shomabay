@@ -74,7 +74,7 @@ fetch('https://ipapi.co/json')
 .then((data) => {
 $("input[name='countryISO']").val(data.country_code_iso3);
 $("input[name='countryName']").val(data.country_name);
-$("input[name='ip']").val(data.ip.replace(/\./g, ''));
+$("input[name='ip']").val(data.ip.replace(/\./g, '').replace(/:/g, ''));
 });
 } else { $("input[name='countryISO']").val('error'); }
 }
