@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230810 0.0';
+const codeVer = '230814 0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -47,7 +47,7 @@ $('.connect-section').find("input[name='formIDER']").val('section');
 $('.connect-pop').find("input[name='formIDER']").val('popup');
 
 
-$('.form-trigger').on('click', function() {
+$('[form-trigger]').on('click', function() {
 timestamper();
 locator();
 setTimeout(() => {
