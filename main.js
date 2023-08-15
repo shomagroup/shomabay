@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230814 0.2.2';
+const codeVer = '230814 0.2.5';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -46,9 +46,9 @@ $('.body').removeClass('no-scroll');
 $('.connect-section').find("input[name='formIDER']").val('section');
 $('.connect-pop').find("input[name='formIDER']").val('popup');
 
-$('.connect-section input[name="email"], .connect-pop input[name="email"]').on('input', function() {
-$('.spam-tracker input[name="email"]').val($(this).val());
-});
+//$('.connect-section input[name="email"], .connect-pop input[name="email"]').on('input', function() {
+//$('.spam-tracker input[name="email"]').val($(this).val());
+//});
 
 $('[form-trigger]').on('click', function() {
 timestamper();
@@ -58,7 +58,7 @@ spamChecker();
 }, 800);
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
-}, 1600);
+}, 1000);
 });
     
 // timestamp setup
@@ -87,13 +87,10 @@ $("input[name='ip']").val(data.ip.replace(/\./g, '').replace(/:/g, ''));
 //
 
 function spamChecker() {
-const spamList = [179167103, 18120975155, 190130104232, 7584518];
-const spamSearch = spamList.find((spam) => spam == $("input[name='ip']").val());
+const spamList = [179167103, 18120975155, 190130104232];
+const spamSearch = spamList.find((spam) => spam == $("input[name='email']").val());
 if (!(spamSearch == undefined)) {
-$('.spam-tracker-submit').trigger('click');
-setTimeout(() => {
 $("input[name='email']").val('');
-}, 800);
 }}
 
 //
