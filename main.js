@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230814 0.2.1';
+const codeVer = '230814 0.2.2';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -93,7 +93,7 @@ if (!(spamSearch == undefined)) {
 $('.spam-tracker-submit').trigger('click');
 setTimeout(() => {
 $("input[name='email']").val('');
-}, 400);
+}, 800);
 }}
 
 //
