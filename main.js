@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230814 0.2.6';
+const codeVer = '230815 0.2.7';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -53,12 +53,12 @@ $('.connect-pop').find("input[name='formIDER']").val('popup');
 $('[form-trigger]').on('click', function() {
 timestamper();
 locator();
-setTimeout(() => {
-spamChecker();
-}, 800);
+//setTimeout(() => {
+//spamChecker();
+//}, 800);
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
-}, 1000);
+}, 800);
 });
     
 // timestamp setup
