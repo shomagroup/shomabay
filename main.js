@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230814 0.1.5';
+const codeVer = '230814 0.1.6';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -55,7 +55,7 @@ spamChecker();
 }, 800);
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
-}, 1600);
+}, 1000);
 });
     
 // timestamp setup
