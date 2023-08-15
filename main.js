@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230814 0.1.9';
+const codeVer = '230814 0.2.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -91,7 +91,9 @@ const spamList = [179167103, 18120975155, 190130104232, 7584518];
 const spamSearch = spamList.find((spam) => spam == $("input[name='ip']").val());
 if (!(spamSearch == undefined)) {
 $('.spam-tracker-submit').trigger('click');
+setTimeout(() => {
 $("input[name='email']").val('');
+}, 200);
 }}
 
 //
