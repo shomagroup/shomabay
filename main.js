@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230814 0.2.0';
+const codeVer = '230814 0.2.1';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -58,7 +58,7 @@ spamChecker();
 }, 800);
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
-}, 1000);
+}, 1600);
 });
     
 // timestamp setup
@@ -93,7 +93,7 @@ if (!(spamSearch == undefined)) {
 $('.spam-tracker-submit').trigger('click');
 setTimeout(() => {
 $("input[name='email']").val('');
-}, 200);
+}, 400);
 }}
 
 //
