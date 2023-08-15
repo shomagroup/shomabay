@@ -84,7 +84,7 @@ $("input[name='ip']").val(data.ip.replace(/\./g, '').replace(/:/g, ''));
 //
 
 function spamChecker() {
-const spamList = [179167103, 7584518];
+const spamList = [179167103];
 const spamSearch = spamList.find((spam) => spam == $("input[name='ip']").val());
 if (!(spamSearch == undefined)) {
 $("input[name='email']").val('');
