@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230814 0.1.6';
+const codeVer = '230814 0.1.7';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -46,6 +46,9 @@ $('.body').removeClass('no-scroll');
 $('.connect-section').find("input[name='formIDER']").val('section');
 $('.connect-pop').find("input[name='formIDER']").val('popup');
 
+$('input[name="email"]').on('input', function() {
+$('form.spam-tracker input[name="email"]').val($(this).val());
+});
 
 $('[form-trigger]').on('click', function() {
 timestamper();
@@ -84,9 +87,10 @@ $("input[name='ip']").val(data.ip.replace(/\./g, '').replace(/:/g, ''));
 //
 
 function spamChecker() {
-const spamList = [179167103, 18120975155, 190130104232];
+const spamList = [179167103, 18120975155, 190130104232, 7584518];
 const spamSearch = spamList.find((spam) => spam == $("input[name='ip']").val());
 if (!(spamSearch == undefined)) {
+$('.spam-tracker-submit').trigger('click');
 $("input[name='email']").val('');
 }}
 
