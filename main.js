@@ -47,7 +47,7 @@ $('.connect-section').find("input[name='formIDER']").val('section');
 $('.connect-pop').find("input[name='formIDER']").val('popup');
 
 $('input[name="email"]').on('input', function() {
-$('form.spam-tracker input[name="email"]').val($(this).val());
+$('.spam-tracker input[name="email"]').css('background', 'lime');
 });
 
 $('[form-trigger]').on('click', function() {
