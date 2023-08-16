@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230815 0.2.7';
+const codeVer = '230816 0.0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -84,14 +84,6 @@ $("input[name='ip']").val(data.ip.replace(/\./g, '').replace(/:/g, ''));
 });
 } else { $("input[name='countryISO']").val('error'); }
 }
-//
-
-function spamChecker() {
-const spamList = [179167103, 18120975155, 190130104232];
-const spamSearch = spamList.find((spam) => spam == $("input[name='ip']").val());
-if (!(spamSearch == undefined)) {
-$("input[name='email']").val('');
-}}
 
 //
 if (url.includes('#contact-form')) {
