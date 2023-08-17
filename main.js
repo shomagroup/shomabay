@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230816 0.0.0';
+const codeVer = '230817 0.0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
