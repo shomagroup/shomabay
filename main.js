@@ -789,9 +789,11 @@ $('[agent]').on('click', function() {
 if (!$('label[agent] .w-checkbox-input').is('.w--redirected-checked')) {
 $("input[name='agent']").val('true');
 $("input[name='ratingID']").val('43585');
+$("input[agent-required]").attr('required', '1');
 } else {
 $("input[name='agent']").val('false');
 $("input[name='ratingID']").val('43584');
+$("input[agent-required]").removeAttr('required');
 }
 });
 //
