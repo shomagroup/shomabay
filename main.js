@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-const codeVer = '230926 0.0.0';
+const codeVer = '230928 0.0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -921,6 +921,12 @@ if (Cookies.get('source') == 'google') {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+17868861787');
     $('[phoneTx]').text('786-886-1787');
+    //-------------
+    //---- SOCIAL MEDIA ----//
+} else if ($("input[name='utm_source']").is("[value='fence']")) {
+    //---- EBLAST
+    $('[phoneNum]').attr('href', 'tel:+7868823098');
+    $('[phoneTx]').text('786-882-3098');
     //-------------
     //---- SOCIAL MEDIA ----//
 } else if ($("input[name='utm_medium']").is("[value='socialmedia']")) {
