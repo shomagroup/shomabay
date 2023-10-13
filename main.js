@@ -827,15 +827,15 @@ $("input[name='form-id']").val('Floorplans');
 } else if (url.includes('/amenities') || url.includes('/amenidades') || url.includes('/comodidades')) {
 $("input[name='form-id']").val('Amenities');
 } else if (url.includes('/location') || url.includes('/localizacion') || url.includes('/localizacao')) {
-$("input[name='form-id']").val('location');
+$("input[name='form-id']").val('Location');
 } else if (url.includes('/team') || url.includes('/equipo') || url.includes('/equipe')) {
-$("input[name='form-id']").val('team');
+$("input[name='form-id']").val('Team');
 } else if (url.includes('/blog')) {
-$("input[name='form-id']").val('blog');
+$("input[name='form-id']").val('Blog');
 } else if (url.includes('/press') || url.includes('/prensa')) {
-$("input[name='form-id']").val('press');
+$("input[name='form-id']").val('Press');
 } else if (url.includes('/customer-registration')) {
-$("input[name='form-id']").val('customer registration');
+$("input[name='form-id']").val('Customer Registration');
 } else { $("input[name='form-id']").val('Home'); }
 
 // HIDDEN stuff
