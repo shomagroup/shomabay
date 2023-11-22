@@ -53,6 +53,9 @@ $('.connect-pop').find("input[name='formIDER']").val('popup');
 $('[form-trigger]').on('click', function() {
 timestamper();
 locator();
+setTimeout(() => {
+countryID();
+}, 200);
 //current url
 $("input[name='current_url']").val(url);
 $("input[name='utm_url']").val(Cookies.get('url'));
@@ -90,7 +93,6 @@ $("input[name='countryName']").val(data.country_name);
 $("input[name='ip']").val(data.ip.replace(/\./g, '').replace(/:/g, ''));
 });
 } else { $("input[name='countryISO']").val('error'); }
-countryID();
 }
 //
 if (url.includes('#contact-form')) {
