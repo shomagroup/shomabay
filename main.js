@@ -53,7 +53,6 @@ $('.connect-pop').find("input[name='formIDER']").val('popup');
 $('[form-trigger]').on('click', function() {
 timestamper();
 locator();
-countryID();
 //current url
 $("input[name='current_url']").val(url);
 $("input[name='utm_url']").val(Cookies.get('url'));
@@ -66,7 +65,7 @@ $("input[name='utm_campaign']").val(Cookies.get('campaign'));
 $("input[name='utm_term']").val(Cookies.get('term'));
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
-}, 1000);
+}, 1200);
 });
     
 // timestamp setup
@@ -91,6 +90,7 @@ $("input[name='countryName']").val(data.country_name);
 $("input[name='ip']").val(data.ip.replace(/\./g, '').replace(/:/g, ''));
 });
 } else { $("input[name='countryISO']").val('error'); }
+countryID();
 }
 //
 if (url.includes('#contact-form')) {
