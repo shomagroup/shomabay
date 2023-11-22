@@ -843,6 +843,8 @@ $("input[name='form-id']").val('Blog');
 $("input[name='form-id']").val('Press');
 } else if (url.includes('/customer-registration')) {
 $("input[name='form-id']").val('Customer Registration');
+} else if (url.includes('/sales-registration')) {
+$("input[name='form-id']").val('sales Registration');
 } else { $("input[name='form-id']").val('Home'); }
 
 // HIDDEN stuff
