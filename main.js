@@ -55,7 +55,7 @@ timestamper();
 locator();
 setTimeout(() => {
 countryID();
-}, 200);
+}, 500);
 //current url
 $("input[name='current_url']").val(url);
 $("input[name='utm_url']").val(Cookies.get('url'));
