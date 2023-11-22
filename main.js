@@ -53,12 +53,19 @@ $('.connect-pop').find("input[name='formIDER']").val('popup');
 $('[form-trigger]').on('click', function() {
 timestamper();
 locator();
-//setTimeout(() => {
-//spamChecker();
-//}, 800);
+//current url
+$("input[name='current_url']").val(url);
+$("input[name='utm_url']").val(Cookies.get('url'));
+//get cookies into form
+if (!Cookies.get('source') == null || !Cookies.get('source') == "") {
+    $("input[name='utm_source']").val(Cookies.get('source'));
+} else { $("input[name='utm_source']").val('Direct'); }
+$("input[name='utm_medium']").val(Cookies.get('medium'));
+$("input[name='utm_campaign']").val(Cookies.get('campaign'));
+$("input[name='utm_term']").val(Cookies.get('term'));
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
-}, 800);
+}, 1000);
 });
     
 // timestamp setup
@@ -877,18 +884,6 @@ if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
     var term = $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
     Cookies.set('term', term, { expires: 30 });
 }
-
-//current url
-$("input[name='current_url']").val(url);
-$("input[name='utm_url']").val(Cookies.get('url'));
-//get cookies into form
-if (!Cookies.get('source') == null || !Cookies.get('source') == "") {
-    $("input[name='utm_source']").val(Cookies.get('source'));
-} else { $("input[name='utm_source']").val('Direct'); }
-
-$("input[name='utm_medium']").val(Cookies.get('medium'));
-$("input[name='utm_campaign']").val(Cookies.get('campaign'));
-$("input[name='utm_term']").val(Cookies.get('term'));
 
 
 //==== PHONE NUMBER FILTER ====//
