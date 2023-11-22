@@ -53,6 +53,7 @@ $('.connect-pop').find("input[name='formIDER']").val('popup');
 $('[form-trigger]').on('click', function() {
 timestamper();
 locator();
+countryID();
 //current url
 $("input[name='current_url']").val(url);
 $("input[name='utm_url']").val(Cookies.get('url'));
@@ -91,7 +92,6 @@ $("input[name='ip']").val(data.ip.replace(/\./g, '').replace(/:/g, ''));
 });
 } else { $("input[name='countryISO']").val('error'); }
 }
-
 //
 if (url.includes('#contact-form')) {
     $('.connect-pop').addClass('active');
@@ -99,7 +99,7 @@ if (url.includes('#contact-form')) {
 }
 
 // COUNTRY CODE
-$('form').not('[data-name="customer-registration"]').on('click touchstart', function() {
+function countryID() {
     if ($("input[name='countryISO']").val() === 'AFG') {
         $(this).find('input[name="countryID"]').val('1');
 
@@ -777,7 +777,7 @@ $('form').not('[data-name="customer-registration"]').on('click touchstart', func
 
     } else { $(this).find('input[name="countryID"]').val('undefined'); }
 
-});
+}
 //
 $("input[name='preference']").val('No Preference');
 $('[preference]').on('click', function() {
