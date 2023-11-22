@@ -860,7 +860,7 @@ Cookies.set('source', source, { expires: inTwoMins});
 } else {
 Cookies.set('source', source, { expires: 30 });
 }
- Cookies.set('url', cleanUrl, { expires: 30 });
+Cookies.set('url', cleanUrl, { expires: 30 });
 }
 //
 if (!$.urlParam('utm_medium') == null || !$.urlParam('utm_medium') == "") {
