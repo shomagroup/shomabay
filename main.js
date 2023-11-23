@@ -68,7 +68,7 @@ $("input[name='utm_campaign']").val(Cookies.get('campaign'));
 $("input[name='utm_term']").val(Cookies.get('term'));
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
-}, 800);
+}, 500);
 });
     
 // timestamp setup
@@ -848,7 +848,7 @@ $("input[name='form-id']").val('Press');
 } else if (url.includes('/customer-registration')) {
 $("input[name='form-id']").val('Customer Registration');
 } else if (url.includes('/sales-registration')) {
-$("input[name='form-id']").val('sales Registration');
+$("input[name='form-id']").val('Sales Registration');
 } else { $("input[name='form-id']").val('Home'); }
 
 // HIDDEN stuff
