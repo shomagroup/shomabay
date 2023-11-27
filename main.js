@@ -54,10 +54,8 @@ $('[form-trigger]').on('click', function() {
 timestamper();
 locator();
 setTimeout(() => {
-countryID();
-}, 269);
 countryIDer();
-}, 200);
+}, 269);
 //current url
 $("input[name='current_url']").val(url);
 $("input[name='utm_url']").val(Cookies.get('url'));
@@ -70,8 +68,8 @@ $("input[name='utm_campaign']").val(Cookies.get('campaign'));
 $("input[name='utm_term']").val(Cookies.get('term'));
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
-}, 560);
-// timestamp setup
+}, 569);
+    // timestamp setup
 function timestamper() {
 const date = new Date();
 const year = new Intl.DateTimeFormat('en',{year:'2-digit'}).format(date);
