@@ -69,6 +69,8 @@ $("input[name='utm_term']").val(Cookies.get('term'));
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
 }, 569);
+});
+
     // timestamp setup
 function timestamper() {
 const date = new Date();
