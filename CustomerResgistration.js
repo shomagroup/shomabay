@@ -65,11 +65,11 @@ $(this).closest('form').find('input[name="utm_medium"]').val('');
 $(this).closest('form').find('input[name="utm_source"]').val('Presentation');
 $(this).closest('form').find('input[name="utm_medium"]').val('International');
 } else if ($(this).find('option:selected').val() == 'Kiosk') {
-$(this).closest('form').find('input[name="utm_source"]').val('Kiosk');
-$(this).closest('form').find('input[name="utm_medium"]').val('');
+$(this).closest('form').find('input[name="utm_source"]').val('Walk-in');
+$(this).closest('form').find('input[name="utm_medium"]').val('Sales Kiosk');
 } else if ($(this).find('option:selected').val() == 'SalesCenter') {
-$(this).closest('form').find('input[name="utm_source"]').val('Sales Center');
-$(this).closest('form').find('input[name="utm_medium"]').val('');
+$(this).closest('form').find('input[name="utm_source"]').val('Walk-in');
+$(this).closest('form').find('input[name="utm_medium"]').val('Sales Gallery');
 }
 
 } else if ($(this).find('option:selected').val() == 'No'){
