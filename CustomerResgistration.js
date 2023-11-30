@@ -235,3 +235,7 @@ $(this).closest('form').find('input[name="buyerCountryID"]').val($(this)
 $('.reload-form').on('click', function() {
 location.reload();
 });
+
+$('[cr-trigger]').on('click', function() {
+$(this).siblings('.button-contact').trigger('click');
+});
