@@ -55,7 +55,7 @@ timestamper();
 locator();
 setTimeout(() => {
 countryIDer();
-}, 269);
+}, 369);
 //current url
 $("input[name='current_url']").val(url);
 $("input[name='utm_url']").val(Cookies.get('url'));
@@ -68,7 +68,7 @@ $("input[name='utm_campaign']").val(Cookies.get('campaign'));
 $("input[name='utm_term']").val(Cookies.get('term'));
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
-}, 569);
+}, 869);
 });
 
     // timestamp setup
