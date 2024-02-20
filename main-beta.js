@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240220 0.0.4.1';
+let codeVer = '240220 0.0.4.2';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -199,14 +199,16 @@ if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
 var term = $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
 } else {var term = "⠀"}
 var utm = {
-    "source": "source",
-    "medium": "medium",
-    "campaign": "campaign",
-    "term": "term"
+    "source": source,
+    "medium": medium,
+    "campaign": campaign,
+    "term": term
 }
+
 Cookies.set('utm', utm, { expires: 30 });
-console.log("1" + utm);
-console.log("2" + Cookies.get('utm'));
+console.log("1 " + utm);
+console.log("2 " + Cookies.get('utm'));
+console.log("3 " + source+','+medium+','+campaign+','+term);
 }
 
 //
