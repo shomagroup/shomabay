@@ -205,7 +205,7 @@ var utm = {
     "term": term
 }
 
-Cookies.set('utm', utm, { expires: 30 });
+
 console.log("1 " + utm);
 console.log("2 " + Cookies.get('utm'));
 console.log("3 " + source+','+medium+','+campaign+','+term);
