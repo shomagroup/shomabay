@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240220 0.1.0';
+let codeVer = '240220 0.1.1';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -62,10 +62,10 @@ $("input[name='utm_url']").val(Cookies.get('url'));
 //get cookies into form 
 // ----------------------------- C H A N G E
 if (!Cookies.get('utm') == null || !Cookies.get('utm') == "") { // UTM NOT EMPTY
-    // $("input[name='utm_source']").val(Cookies.get('utm.source'));
-    // $("input[name='utm_medium']").val(Cookies.get('utm.medium'));
-    // $("input[name='utm_campaign']").val(Cookies.get('utm.campaign'));
-    // $("input[name='utm_term']").val(Cookies.get('utm.term'));
+    $("input[name='utm_source']").val(JSON.parse(cookies.get('utm')).source);
+    $("input[name='utm_medium']").val(JSON.parse(cookies.get('utm')).medium);
+    $("input[name='utm_campaign']").val(JSON.parse(cookies.get('utm')).campaign);
+    $("input[name='utm_term']").val(JSON.parse(cookies.get('utm')).term);
 
 } else { // ------------------------------------------------------ UTM IS EMPTY
 $("input[name='utm_source']").val('Direct'); 
