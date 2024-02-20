@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240220 0.0.8';
+let codeVer = '240220 0.0.9';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -204,9 +204,9 @@ var utm = {
     "campaign": campaign,
     "term": term
 }
-
-
+Cookies.set("utm", {utm},{expires:30})
 console.log("1 " + JSON.stringify(utm));
+console.log("2 " + cookies.get('utm'));
 console.log("3 " + source+','+medium+','+campaign+','+term);
 }
 
