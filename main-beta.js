@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240220 0.0.4';
+let codeVer = '240220 0.0.4.1';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -43,8 +43,8 @@ $('.body').removeClass('no-scroll');
 });
 
 // CONTACT FORM IDER
-$('.connect-section').find("input[name='formIDER']").val('section');
-$('.connect-pop').find("input[name='formIDER']").val('popup');
+$('.connect-section').find("input[name='formIDER']").val('Section');
+$('.connect-pop').find("input[name='formIDER']").val('Popup');
 
 //$('.connect-section input[name="email"], .connect-pop input[name="email"]').on('input', function() {
 //$('.spam-tracker input[name="email"]').val($(this).val());
@@ -199,12 +199,14 @@ if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
 var term = $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
 } else {var term = "⠀"}
 var utm = {
-    "source": source,
-    "medium": medium,
-    "campaign": campaign,
-    "term": term
+    "source": "source",
+    "medium": "medium",
+    "campaign": "campaign",
+    "term": "term"
 }
 Cookies.set('utm', utm, { expires: 30 });
+console.log("1" + utm);
+console.log("2" + Cookies.get('utm'));
 }
 
 //
