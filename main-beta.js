@@ -59,10 +59,16 @@ countryIDer();
 //current url
 $("input[name='current_url']").val(url);
 $("input[name='utm_url']").val(Cookies.get('url'));
-//get cookies into form
-if (!Cookies.get('source') == null || !Cookies.get('source') == "") {
-    $("input[name='utm_source']").val(Cookies.get('source'));
-} else { $("input[name='utm_source']").val('Direct'); }
+//get cookies into form 
+// ----------------------------- C H A N G E
+if (!Cookies.get('utm') == null || !Cookies.get('utm') == "") { // UTM NOT EMPTY
+    $("input[name='utm_source']").val(Cookies.get('utm.source'));
+    $("input[name='utm_medium']").val(Cookies.get('utm.medium'));
+    $("input[name='utm_campaign']").val(Cookies.get('utm.campaign'));
+    $("input[name='utm_term']").val(Cookies.get('utm.term'));
+
+} else { // ------------------------------------------------------ UTM IS EMPTY
+    $("input[name='utm_source']").val('Direct'); }
 $("input[name='utm_medium']").val(Cookies.get('medium'));
 $("input[name='utm_campaign']").val(Cookies.get('campaign'));
 $("input[name='utm_term']").val(Cookies.get('term'));
@@ -173,40 +179,34 @@ $('.hidden-form-fields input').attr('readonly', 'readonly');
 
 // === UTM TRACKER === //
 $.urlParam = function(name) {
-    var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
-    if (results == null) { return null; } else { return results[1] || 0; }
+var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
+if (results == null) { return null; } else { return results[1] || 0; }
 }
-let cleanUrl = url.replace('https://www.shomabay.com/?', '').replace('https://shomabay.webflow.io/?', '');
-//
-var inTwoMins = new Date(new Date().getTime() + 2 * 60 * 1000);
+var cleanUrl = url.replace('https://www.shomabay.com/?', '').replace('https://shomabay.webflow.io/?', '');
+// var inTwoMins = new Date(new Date().getTime() + 2 * 60 * 1000);
 //cookie setter
-//
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
 var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
-//
-if (source == "Presentation" || source == "mls" || source == "LiveChat") {
-Cookies.set('source', source, { expires: inTwoMins});
-} else {
-Cookies.set('source', source, { expires: 30 });
-}
-Cookies.set('url', cleanUrl, { expires: 30 });
-}
-//
+// source, exist
 if (!$.urlParam('utm_medium') == null || !$.urlParam('utm_medium') == "") {
 var medium = $.urlParam('utm_medium').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
-Cookies.set('medium', medium, { expires: 30 });
-}
-//
+} else { var medium = "⠀"}
 if (!$.urlParam('utm_campaign') == null || !$.urlParam('utm_campaign') == "") {
-    var campaign = $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
-    Cookies.set('campaign', campaign, { expires: 30 });
-}
-//
+var campaign = $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
+} else {var campaign = "⠀"}
 if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
-    var term = $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
-    Cookies.set('term', term, { expires: 30 });
+var term = $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
+} else {var term = "⠀"}
+var utm = {
+    "source": source,
+    "medium": medium,
+    "campaign": campaign,
+    "term": term
+}
+Cookies.set('utm', utm, { expires: 30 });
 }
 
+//
 
 //==== PHONE NUMBER FILTER ====//
 
