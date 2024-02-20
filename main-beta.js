@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240220 0.0.2';
+let codeVer = '240220 0.0.3';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -68,10 +68,11 @@ if (!Cookies.get('utm') == null || !Cookies.get('utm') == "") { // UTM NOT EMPTY
     $("input[name='utm_term']").val(Cookies.get('utm.term'));
 
 } else { // ------------------------------------------------------ UTM IS EMPTY
-    $("input[name='utm_source']").val('Direct'); }
+$("input[name='utm_source']").val('Direct'); 
 $("input[name='utm_medium']").val(Cookies.get('⠀'));
 $("input[name='utm_campaign']").val(Cookies.get('⠀'));
 $("input[name='utm_term']").val(Cookies.get('⠀'));
+}
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
 }, 869);
