@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240220 0.1.1';
+let codeVer = '240220 0.1.2';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -61,7 +61,7 @@ $("input[name='current_url']").val(url);
 $("input[name='utm_url']").val(Cookies.get('url'));
 //get cookies into form 
 // ----------------------------- C H A N G E
-if (!Cookies.get('utm') == null || !Cookies.get('utm') == "") { // UTM NOT EMPTY
+if (!(JSON.parse(cookies.get('utm')) == null) || !(JSON.parse(cookies.get('utm')) == "")) { // UTM NOT EMPTY
     $("input[name='utm_source']").val(JSON.parse(cookies.get('utm')).source);
     $("input[name='utm_medium']").val(JSON.parse(cookies.get('utm')).medium);
     $("input[name='utm_campaign']").val(JSON.parse(cookies.get('utm')).campaign);
