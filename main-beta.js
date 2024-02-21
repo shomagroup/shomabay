@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240220 0.1.2';
+let codeVer = '240220 0.1.3';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -58,14 +58,14 @@ countryIDer();
 }, 369);
 //current url
 $("input[name='current_url']").val(url);
-$("input[name='utm_url']").val(Cookies.get('url'));
+$("input[name='utm_url']").val(JSON.parse(Cookies.get('utm')).url);
 //get cookies into form 
 // ----------------------------- C H A N G E
-if (!(JSON.parse(cookies.get('utm')) == null) || !(JSON.parse(cookies.get('utm')) == "")) { // UTM NOT EMPTY
-    $("input[name='utm_source']").val(JSON.parse(cookies.get('utm')).source);
-    $("input[name='utm_medium']").val(JSON.parse(cookies.get('utm')).medium);
-    $("input[name='utm_campaign']").val(JSON.parse(cookies.get('utm')).campaign);
-    $("input[name='utm_term']").val(JSON.parse(cookies.get('utm')).term);
+if (!(JSON.parse(Cookies.get('utm')) == null) || !(JSON.parse(Cookies.get('utm')) == "")) { // UTM NOT EMPTY
+    $("input[name='utm_source']").val(JSON.parse(Cookies.get('utm')).source);
+    $("input[name='utm_medium']").val(JSON.parse(Cookies.get('utm')).medium);
+    $("input[name='utm_campaign']").val(JSON.parse(Cookies.get('utm')).campaign);
+    $("input[name='utm_term']").val(JSON.parse(Cookies.get('utm')).term);
 
 } else { // ------------------------------------------------------ UTM IS EMPTY
 $("input[name='utm_source']").val('Direct'); 
@@ -202,7 +202,8 @@ var utm = {
     "source": source,
     "medium": medium,
     "campaign": campaign,
-    "term": term
+    "term": term,
+    "url": cleanUrl
 }
 Cookies.set("utm", JSON.stringify(utm) , {expires:30})
 }
