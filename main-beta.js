@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240226 0.1.95';
+let codeVer = '240226 0.2.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -57,7 +57,7 @@ countryIDer();
 }, 369);
 //current url
 $("input[name='current_url']").val(url);
-//  $("input[name='utm_id']").val(JSON.parse(Cookies.get('utm')).id);
+$("input[name='utm_id']").val(JSON.parse(Cookies.get('utm')).id);
 //get cookies into form 
 // ----------------------------- C H A N G E
 if (!(JSON.parse(Cookies.get('utm')) == null) || !(JSON.parse(Cookies.get('utm')) == "")) { // UTM NOT EMPTY
