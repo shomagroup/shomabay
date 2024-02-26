@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240226 0.2.1';
+let codeVer = '240226 0.2.15';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -51,21 +51,20 @@ $('.connect-pop').find("input[name='formLocation']").val('Popup');
 
 $('[form-trigger]').on('click', function() {
 locator();
-setTimeout(() => {
-countryIDer();
-}, 369);
 //current url
 $("input[name='current_url']").val(url);
-$("input[name='utm_id']").val(JSON.parse(Cookies.get('utm')).id);
+
 //get cookies into form 
 // ----------------------------- C H A N G E
-if (!(JSON.parse(Cookies.get('utm')) == null) || !(JSON.parse(Cookies.get('utm')) == "")) { // UTM NOT EMPTY
+//if (!(Cookies.get('utm') == null) || !(JSON.parse(Cookies.get('utm')) == "")) { // UTM NOT EMPTY
+    if (false) { // UTM NOT EMPTY
+$("input[name='utm_id']").val(JSON.parse(Cookies.get('utm')).id);
 $("input[name='utm_source']").val(JSON.parse(Cookies.get('utm')).source);
 $("input[name='utm_medium']").val(JSON.parse(Cookies.get('utm')).medium);
 $("input[name='utm_campaign']").val(JSON.parse(Cookies.get('utm')).campaign);
 $("input[name='utm_term']").val(JSON.parse(Cookies.get('utm')).term);
-
 } else { // ------------------------------------------------------ UTM IS EMPTY
+$("input[name='utm_id']").val('Direct / ⠀ / ⠀');
 $("input[name='utm_source']").val('Direct'); 
 $("input[name='utm_medium']").val('⠀'); 
 $("input[name='utm_campaign']").val('⠀'); 
