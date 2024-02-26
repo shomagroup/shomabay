@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240220 0.1.3';
+let codeVer = '240226 0.1.4';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -58,7 +58,7 @@ countryIDer();
 }, 369);
 //current url
 $("input[name='current_url']").val(url);
-$("input[name='utm_url']").val(JSON.parse(Cookies.get('utm')).url);
+$("input[name='utm_id']").val(JSON.parse(Cookies.get('utm')).id);
 //get cookies into form 
 // ----------------------------- C H A N G E
 if (!(JSON.parse(Cookies.get('utm')) == null) || !(JSON.parse(Cookies.get('utm')) == "")) { // UTM NOT EMPTY
@@ -171,7 +171,6 @@ $.urlParam = function(name) {
 var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
 if (results == null) { return null; } else { return results[1] || 0; }
 }
-var cleanUrl = url.replace('https://www.shomabay.com/?', '').replace('https://shomabay.webflow.io/?', '');
 // var inTwoMins = new Date(new Date().getTime() + 2 * 60 * 1000);
 //cookie setter
 if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
@@ -186,12 +185,13 @@ var campaign = $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').repl
 if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
 var term = $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
 } else {var term = "⠀"}
+var utm_id = source+' / '+medium+' / '+campagin+' / '+term
 var utm = {
     "source": source,
     "medium": medium,
     "campaign": campaign,
     "term": term,
-    "url": cleanUrl
+    "id": utm_id
 }
 Cookies.set("utm", JSON.stringify(utm) , {expires:30})
 }
