@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240226 0.1.7';
+let codeVer = '240226 0.1.8';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -192,7 +192,7 @@ var campaign = $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').repl
 if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
 var term = $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
 } else {var term = "⠀"}
-var utm_id = source+' / '+medium+' / '+campagin+' / '+term;
+var utm_id = source+' / '+medium+' / '+campaign+' / '+term;
 var utm = {
     "source": source,
     "medium": medium,
