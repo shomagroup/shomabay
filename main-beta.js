@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240226 0.2.05';
+let codeVer = '240226 0.2.1';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -50,7 +50,6 @@ $('.connect-pop').find("input[name='formLocation']").val('Popup');
 //});
 
 $('[form-trigger]').on('click', function() {
-timestamper();
 locator();
 setTimeout(() => {
 countryIDer();
@@ -77,17 +76,6 @@ $(this).siblings('.button-contact').trigger('click');
 }, 869);
 });
 
-    // timestamp setup
-function timestamper() {
-const date = new Date();
-// const year = new Intl.DateTimeFormat('en',{year:'2-digit'}).format(date);
-// const month = new Intl.DateTimeFormat('en',{month:'short'}).format(date);
-// const weekday = new Intl.DateTimeFormat('en',{weekday:'short'}).format(date);
-// const day = new Intl.DateTimeFormat('en',{day:'2-digit'}).format(date);
-// const time = new Intl.DateTimeFormat('en',{hour:'2-digit', minute:'2-digit', hour12:false}).format(date);
-// var timestamp = `${time} ${weekday} ${month} ${day} ${year}`;
-$("input[timestamper]").val(date);
-}
 // locator setup
 function locator() {
 if (navigator.geolocation) {
