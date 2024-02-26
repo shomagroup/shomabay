@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240226 0.1.5';
+let codeVer = '240226 0.1.6';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -119,6 +119,14 @@ $("input[name='preference']").val(preference);
 } else { $("input[name='preference']").val('No Preference'); }
 });
 //
+
+$('[agent]').on('click', function() {
+if (!$('label[agent] .w-checkbox-input').is('.w--redirected-checked')) {
+$("input[agent-required]").attr('required', '1');
+} else {
+$("input[agent-required]").removeAttr('required');
+}
+});
 
 // Blocking some Attempt spam
 if (url.includes('?agenbt') || url.includes('?First') || url.includes('?Last') || url.includes('?Email') || url.includes('?Phone') || url.includes('?country') || url.includes('?Message') ||
