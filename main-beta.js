@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240226 0.1.6';
+let codeVer = '240226 0.1.7';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -16,16 +16,15 @@ let url = window.location.href;
 // MOBILE NAV POPUP
 $('.m-button').on('click', function() {
 if ($(this).is('.active')) {
-    $(this).removeClass('active');
-    $('.nav-container').removeClass('active');
-    $('.body').removeClass('no-scroll');
+$(this).removeClass('active');
+$('.nav-container').removeClass('active');
+$('.body').removeClass('no-scroll');
 } else {
-    $(this).addClass('active');
-    $('.nav-container').addClass('active');
-    $('.body').addClass('no-scroll');
+$(this).addClass('active');
+$('.nav-container').addClass('active');
+$('.body').addClass('no-scroll');
 }
 });
-
 // Floorplan / Residences 
 $('[sect-1-hover]').on('mouseenter mouseleave', function() {
 $(this).find('.sect-1-card-1, .sect-1-card-2').toggleClass('swaphover');
@@ -62,10 +61,10 @@ $("input[name='utm_id']").val(JSON.parse(Cookies.get('utm')).id);
 //get cookies into form 
 // ----------------------------- C H A N G E
 if (!(JSON.parse(Cookies.get('utm')) == null) || !(JSON.parse(Cookies.get('utm')) == "")) { // UTM NOT EMPTY
-    $("input[name='utm_source']").val(JSON.parse(Cookies.get('utm')).source);
-    $("input[name='utm_medium']").val(JSON.parse(Cookies.get('utm')).medium);
-    $("input[name='utm_campaign']").val(JSON.parse(Cookies.get('utm')).campaign);
-    $("input[name='utm_term']").val(JSON.parse(Cookies.get('utm')).term);
+$("input[name='utm_source']").val(JSON.parse(Cookies.get('utm')).source);
+$("input[name='utm_medium']").val(JSON.parse(Cookies.get('utm')).medium);
+$("input[name='utm_campaign']").val(JSON.parse(Cookies.get('utm')).campaign);
+$("input[name='utm_term']").val(JSON.parse(Cookies.get('utm')).term);
 
 } else { // ------------------------------------------------------ UTM IS EMPTY
 $("input[name='utm_source']").val('Direct'); 
@@ -193,7 +192,7 @@ var campaign = $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').repl
 if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
 var term = $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
 } else {var term = "⠀"}
-var utm_id = source+' / '+medium+' / '+campagin+' / '+term
+var utm_id = source+' / '+medium+' / '+campagin+' / '+term;
 var utm = {
     "source": source,
     "medium": medium,
