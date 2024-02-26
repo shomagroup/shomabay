@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240226 0.2.0';
+let codeVer = '240226 0.2.05';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
