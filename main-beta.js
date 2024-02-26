@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240226 0.2.16';
+let codeVer = '240226 0.2.17';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -63,7 +63,7 @@ $("input[name='utm_medium']").val(JSON.parse(Cookies.get('utm')).medium);
 $("input[name='utm_campaign']").val(JSON.parse(Cookies.get('utm')).campaign);
 $("input[name='utm_term']").val(JSON.parse(Cookies.get('utm')).term);
 } else { // ------------------------------------------------------ UTM IS EMPTY
-console.log(JSON.parse(Cookies.get('utm').id));
+console.log(Cookies.get('utm').id);
 $("input[name='utm_id']").val('Direct / ⠀ / ⠀');
 $("input[name='utm_source']").val('Direct'); 
 $("input[name='utm_medium']").val('⠀'); 
