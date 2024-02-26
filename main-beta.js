@@ -43,8 +43,8 @@ $('.body').removeClass('no-scroll');
 });
 
 // CONTACT FORM IDER
-$('.connect-section').find("input[name='formIDER']").val('Section');
-$('.connect-pop').find("input[name='formIDER']").val('Popup');
+$('.connect-section').find("input[name='formLocation']").val('Section');
+$('.connect-pop').find("input[name='formLocation']").val('Popup');
 
 //$('.connect-section input[name="email"], .connect-pop input[name="email"]').on('input', function() {
 //$('.spam-tracker input[name="email"]').val($(this).val());
@@ -119,22 +119,10 @@ $("input[name='preference']").val(preference);
 } else { $("input[name='preference']").val('No Preference'); }
 });
 //
-$("input[name='agent']").val('false');
-$("input[name='ratingID']").val('43584');
-$('[agent]').on('click', function() {
-if (!$('label[agent] .w-checkbox-input').is('.w--redirected-checked')) {
-$("input[name='ratingID']").val('43585');
-$("input[agent-required]").attr('required', '1');
-} else {
-$("input[name='ratingID']").val('43584');
-$("input[agent-required]").removeAttr('required');
-}
-});
-//
 
 // Blocking some Attempt spam
 if (url.includes('?agenbt') || url.includes('?First') || url.includes('?Last') || url.includes('?Email') || url.includes('?Phone') || url.includes('?country') || url.includes('?Message') ||
-url.includes('?preference') || url.includes('?countryID') || url.includes('?lang') || url.includes('?ratingID') || url.includes('?timestamper') ||
+url.includes('?preference') || url.includes('?countryID') || url.includes('?lang') || url.includes('?timestamper') ||
 url.includes('?form') || url.includes('?utm_url') || url.includes('?current_url')) {
 window.open("https://www.shomabay.com/", "_top");
 function cleanse() {
@@ -155,24 +143,24 @@ $("input[name='lang']").val('PT');
 
 // What page is form being submited
 if (url.includes('/residences') || url.includes('/residencias')) {
-$("input[name='form-id']").val('Residences');
+$("input[name='formPage']").val('Residences');
 } else if (url.includes('/floorplans') || url.includes('/planos') || url.includes('/plantas')) {
-$("input[name='form-id']").val('Floorplans');
+$("input[name='formPage']").val('Floorplans');
 } else if (url.includes('/amenities') || url.includes('/amenidades') || url.includes('/comodidades')) {
-$("input[name='form-id']").val('Amenities');
+$("input[name='formPage']").val('Amenities');
 } else if (url.includes('/location') || url.includes('/localizacion') || url.includes('/localizacao')) {
-$("input[name='form-id']").val('Location');
+$("input[name='formPage']").val('Location');
 } else if (url.includes('/team') || url.includes('/equipo') || url.includes('/equipe')) {
-$("input[name='form-id']").val('Team');
+$("input[name='formPage']").val('Team');
 } else if (url.includes('/blog')) {
-$("input[name='form-id']").val('Blog');
+$("input[name='formPage']").val('Blog');
 } else if (url.includes('/press') || url.includes('/prensa')) {
-$("input[name='form-id']").val('Press');
+$("input[name='formPage']").val('Press');
 } else if (url.includes('/customer-registration')) {
-$("input[name='form-id']").val('Customer Registration');
+$("input[name='formPage']").val('Customer Registration');
 } else if (url.includes('/sales-registration')) {
-$("input[name='form-id']").val('Sales Registration');
-} else { $("input[name='form-id']").val('Home'); }
+$("input[name='formPage']").val('Sales Registration');
+} else { $("input[name='formPage']").val('Home'); }
 
 // HIDDEN stuff
 $('.hidden-form-fields:not(.show) input').attr('type', 'hidden');
