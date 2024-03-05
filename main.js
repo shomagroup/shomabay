@@ -88,9 +88,10 @@ if (navigator.geolocation) {
 fetch('https://ipapi.co/json')
 .then((response) => response.json())
 .then((data) => {
-$("input[name='countryISO']").val(data.country_code_iso3);
-$("input[name='countryName']").val(data.country_name);
-$("input[name='ip']").val(data.ip.replace(/\./g, '').replace(/:/g, ''));
+$("input[name='country']").val(data.country_code_iso3);
+$("input[name='state']").val(data.region);
+$("input[name='city']").val(data.city);
+$("input[name='ip']").val(data.ip);
 });
 } else { $("input[name='countryISO']").val('error'); }
 }
