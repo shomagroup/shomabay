@@ -166,16 +166,16 @@ if (results == null) { return null; } else { return results[1] || 0; }
 }
 // var inTwoMins = new Date(new Date().getTime() + 2 * 60 * 1000);
 //cookie setter
-if (!$.urlParam('utm_source') == null || !$.urlParam('utm_source') == "") {
+if (!($.urlParam('utm_source') == null) && !($.urlParam('utm_source') == "") && !($.urlParam('utm_source') == undefined) ) {
 var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
 // source, exist
-if (!$.urlParam('utm_medium') == null || !$.urlParam('utm_medium') == "") {
+if (!($.urlParam('utm_medium') == null) && !($.urlParam('utm_medium') == "")  && !($.urlParam('utm_medium') == undefined) ) {
 var medium = $.urlParam('utm_medium').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
 } else { var medium = "⠀"}
-if (!$.urlParam('utm_campaign') == null || !$.urlParam('utm_campaign') == "") {
+if (!($.urlParam('utm_campaign') == null) && !($.urlParam('utm_campaign') == "") && !($.urlParam('utm_campaign') == undefined)  ) {
 var campaign = $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
 } else {var campaign = "⠀"}
-if (!$.urlParam('utm_term') == null || !$.urlParam('utm_term') == "") {
+if (!($.urlParam('utm_term') == null) && !($.urlParam('utm_term') == "") && !($.urlParam('utm_term') == undefined)  ) {
 var term = $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
 } else {var term = "⠀"}
 var utm_id = source+' / '+medium+' / '+campaign+' / '+term;
