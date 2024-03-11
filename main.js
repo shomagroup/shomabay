@@ -69,11 +69,11 @@ $("input[name='utm_campaign']").val('⠀');
 $("input[name='utm_term']").val('⠀'); 
 }
 
-if ($('input[name="message"]').val().length > 255) { $(this).closest('form')[0].reset()} else {
+// if ($('input[name="message"]').val().length > 255) { $(this).closest('form')[0].reset()} else {
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
-}, 600);
-};
+}, 800);
+// };
 });
 
 // locator setup
