@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240307 0.0.0';
+let codeVer = '2403011 0.0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -68,7 +68,7 @@ $("input[name='utm_medium']").val('⠀');
 $("input[name='utm_campaign']").val('⠀'); 
 $("input[name='utm_term']").val('⠀'); 
 }
-if ($('input[name="message"]').val().length > 250) {console.log("floop")}else{console.log("meep")}
+if ($('input[name="message"]').val().length > 250) {console.log("floop")}else{console.log("meep",$('input[name="message"]').val().length)}
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
 }, 869);
