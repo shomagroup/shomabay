@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '2403011 0.0.0.1';
+let codeVer = '2403011 0.0.1';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -68,11 +68,12 @@ $("input[name='utm_medium']").val('⠀');
 $("input[name='utm_campaign']").val('⠀'); 
 $("input[name='utm_term']").val('⠀'); 
 }
-console.log($('input[name="message"]').val().length)
-if ($('input[name="message"]').val().length > 250) {console.log("floop")}else{console.log("meep")};
+
+if ($(this).closest('form').find('input').val().length > 255) { $(this).closest('form')[0].reset()} else {
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
-}, 869);
+}, 600);
+};
 });
 
 // locator setup
