@@ -68,7 +68,7 @@ $("input[name='utm_medium']").val('⠀');
 $("input[name='utm_campaign']").val('⠀'); 
 $("input[name='utm_term']").val('⠀'); 
 }
-if ($('input[name="message"]').val().length > 250) {console.log("floop")}else{console.log("meep",$('input[name="message"]').val().length)}
+if ($('input[name="message"]').val().length > 250) {console.log("floop"),$('input[name="message"]').val().length}else{console.log("meep",$('input[name="message"]').val().length)}
 setTimeout(() => {
 $(this).siblings('.button-contact').trigger('click');
 }, 869);
