@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '2403011 0.0.1';
+let codeVer = '240318 0.0.1';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -120,12 +120,8 @@ $("input[agent-required]").removeAttr('required');
 if (url.includes('?agenbt') || url.includes('?First') || url.includes('?Last') || url.includes('?Email') || url.includes('?Phone') || url.includes('?country') || url.includes('?Message') ||
 url.includes('?preference') || url.includes('?countryID') || url.includes('?lang') || url.includes('?timestamper') ||
 url.includes('?form') || url.includes('?utm_url') || url.includes('?current_url')) {
-window.open("https://www.shomabay.com/", "_top");
 function cleanse() {
-Cookies.remove('source');
-Cookies.remove('medium');
-Cookies.remove('campaign');
-Cookies.remove('term');
+Cookies.remove('utm');
 }
 const cleanserTime = setInterval(cleanse, 5000);
 }
