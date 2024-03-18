@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240318 0.0.1';
+let codeVer = '240318 0.0.2';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -115,16 +115,6 @@ $("input[agent-required]").attr('required', '1');
 $("input[agent-required]").removeAttr('required');
 }
 });
-
-// Blocking some Attempt spam
-if (url.includes('?agenbt') || url.includes('?First') || url.includes('?Last') || url.includes('?Email') || url.includes('?Phone') || url.includes('?country') || url.includes('?Message') ||
-url.includes('?preference') || url.includes('?countryID') || url.includes('?lang') || url.includes('?timestamper') ||
-url.includes('?form') || url.includes('?utm_url') || url.includes('?current_url')) {
-function cleanse() {
-Cookies.remove('utm');
-}
-const cleanserTime = setInterval(cleanse, 5000);
-}
 
 // URL Language
 if (url.includes('/es')) {
