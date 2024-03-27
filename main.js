@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '240318 0.0.2';
+let codeVer = '240327 0.0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -248,5 +248,24 @@ if (Cookies.get('source') == 'google') {
     $('[phoneNum]').attr('href', 'tel:+17868825887');
     $('[phoneTx]').text('786-882-5887');
 }
+
+//
+
+
+var newpop = 'visitus-240125';
+if ( Cookies.get('ann-seen') == newpop ) {
+$('.popup-announcement').addClass('close');
+} else {
+$('.popup-announcement').removeClass('close');
+}
+
+$('[closeOtherPop]').on('click', function(){
+$(this).closest('div[announcement]').addClass('close');
+Cookies.set('ann-seen', newpop, { expires: 15 });
+});
+
+$('[openOtherpopup]').on('click', function(){
+$('div[announcement]').removeClass('close');
+});
 
 //
