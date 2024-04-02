@@ -269,6 +269,21 @@ $('[openOtherpopup]').on('click', function(){
 $('div[announcement]').removeClass('close');
 });
 
-//
+// --------- MODAL
+//NOTE: This is needs to be usable for all the modals and types
+$('[data-modal-trig]').on('click', function() {
+    let $this = $(this);
+    let vid = $this.data('vid-embed');
+    let modal = $this.closest('div[data-modal]').data('modal');
+    $this.closest('.main').siblings(`.view-modal[data-modal-view="${modal}"]`)
+    .find('.view-modal-in-content').attr('src', `https://player.vimeo.com/video/${vid}&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`);
+    $this.closest('.main').siblings(`.view-modal[data-modal-view="${modal}"]`)
+    .addClass('active');
+    });
+    $('[data-modal-close]').on('click', function() {
+    $(this).closest('.view-modal[data-modal-view]').removeClass('active');
+    $(this).closest('.view-modal[data-modal-view]').find('.view-modal-in-content').attr('src', '');
+    });// --------- MODAL end
+
 
 }); // DOM LOADED
