@@ -1,6 +1,6 @@
 $(document).ready(function() {
 // WEBSITE CODE VERSION
-let codeVer = '240403 0.0.0';
+let codeVer = '240403 0.0.1';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -78,7 +78,7 @@ $(this).siblings('.button-contact').trigger('click');
 });
 
 // locator setup
-function locator() {
+window.locator = function() {
 if (navigator.geolocation) {
 fetch('https://ipapi.co/json')
 .then((response) => response.json())
