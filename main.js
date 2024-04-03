@@ -1,3 +1,20 @@
+// ----------- Define callbacks
+// locator setup
+function locator() {
+if (navigator.geolocation) {
+fetch('https://ipapi.co/json')
+.then((response) => response.json())
+.then((data) => {
+$("input[name='country']").val(data.country_code_iso3);
+$("input[name='state']").val(data.region);
+$("input[name='city']").val(data.city);
+$("input[name='ip']").val(data.ip);
+});
+} else { $("input[name='countryISO']").val('error'); }
+}
+//
+
+// --- actions
 $(document).ready(function() {
 // WEBSITE CODE VERSION
 let codeVer = '240403 0.0.1';
@@ -77,20 +94,7 @@ $(this).siblings('.button-contact').trigger('click');
 // };
 });
 
-// locator setup
-window.locator = function() {
-if (navigator.geolocation) {
-fetch('https://ipapi.co/json')
-.then((response) => response.json())
-.then((data) => {
-$("input[name='country']").val(data.country_code_iso3);
-$("input[name='state']").val(data.region);
-$("input[name='city']").val(data.city);
-$("input[name='ip']").val(data.ip);
-});
-} else { $("input[name='countryISO']").val('error'); }
-}
-//
+
 if (url.includes('#contact-form')) {
     $('.connect-pop').addClass('active');
     $('.body').addClass('no-scroll');
