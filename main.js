@@ -1,6 +1,6 @@
 //$(document).ready(function() {
 // WEBSITE CODE VERSION
-let codeVer = '240402 0.0.2';
+let codeVer = '240403 0.0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
