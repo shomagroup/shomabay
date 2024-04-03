@@ -1,4 +1,4 @@
-$(document).ready(function() {
+//$(document).ready(function() {
 // WEBSITE CODE VERSION
 let codeVer = '240402 0.0.2';
 console.log(codeVer);
@@ -286,4 +286,4 @@ $('[data-modal-trig]').on('click', function() {
     });// --------- MODAL end
 
 
-}); // DOM LOADED
+//}); // DOM LOADED
