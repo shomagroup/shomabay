@@ -1,4 +1,6 @@
 // ----------- Define callbacks
+const url = window.location.href;
+
 // locator setup
 function locator() {
 if (navigator.geolocation) {
@@ -12,12 +14,13 @@ $("input[name='ip']").val(data.ip);
 });
 } else { $("input[name='countryISO']").val('error'); }
 }
+
 //
 
 // --- actions
 $(document).ready(function() {
 // WEBSITE CODE VERSION
-let codeVer = '240403 0.0.1';
+let codeVer = '240405 0.0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -28,8 +31,6 @@ $(this).siblings('.nav-link').addClass('nothover');
 $('.nav-link').on('mouseleave', function() {
 $(this).siblings('.nav-link').removeClass('nothover');
 });
-
-let url = window.location.href;
 
 // MOBILE NAV POPUP
 $('.m-button').on('click', function() {
