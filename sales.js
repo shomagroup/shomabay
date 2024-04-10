@@ -1,3 +1,4 @@
+$(document).ready(function() {
 // ------------ triggers after profile loaded
 //
 $('input[name="registration_type"]').on('change', function() {
@@ -127,3 +128,6 @@ $('input[name="registration_type"]').on('change', function() {
     $('input[name="message_send"]').val( user.signature + $(this).val() );
     }
     });
+
+
+}); // DOM LOADED
