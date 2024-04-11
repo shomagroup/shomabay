@@ -85,20 +85,18 @@ $('input[name="registration_type"]').on('change', function() {
     $('input[name="path_two_agent_type"]').on('change', function() {
     let $this = $(this).closest('label').attr('sub_path_selector');
     let options = ['new', 'reg'];
-    
+    addlead()
     let chosen = options.filter(option => option == $this)[0];
     let unchosen = options.filter(option => option !== $this)[0];
 
     $(`input[req_agent]`).attr('readonly',true);
-
+    
     if (chosen === 'reg') {
     let def = '.form-wrapper[sub_path="reg"] .form-wrapper .form-wrapper:nth-child(2)';
     $(`${def} input[req_agent]`).attr('required',true).removeAttr('readonly');
     $(`${def} input[_check_agent]`).prop('checked', true);
     $(`${def} div.multi-option`).addClass("w--redirected-checked");
-    addlead();
     } else {
-    addlead_reset();
     $(`input[path_${chosen}][req_agent]`).removeAttr('readonly');
     $(`input[path_${chosen}][req_agent]`).attr('required',true);
     $(`input[path_${chosen}][_check_agent]`).prop('checked', true);
