@@ -143,7 +143,7 @@ leadcounter++
 let leadtoadd = $('<div>', { class: 'form-wrapper mod-vertical', 'data-count-id': leadcounter}).append(
     $('<div>', { 
         class: 'form-info-text mar-left-auto sub-title margin-mod', 
-        text: 'New Lead #'+leadcounter 
+        text: 'Register New Lead #'+leadcounter 
     }),
     $('<div>', { class: 'form-wrapper' }).append(
     $('<input>', {
