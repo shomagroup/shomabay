@@ -247,7 +247,6 @@ $('.lead-add-remove[trigger-re-add-lead]').removeClass('disabled');
 } else {alert("Maximum of 5 leads per submission")}}
 
 function addlead_remove(min) {
-alert(min);
 if (!min){min=0;}
 $('.form-wrapper[data-count-id="'+leadcounter+'"]').remove();
 
