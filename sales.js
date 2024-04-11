@@ -15,8 +15,10 @@ $('input[name="registration_type"]').on('change', function() {
     .prop('checked', true);
     $('input[path_one][_check][type="checkbox"]')
     .siblings("div.multi-option").addClass("w--redirected-checked");
-    
     $('input[path_one][req_]').attr('required',true);
+
+    addlead_reset();
+    
     }
     if( $(this).val() === "path_two" ) {
     $('input[path_one]').val('');$('input[path_one]').removeAttr('required');
@@ -94,7 +96,9 @@ $('input[name="registration_type"]').on('change', function() {
     $(`${def} input[req_agent]`).attr('required',true).removeAttr('readonly');
     $(`${def} input[_check_agent]`).prop('checked', true);
     $(`${def} div.multi-option`).addClass("w--redirected-checked");
+    addlead();
     } else {
+    addlead_reset();
     $(`input[path_${chosen}][req_agent]`).removeAttr('readonly');
     $(`input[path_${chosen}][req_agent]`).attr('required',true);
     $(`input[path_${chosen}][_check_agent]`).prop('checked', true);
