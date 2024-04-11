@@ -18,7 +18,7 @@ $('input[name="registration_type"]').on('change', function() {
     $('input[path_one][req_]').attr('required',true);
 
     addlead_reset();
-    
+
     }
     if( $(this).val() === "path_two" ) {
     $('input[path_one]').val('');$('input[path_one]').removeAttr('required');
@@ -246,10 +246,10 @@ $('.lead-add-remove[trigger-re-add-lead]').removeClass('disabled');
 function addlead_remove() {
 $('.form-wrapper[data-count-id="'+leadcounter+'"]').remove();
 
-if (leadcounter > 0) {
+if (leadcounter > 1) {
 leadcounter--;
 }
-if (leadcounter === 0) {
+if (leadcounter === 1) {
 $('.lead-add-remove[trigger-re-add-lead]').addClass('disabled');
 }
 if (leadcounter < 5) {
