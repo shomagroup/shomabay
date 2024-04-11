@@ -91,18 +91,19 @@ $('input[name="registration_type"]').on('change', function() {
     $(`input[req_agent]`).attr('readonly',true);
     
     if (chosen === 'reg') {
-    addlead_min = 1;
-    addlead();
+    addlead(1);
     let def = '.form-wrapper[sub_path="reg"] .form-wrapper .form-wrapper:nth-child(2)';
     $(`${def} input[req_agent]`).attr('required',true).removeAttr('readonly');
     $(`${def} input[_check_agent]`).prop('checked', true);
     $(`${def} div.multi-option`).addClass("w--redirected-checked");
+    addlead_min = 1;
     } else {
     $(`input[path_${chosen}][req_agent]`).removeAttr('readonly');
     $(`input[path_${chosen}][req_agent]`).attr('required',true);
     $(`input[path_${chosen}][_check_agent]`).prop('checked', true);
     $(`input[path_${chosen}][_check_agent]`)
     .siblings("div.multi-option").addClass("w--redirected-checked");
+    addlead_min = 0;
     }
     
     $(`input[path_${unchosen}]`).val('');
@@ -138,14 +139,15 @@ $('input[name="registration_type"]').on('change', function() {
 var leadcounter = 0; // Initialize counter
 var addlead_min = 0;
 
-function addlead() {
+function addlead(min) {
+if (!min){min = 0 ;}
 if (leadcounter < 5) {
 leadcounter++
 
 let leadtoadd = $('<div>', { class: 'form-wrapper mod-vertical', 'data-count-id': leadcounter}).append(
     $('<div>', { 
         class: 'form-info-text mar-left-auto sub-title margin-mod', 
-        text: 'Register New Lead #'+leadcounter 
+        text: 'New Lead #'+leadcounter 
     }),
     $('<div>', { class: 'form-wrapper' }).append(
     $('<input>', {
@@ -239,26 +241,28 @@ $('.form-wrapper[data-lead-container]').append(leadtoadd);
 if (leadcounter === 5) {
 $('.lead-add-remove[trigger-add-lead]').addClass('disabled');
 }
-if (leadcounter > addlead_min) {
+if (leadcounter > min) {
 $('.lead-add-remove[trigger-re-add-lead]').removeClass('disabled');
 }
 } else {alert("Maximum of 5 leads per submission")}}
 
-function addlead_remove() {
+function addlead_remove(min) {
+alert(min);
+if (!min){min=0;}
 $('.form-wrapper[data-count-id="'+leadcounter+'"]').remove();
 
-if (leadcounter > addlead_min) {
+if (leadcounter > min) {
 leadcounter--;
 }
-if (leadcounter === addlead_min) {
+if (leadcounter === min) {
 $('.lead-add-remove[trigger-re-add-lead]').addClass('disabled');
 }
-
 if (leadcounter < 5) {
 $('.lead-add-remove[trigger-add-lead]').removeClass('disabled');
 }}
 
 function addlead_reset() {
+$('.lead-add-remove[trigger-re-add-lead]').addClass('disabled');
 $('.form-wrapper[data-lead-container]').empty();
 addlead_min = 0;
 leadcounter = 0; // Reset counter
@@ -268,7 +272,7 @@ $('[trigger-add-lead]').on('click', function() {
 addlead();
 });
 $('[trigger-re-add-lead]').on('click', function() { 
-addlead_remove();
+addlead_remove(addlead_min);
 });
 // ---------- Lead Adder End
 
