@@ -91,7 +91,8 @@ $('input[name="registration_type"]').on('change', function() {
     $(`input[req_agent]`).attr('readonly',true);
     
     if (chosen === 'reg') {
-    addlead()
+    addlead_min = 1;
+    addlead();
     let def = '.form-wrapper[sub_path="reg"] .form-wrapper .form-wrapper:nth-child(2)';
     $(`${def} input[req_agent]`).attr('required',true).removeAttr('readonly');
     $(`${def} input[_check_agent]`).prop('checked', true);
@@ -135,6 +136,7 @@ $('input[name="registration_type"]').on('change', function() {
 
 // ---------- Lead Adder Start
 var leadcounter = 0; // Initialize counter
+var addlead_min = 0;
 
 function addlead() {
 if (leadcounter < 5) {
@@ -237,7 +239,7 @@ $('.form-wrapper[data-lead-container]').append(leadtoadd);
 if (leadcounter === 5) {
 $('.lead-add-remove[trigger-add-lead]').addClass('disabled');
 }
-if (leadcounter > 0) {
+if (leadcounter > addlead_min) {
 $('.lead-add-remove[trigger-re-add-lead]').removeClass('disabled');
 }
 } else {alert("Maximum of 5 leads per submission")}}
@@ -245,18 +247,20 @@ $('.lead-add-remove[trigger-re-add-lead]').removeClass('disabled');
 function addlead_remove() {
 $('.form-wrapper[data-count-id="'+leadcounter+'"]').remove();
 
-if (leadcounter > 0) {
+if (leadcounter > addlead_min) {
 leadcounter--;
 }
-if (leadcounter === 0) {
+if (leadcounter === addlead_min) {
 $('.lead-add-remove[trigger-re-add-lead]').addClass('disabled');
 }
+
 if (leadcounter < 5) {
 $('.lead-add-remove[trigger-add-lead]').removeClass('disabled');
 }}
 
 function addlead_reset() {
 $('.form-wrapper[data-lead-container]').empty();
+addlead_min = 0;
 leadcounter = 0; // Reset counter
 }
 
