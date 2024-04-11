@@ -238,7 +238,7 @@ $('.form-wrapper[data-lead-container]').append(leadtoadd);
 if (leadcounter === 5) {
 $('.lead-add-remove[trigger-add-lead]').addClass('disabled');
 }
-if (leadcounter > 0) {
+if (leadcounter > 1) {
 $('.lead-add-remove[trigger-re-add-lead]').removeClass('disabled');
 }
 } else {alert("Maximum of 5 leads per submission")}}
