@@ -147,6 +147,7 @@ let leadtoadd = $('<div>', { class: 'form-wrapper mod-vertical', 'data-count-id'
         class: 'form-info-text mar-left-auto sub-title margin-mod', 
         text: 'New Lead #'+leadcounter 
     }),
+    $('<div>', { class: 'form-wrapper' }).append(
     $('<input>', {
         type: 'text',
         class: 'form-field w-input',
@@ -166,7 +167,7 @@ let leadtoadd = $('<div>', { class: 'form-wrapper mod-vertical', 'data-count-id'
         maxlength: '256',
         required: 'required',
         placeholder: 'Last Name'
-    }),
+    })),
     $('<div>', { class: 'form-wrapper mod-vertical' }).append(
     $('<div>', { class: 'form-wrapper exception-horizontal',}).append(
         $('<label>', { class: 'w-checkbox option s-form-check' }).append(
