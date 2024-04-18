@@ -41,16 +41,15 @@ $(document).ready(function() {
         $(document).on('change', 'input[contact_option]', function() {
         let $this = $(this);
         let group = $(this).data('group');
-        if ( ($this.is(':checked')) && (!(group.includes("new_lead_"))) ) {
+        if ( ($this.is(':checked')) ) {
         $this.closest('.option').siblings('input').attr('required', true).removeAttr('readonly');
         } else if ( (!(group.includes("new_lead_"))) ) { 
         $this.closest('.option').siblings('input').removeAttr('required').attr('readonly', true).val('');
         }
-        if ( ($this.is(':checked')) && (group.includes("new_lead_")) ) {
+        if ( ($this.is(':checked')) ) {
         $this.closest('.option').siblings('input').removeAttr('required').attr('readonly', true).val('');
-        } else if ( (group.includes("new_lead_")) ) {
-        $this.closest('.option').siblings('input').attr('required', true).removeAttr('readonly');
         }
+        
         if ( ($(`input[contact_option][data-group="${group}"]:checked`).length) === 0 ) {
         if ( (group !== "reg-agent") && (!(group.includes("new_lead_"))) ) {
         $this.closest('.form-wrapper').siblings('.form-wrapper').find('input[contact_option]')
@@ -187,7 +186,7 @@ $(document).ready(function() {
                     style: 'opacity:0;position:absolute;z-index:-1',
                     'contact_option':'' , '_check':'' ,
                     'data-group':'new_lead_'+leadcounter,
-                    required: 'required'
+                    required: 'required',checked: 'checked'
                 }),
                 $('<span>', {
                     class:'span-invi w-form-label',
@@ -218,7 +217,7 @@ $(document).ready(function() {
                     style: 'opacity:0;position:absolute;z-index:-1',
                     'contact_option':'' , '_check':'' ,
                     'data-group':'new_lead_'+ leadcounter,
-                    required: 'required'
+                    required: 'required',checked: 'checked'
                 }),
                 $('<span>', {
                     class:'span-invi w-form-label',
