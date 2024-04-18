@@ -41,12 +41,9 @@ $(document).ready(function() {
         $(document).on('change', 'input[contact_option]', function() {
         let $this = $(this);
         let group = $(this).data('group');
-        if ( ($this.is(':checked')) ) {
+        if ( $this.is(':checked') ) {
         $this.closest('.option').siblings('input').attr('required', true).removeAttr('readonly');
-        } else if ( (!(group.includes("new_lead_"))) ) { 
-        $this.closest('.option').siblings('input').removeAttr('required').attr('readonly', true).val('');
-        }
-        if ( ($this.is(':checked')) ) {
+        } else { 
         $this.closest('.option').siblings('input').removeAttr('required').attr('readonly', true).val('');
         }
         
@@ -185,8 +182,7 @@ $(document).ready(function() {
                     name: 'path_two_new_lead_'+ leadcounter +'_email_able',
                     style: 'opacity:0;position:absolute;z-index:-1',
                     'contact_option':'' , '_check':'' ,
-                    'data-group':'new_lead_'+leadcounter,
-                    required: 'required',checked: 'checked'
+                    'data-group':'new_lead_'+leadcounter
                 }),
                 $('<span>', {
                     class:'span-invi w-form-label',
@@ -215,8 +211,7 @@ $(document).ready(function() {
                     name: 'path_two_new_lead_'+ leadcounter +'_phone_able',
                     style: 'opacity:0;position:absolute;z-index:-1',
                     'contact_option':'' , '_check':'' ,
-                    'data-group':'new_lead_'+ leadcounter,
-                    required: 'required'
+                    'data-group':'new_lead_'+ leadcounter
                 }),
                 $('<span>', {
                     class:'span-invi w-form-label',
@@ -238,7 +233,7 @@ $(document).ready(function() {
     );
     
     $('.form-wrapper[data-lead-container]').append(leadtoadd);
-    
+    $("input[data-group='new_lead_" + leadcounter + "'][_check='']").prop('checked', true);
     if (leadcounter === 5) {
     $('.lead-add-remove[trigger-add-lead]').addClass('disabled');
     }
@@ -259,7 +254,9 @@ $(document).ready(function() {
     }
     if (leadcounter < 5) {
     $('.lead-add-remove[trigger-add-lead]').removeClass('disabled');
-    }$('input[name="client-count"]').val(leadcounter);}
+    }
+    $('input[name="client-count"]').val(leadcounter);
+    }
     
     function addlead_reset() {
     $('.lead-add-remove[trigger-re-add-lead]').addClass('disabled');
