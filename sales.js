@@ -200,9 +200,8 @@ $(document).ready(function() {
                 name: 'path_two_new_lead_'+ leadcounter +'_email',
                 'data-name': 'path_two_new_lead_'+ leadcounter +'_email',
                 id: 'path_two_new_lead_'+ leadcounter +'_email',
-                maxlength: '256',
+                maxlength: '256',placeholder: 'Email',
                 required: 'required',
-                placeholder: 'Email'
             })
         ),
         $('<div>', { class: 'form-wrapper exception-horizontal',}).append(
@@ -217,7 +216,7 @@ $(document).ready(function() {
                     style: 'opacity:0;position:absolute;z-index:-1',
                     'contact_option':'' , '_check':'' ,
                     'data-group':'new_lead_'+ leadcounter,
-                    required: 'required',checked: 'checked'
+                    required: 'required'
                 }),
                 $('<span>', {
                     class:'span-invi w-form-label',
@@ -231,9 +230,8 @@ $(document).ready(function() {
                 name: 'path_two_new_lead_'+ leadcounter +'_phone',
                 'data-name': 'path_two_new_lead_'+ leadcounter +'_phone',
                 id: 'path_two_new_lead_'+ leadcounter +'_phone',
-                maxlength: '256',
-                required: 'required',
-                placeholder: 'Phone'
+                maxlength: '15',placeholder: 'Phone',
+                required: 'required'
             })
         )
         )
