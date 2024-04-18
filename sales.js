@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // ------------ triggers after profile loaded
-    $('input[name="client-count"]').val('0');
+    $('input[name="client_count"]').val('0');
     $('input[name="registration_type"]').on('change', function() {
         if( $(this).val() === "path_one" ) {
         $('input[path_two]').val('');$('input[path_two]').removeAttr('required');
@@ -240,7 +240,7 @@ $(document).ready(function() {
     if (leadcounter > min) {
     $('.lead-add-remove[trigger-re-add-lead]').removeClass('disabled');
     }
-    $('input[name="client-count"]').val(leadcounter);
+    $('input[name="client_count"]').val(leadcounter);
     } else {alert("Maximum of 5 leads per submission")}}
     
     function addlead_remove(min) {
@@ -255,7 +255,7 @@ $(document).ready(function() {
     if (leadcounter < 5) {
     $('.lead-add-remove[trigger-add-lead]').removeClass('disabled');
     }
-    $('input[name="client-count"]').val(leadcounter);
+    $('input[name="client_count"]').val(leadcounter);
     }
     
     function addlead_reset() {
@@ -263,7 +263,7 @@ $(document).ready(function() {
     $('.form-wrapper[data-lead-container]').empty();
     addlead_min = 0;
     leadcounter = 0; // Reset counter
-    $('input[name="client-count"]').val(leadcounter);
+    $('input[name="client_count"]').val(leadcounter);
     }
     
     $('[trigger-add-lead]').on('click', function() { 
