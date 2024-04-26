@@ -148,6 +148,8 @@ $("input[name='formPage']").val('Press');
 $("input[name='formPage']").val('Customer Registration');
 } else if (url.includes('/sales-registration')) {
 $("input[name='formPage']").val('Sales Registration');
+} else if (url.includes('/downloads') || url.includes('/descargas') || url.includes('/baixar')) {
+$("input[name='formPage']").val('Downloads');
 } else { $("input[name='formPage']").val('Home'); }
 
 // HIDDEN stuff
