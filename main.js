@@ -20,7 +20,7 @@ $("input[name='ip']").val(data.ip);
 // --- actions
 $(document).ready(function() {
 // WEBSITE CODE VERSION
-let codeVer = '240405 0.0.0';
+let codeVer = '240426 0.0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -148,7 +148,7 @@ $("input[name='formPage']").val('Press');
 $("input[name='formPage']").val('Customer Registration');
 } else if (url.includes('/sales-registration')) {
 $("input[name='formPage']").val('Sales Registration');
-} else if (url.includes('/downloads') || url.includes('/descargas') || url.includes('/baixar')) {
+} else if (url.includes('/downloads') || url.includes('/descargas') || url.includes('/downloads')) {
 $("input[name='formPage']").val('Downloads');
 } else { $("input[name='formPage']").val('Home'); }
 
