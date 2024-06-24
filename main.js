@@ -20,7 +20,7 @@ $("input[name='ip']").val(data.ip);
 // --- actions
 $(document).ready(function() {
 // WEBSITE CODE VERSION
-let codeVer = '240624 0.1.0';
+let codeVer = '240624 0.1.1';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -191,9 +191,9 @@ Cookies.set("utm", JSON.stringify(utm) , {expires:30})
 //==== PHONE NUMBER FILTER ====//
 
 if (!(Cookies.get('utm') == null) || !(Cookies.get('utm') == undefined)) {
-source = source.toLowerCase();
-medium = medium.toLowerCase();
-campaign = campaign.toLowerCase();
+source = Cookies.get('utm').source.toLowerCase();
+medium = Cookies.get('utm').medium.toLowerCase();
+campaign = Cookies.get('utm').campaign.toLowerCase();
 
 //---- GOOGLE
 if (source == 'google') {
