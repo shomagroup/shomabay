@@ -191,8 +191,12 @@ Cookies.set("utm", JSON.stringify(utm) , {expires:30})
 //==== PHONE NUMBER FILTER ====//
 
 //---- GOOGLE
-if (Cookies.get('source') == 'google') {
-    if (Cookies.get('medium') == 'paid') {
+let source = Cookies.get('source').toLowerCase();
+let medium = Cookies.get('medium').toLowerCase();
+let campaign = Cookies.get('campaign').toLowerCase();
+
+if (source == 'google') {
+    if (medium == 'cpc' || medium == 'paid') {
         //- Paid
         $('[phoneNum]').attr('href', 'tel:+17863860647');
         $('[phoneTx]').text('786-386-0647');
@@ -202,52 +206,36 @@ if (Cookies.get('source') == 'google') {
         $('[phoneTx]').text('786-882-5350');
         //-------------
     }
-} else if ($("input[name='utm_source']").is("[value='facebook']")) {
+} else if (source == 'facebook') {
     //---- FACEBOOK
-    if ($("input[name='utm_medium']").is("[value='socialmedia']")) {
-        //---- FACEBOOK SOCIALMEDIA
-        $('[phoneNum]').attr('href', 'tel:+17868826213');
-        $('[phoneTx]').text('786-882-6213');
+    if (medium == 'paid') {
         //----- FACEBOOK AD
-    } else {
         $('[phoneNum]').attr('href', 'tel:+17868768185');
         $('[phoneTx]').text('786-876-8185');
-    }
     //-------------
-} else if ($("input[name='utm_source']").is("[value='eblast']")) {
+} else if (source == 'eblast') {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+17868861787');
     $('[phoneTx]').text('786-886-1787');
     //-------------
     //---- SOCIAL MEDIA ----//
-} else if ($("input[name='utm_source']").is("[value='fence']")) {
+} else if (source == 'fence') {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+7868823098');
     $('[phoneTx]').text('786-882-3098');
     //-------------
     //---- SOCIAL MEDIA ----//
-} else if ($("input[name='utm_medium']").is("[value='socialmedia']")) {
+} else if (source == 'socials') {
+
     $('[phoneNum]').attr('href', 'tel:+17868826213');
     $('[phoneTx]').text('786-882-6213');
-    // } else if ($("input[name='utm_source']").is("[value*='instagram']")) {
-    //     //---- INSTAGRAM
-    //     $('[phoneNum]').attr('href', 'tel:+17868826213');
-    //     //-------------
-    // } else if ($("input[name='utm_source']").is("[value*='tiktok']")) {
-    //     //---- TIKTOK
-    //     $('[phoneNum]').attr('href', 'tel:+17868826213');
-    //     //-------------
-    // } else if ($("input[name='utm_source']").is("[value*='youtube']")) {
-    //     //---- YOUTUBE
-    //     $('[phoneNum]').attr('href', 'tel:+17868826213');
-    //     //-------------
-} else if ($("input[name='utm_source']").is("[value*='printed']")) {
-    //---- PRINTED MATERIALS
-    $('[phoneNum]').attr('href', 'tel:+17868337421');
-    $('[phoneTx]').text('786-833-7421');
-    //-------------
-} else if ($("input[name='utm_source']").is("[value*='mailer']")) {
-    //---- DIRECT MAILER
+
+} else if (source == 'printed materials') {
+    if (medium == 'shomabazaar') {
+    $('[phoneNum]').attr('href', 'tel:+17869339872');
+    $('[phoneTx]').text('786-933-9872');
+    }
+    //---- ALL PRINTED MATERIALS
     $('[phoneNum]').attr('href', 'tel:+17868337421');
     $('[phoneTx]').text('786-833-7421');
     //-------------
