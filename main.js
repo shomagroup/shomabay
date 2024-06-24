@@ -190,11 +190,12 @@ Cookies.set("utm", JSON.stringify(utm) , {expires:30})
 
 //==== PHONE NUMBER FILTER ====//
 
-//---- GOOGLE
+if (Cookies.get('utm').length) {
 source = source.toLowerCase();
 medium = medium.toLowerCase();
 campaign = campaign.toLowerCase();
 
+//---- GOOGLE
 if (source == 'google') {
     if (medium == 'cpc' || medium == 'paid') {
         //- Paid
@@ -247,8 +248,7 @@ if (source == 'google') {
     $('[phoneNum]').attr('href', 'tel:+17868825887');
     $('[phoneTx]').text('786-882-5887');
 }
-
-//
+}
 
 
 var newpop = 'visitus-240125';
