@@ -212,6 +212,7 @@ if (source == 'google') {
         //----- FACEBOOK AD
         $('[phoneNum]').attr('href', 'tel:+17868768185');
         $('[phoneTx]').text('786-876-8185');
+    }
     //-------------
 } else if (source == 'eblast') {
     //---- EBLAST
@@ -235,9 +236,11 @@ if (source == 'google') {
     $('[phoneNum]').attr('href', 'tel:+17869339872');
     $('[phoneTx]').text('786-933-9872');
     }
+    else {
     //---- ALL PRINTED MATERIALS
     $('[phoneNum]').attr('href', 'tel:+17868337421');
     $('[phoneTx]').text('786-833-7421');
+    }
     //-------------
 } else {
     //---- PROPERTY WEBSITE
