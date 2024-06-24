@@ -190,7 +190,7 @@ Cookies.set("utm", JSON.stringify(utm) , {expires:30})
 
 //==== PHONE NUMBER FILTER ====//
 
-if (Cookies.get('utm').length) {
+if (!(Cookies.get('utm') == null) || !(Cookies.get('utm') == undefined)) {
 source = source.toLowerCase();
 medium = medium.toLowerCase();
 campaign = campaign.toLowerCase();
