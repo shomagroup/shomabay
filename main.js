@@ -191,9 +191,9 @@ Cookies.set("utm", JSON.stringify(utm) , {expires:30})
 //==== PHONE NUMBER FILTER ====//
 
 //---- GOOGLE
-let source = Cookies.get('source').toLowerCase();
-let medium = Cookies.get('medium').toLowerCase();
-let campaign = Cookies.get('campaign').toLowerCase();
+source = source.toLowerCase();
+medium = medium.toLowerCase();
+campaign = campaign.toLowerCase();
 
 if (source == 'google') {
     if (medium == 'cpc' || medium == 'paid') {
