@@ -80,6 +80,12 @@ $("input[name='utm_source']").val(JSON.parse(Cookies.get('utm')).source);
 $("input[name='utm_medium']").val(JSON.parse(Cookies.get('utm')).medium);
 $("input[name='utm_campaign']").val(JSON.parse(Cookies.get('utm')).campaign);
 $("input[name='utm_term']").val(JSON.parse(Cookies.get('utm')).term);
+} else if (url.includes('gclid')) {
+    $("input[name='utm_id']").val('Google / Paid / ⠀');
+    $("input[name='utm_source']").val('Google'); 
+    $("input[name='utm_medium']").val('Paid'); 
+    $("input[name='utm_campaign']").val('⠀'); 
+    $("input[name='utm_term']").val('⠀'); 
 } else { // ------------------------------------------------------ UTM IS EMPTY
 $("input[name='utm_id']").val('Direct / ⠀ / ⠀');
 $("input[name='utm_source']").val('Direct'); 
