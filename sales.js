@@ -118,6 +118,8 @@ $(document).ready(function() {
         $('select[name="utm_select"]').on('change', function() {
         if ($(this).find('option:selected').val() !== '' &&  $(this).find('option:selected').val() !== "SellingBrokers") {
         $('input[name="utm_dynamic"]').addClass('open').attr('require',true);
+        } else if ($(this).find('option:selected').val() == "SellingBrokers") {
+            $('input[name="utm_dynamic"]').val('MLS Broker List');
         } else { 
         $('input[name="utm_dynamic"]').removeClass('open');
         $('input[name="utm_dynamic"]').removeAttr('require');
