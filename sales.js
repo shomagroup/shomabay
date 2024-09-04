@@ -119,10 +119,11 @@ $(document).ready(function() {
             $('input[name="utm_dynamic"]').removeClass('open');
             $('input[name="utm_dynamic"]').removeAttr('require');
             $('input[name="utm_dynamic"]').val('');
-        if ($(this).find('option:selected').val() !== '' &&  $(this).find('option:selected').val() !== "SellingBrokers") {
+        if ($(this).find('option:selected').val() !== '') {
         $('input[name="utm_dynamic"]').addClass('open').attr('require',true);
-        } else if ($(this).find('option:selected').val() == "SellingBrokers") {
+        if ($(this).find('option:selected').val() == "SellingBrokers") {
             $('input[name="utm_dynamic"]').val('MLS Broker List');
+        }
         }
         });
         
