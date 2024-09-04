@@ -116,15 +116,13 @@ $(document).ready(function() {
         });// pathtwo agent end
         
         $('select[name="utm_select"]').on('change', function() {
-        $('input[name="utm_dynamic"]').val('');
+            $('input[name="utm_dynamic"]').removeClass('open');
+            $('input[name="utm_dynamic"]').removeAttr('require');
+            $('input[name="utm_dynamic"]').val('');
         if ($(this).find('option:selected').val() !== '' &&  $(this).find('option:selected').val() !== "SellingBrokers") {
         $('input[name="utm_dynamic"]').addClass('open').attr('require',true);
         } else if ($(this).find('option:selected').val() == "SellingBrokers") {
             $('input[name="utm_dynamic"]').val('MLS Broker List');
-        } else { 
-        $('input[name="utm_dynamic"]').removeClass('open');
-        $('input[name="utm_dynamic"]').removeAttr('require');
-        $('input[name="utm_dynamic"]').val('');
         }
         });
         
