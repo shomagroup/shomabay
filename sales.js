@@ -116,6 +116,7 @@ $(document).ready(function() {
         });// pathtwo agent end
         
         $('select[name="utm_select"]').on('change', function() {
+        $('input[name="utm_dynamic"]').val('');
         if ($(this).find('option:selected').val() !== '' &&  $(this).find('option:selected').val() !== "SellingBrokers") {
         $('input[name="utm_dynamic"]').addClass('open').attr('require',true);
         } else if ($(this).find('option:selected').val() == "SellingBrokers") {
