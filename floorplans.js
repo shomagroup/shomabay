@@ -11,19 +11,19 @@ $('.fp-control-link').on('click', function() {
     }
 
     if ($('.fp-control-link[studio]').is('.active')) {
-        $('.floorplan[studio]').addClass('active');
+        $('.floorplan[fp="studio"]').addClass('active');
     }
     if ($('.fp-control-link[bed-1]').is('.active')) {
-        $('.floorplan[bed-1]').addClass('active');
+        $('.floorplan[fp="bed-1"]').addClass('active');
     }
     if ($('.fp-control-link[bed-2]').is('.active')) {
-        $('.floorplan[bed-2]').addClass('active');
+        $('.floorplan[fp="bed-2"]').addClass('active');
     }
     if ($('.fp-control-link[bed-3]').is('.active')) {
-        $('.floorplan[bed-3]').addClass('active');
+        $('.floorplan[fp="bed-3"]').addClass('active');
     }
     if ($('.fp-control-link[penth]').is('.active')) {
-        $('.floorplan[penth]').addClass('active');
+        $('.floorplan[fp="penth"]').addClass('active');
     }
 
     if (!$('.floorplan.active').length) {
