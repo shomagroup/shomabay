@@ -109,7 +109,7 @@ $(document).ready(function() {
         $(`input[path_${unchosen}]`).val('');
         $(`input[path_${unchosen}][req_agent]`).attr('required',false);
         $(`input[path_${unchosen}][req_agent]`).attr('readonly',true);
-        $(`input[path_${unchosen}][_check_agent]`).prop('checked', false);
+        $(`input[path_${unchosen}][_check_agent]`).prop('checked',false);
         $(`input[path_${unchosen}][_check_agent]`)
         .siblings("div.multi-option").removeClass("w--redirected-checked");
         
