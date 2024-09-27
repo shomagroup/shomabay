@@ -120,7 +120,8 @@ $(document).ready(function() {
             $('input[name="utm_dynamic"]').removeAttr('require');
             $('input[name="utm_dynamic"]').val('');
         if ($(this).find('option:selected').val() !== "") {
-        $('input[name="utm_dynamic"]').addClass('open').attr('require',true);
+        $('input[name="utm_dynamic"]').addClass('open');
+        $('input[name="utm_dynamic"]').attr('require',true);
         }});
         
         // message handler
