@@ -259,7 +259,7 @@ if (source == 'google') {
 
 
 var newpop = 'visitus-240125';
-if ( Cookies.get('ann-seen') == newpop ) {
+if ( Cookies.get('ann-seen') == newpop || window.location.href.indexOf("#contact-form") === -1) {
 $('.popup-announcement').addClass('close');
 } else {
 $('.popup-announcement').removeClass('close');
