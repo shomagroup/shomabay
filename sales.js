@@ -125,7 +125,7 @@ $(window).on('load', function() {
         }});
         
         // message handler
-        $('input[name="message"]').on('input', function() {
+        $('input[name="message"]').on('input change' , function() {
         if ( $(this).val() === '' ) {
         $('input[name="message_send"]').val('');
         } else {
