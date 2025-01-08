@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    // ------------ triggers after profile loaded
+$(window).on('load', function() {
+        // ------------ triggers after profile loaded
     $('input[name="client_count"]').val('0');
     $('input[name="registration_type"]').on('change', function() {
         if( $(this).val() === "path_one" ) {
