@@ -124,7 +124,14 @@ $(window).on('load', function() {
         $('input[name="utm_dynamic"]').attr('required',true);
         }});
         
-        
+        // message handler
+        $('input[name="message"]').on('input change' , function() {
+        if ( $(this).val() === '' ) {
+        $('input[name="message_send"]').val('');
+        } else {
+        $('input[name="message_send"]').val( user.signature + $(this).val() );
+        }
+        });
     
     
     // ---------- Lead Adder Start
