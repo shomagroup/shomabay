@@ -119,7 +119,7 @@ $(window).on('load', function() {
             $('input[name="utm_dynamic"]').removeClass('open');
             $('input[name="utm_dynamic"]').removeAttr('required');
             $('input[name="utm_dynamic"]').val('');
-        if ($(this).find('option:selected').val() !== "") {
+        if (($(this).find('option:selected').val() !== "") || ($(this).find('option:selected').val() !== "Lawyers")) {
         $('input[name="utm_dynamic"]').addClass('open');
         $('input[name="utm_dynamic"]').attr('required',true);
         }});
