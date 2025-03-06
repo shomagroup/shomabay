@@ -196,11 +196,11 @@ function trackUTM() {
     if (Cookies.get('utm') && Cookies.get('utm') !== undefined) {
         var utmData = JSON.parse(Cookies.get('utm'));
         return {
-            source: utmData.source.toLowerCase(),
-            medium: utmData.medium.toLowerCase(),
-            campaign: utmData.campaign.toLowerCase(),
-            term: utmData.term.toLowerCase(),
-            id: utmData.id.toLowerCase()
+            "source": utmData.source.toLowerCase(),
+            "medium": utmData.medium.toLowerCase(),
+            "campaign": utmData.campaign.toLowerCase(),
+            "term": utmData.term.toLowerCase(),
+            "id": utmData.id.toLowerCase()
         };
     }
     
