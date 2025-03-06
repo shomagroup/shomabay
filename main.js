@@ -17,7 +17,7 @@ $("input[name='ip']").val(data.ip);
 // --- actions
 $(document).ready(function() {
 // WEBSITE CODE VERSION
-let codeVer = '250305 0.0.1';
+let codeVer = '250301 0.0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
@@ -181,27 +181,26 @@ function trackUTM() {
         
         var utm_id = source + ' / ' + medium + ' / ' + campaign;
         var utm = {
-            "usource": source,
-            "umedium": medium,
-            "ucampaign": campaign,
-            "uterm": term,
-            "uid": utm_id
+            "source": source,
+            "medium": medium,
+            "campaign": campaign,
+            "term": term,
+            "id": utm_id
         };
 
         // Set cookie for 30 days
         Cookies.set("utm", JSON.stringify(utm), { expires: 30 });
     }
 
-    // Return UTM values if cookie exists
-    if (Cookies.get('utm') && Cookies.get('utm') !== undefined) {
+    // Return UTM values 
         var utmData = JSON.parse(Cookies.get('utm'));
         return {
-            "source": utmData.usource.toLowerCase(),
-            "medium": utmData.umedium.toLowerCase(),
-            "campaign": utmData.ucampaign.toLowerCase(),
-            "term": utmData.uterm.toLowerCase(),
-            "id": utmData.uid.toLowerCase()
-        };
+            "source": utmData.source.toLowerCase() || "",
+            "medium": utmData.medium.toLowerCase() || "",
+            "campaign": utmData.campaign.toLowerCase() || "",
+            "term": utmData.term.toLowerCase() || "",
+            "id": utmData.id.toLowerCase() || ""
+
     }
     
     return null; // Return null if no UTM data exists
@@ -209,8 +208,8 @@ function trackUTM() {
 
 
 //---- GOOGLE
-if (usource == 'google') {
-    if (umedium == 'cpc' || umedium == 'paid') {
+if (source == 'google') {
+    if (medium == 'cpc' || medium == 'paid') {
         //- Paid
         $('[phoneNum]').attr('href', 'tel:+17863860647');
         $('[phoneTx]').text('786-386-0647');
@@ -220,33 +219,33 @@ if (usource == 'google') {
         $('[phoneTx]').text('786-882-5350');
         //-------------
     }
-} else if (usource == 'facebook') {
+} else if (source == 'facebook') {
     //---- FACEBOOK
-    if (umedium == 'paid') {
+    if (medium == 'paid') {
         //----- FACEBOOK AD
         $('[phoneNum]').attr('href', 'tel:+17868768185');
         $('[phoneTx]').text('786-876-8185');
     }
     //-------------
-} else if (usource == 'eblast') {
+} else if (source == 'eblast') {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+17868861787');
     $('[phoneTx]').text('786-886-1787');
     //-------------
     //---- SOCIAL MEDIA ----//
-} else if (usource == 'fence') {
+} else if (source == 'fence') {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+7868823098');
     $('[phoneTx]').text('786-882-3098');
     //-------------
     //---- SOCIAL MEDIA ----//
-} else if (usource == 'socials') {
+} else if (source == 'socials') {
 
     $('[phoneNum]').attr('href', 'tel:+17868826213');
     $('[phoneTx]').text('786-882-6213');
 
-} else if (usource == 'printed materials') {
-    if (umedium == 'shomabazaar') {
+} else if (source == 'printed materials') {
+    if (medium == 'shomabazaar') {
     $('[phoneNum]').attr('href', 'tel:+17869339872');
     $('[phoneTx]').text('786-933-9872');
     }
