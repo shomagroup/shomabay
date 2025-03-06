@@ -162,44 +162,53 @@ $("input[name='formPage']").val('Downloads');
 $('.hidden-form-fields:not(.show) input').attr('type', 'hidden');
 $('.hidden-form-fields input').attr('readonly', 'readonly');
 
-// === UTM TRACKER === //
-$.urlParam = function(name) {
-var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
-if (results == null) { return null; } else { return results[1] || 0; }
-}
-// var inTwoMins = new Date(new Date().getTime() + 2 * 60 * 1000);
-//cookie setter
-if (!($.urlParam('utm_source') == null) && !($.urlParam('utm_source') == "") && !($.urlParam('utm_source') == undefined) ) {
-var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
-// source, exist
-if (!($.urlParam('utm_medium') == null) && !($.urlParam('utm_medium') == "")  && !($.urlParam('utm_medium') == undefined) ) {
-var medium = $.urlParam('utm_medium').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
-} else { var medium = "⠀"}
-if (!($.urlParam('utm_campaign') == null) && !($.urlParam('utm_campaign') == "") && !($.urlParam('utm_campaign') == undefined)  ) {
-var campaign = $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
-} else {var campaign = "⠀"}
-if (!($.urlParam('utm_term') == null) && !($.urlParam('utm_term') == "") && !($.urlParam('utm_term') == undefined)  ) {
-var term = $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
-} else {var term = "⠀"}
-var utm_id = source+' / '+medium+' / '+campaign;
-var utm = {
-    "source": source,
-    "medium": medium,
-    "campaign": campaign,
-    "term": term,
-    "id": utm_id
-}
-Cookies.set("utm", JSON.stringify(utm) , {expires:30})
-}
+function trackUTM() {
+    // URL parameter parser
+    $.urlParam = function(name) {
+        var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
+        return results == null ? null : (results[1] || 0);
+    };
 
-//
+    // Set UTM cookie if parameters exist in URL
+    if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('utm_source') !== undefined) {
+        var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
+        var medium = ($.urlParam('utm_medium') && $.urlParam('utm_medium') !== "" && $.urlParam('utm_medium') !== undefined) 
+            ? $.urlParam('utm_medium').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
+            : "⠀";
+        var campaign = ($.urlParam('utm_campaign') && $.urlParam('utm_campaign') !== "" && $.urlParam('utm_campaign') !== undefined) 
+            ? $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
+            : "⠀";
+        var term = ($.urlParam('utm_term') && $.urlParam('utm_term') !== "" && $.urlParam('utm_term') !== undefined) 
+            ? $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
+            : "⠀";
+        
+        var utm_id = source + ' / ' + medium + ' / ' + campaign;
+        var utm = {
+            "source": source,
+            "medium": medium,
+            "campaign": campaign,
+            "term": term,
+            "id": utm_id
+        };
 
-//==== PHONE NUMBER FILTER ====//
+        // Set cookie for 30 days
+        Cookies.set("utm", JSON.stringify(utm), { expires: 30 });
+    }
 
-if (!(Cookies.get('utm') == null) || !(Cookies.get('utm') == undefined)) {
-    source = JSON.parse(Cookies.get('utm')).source.toLowerCase();
-    medium = JSON.parse(Cookies.get('utm')).medium.toLowerCase();
-    campaign = JSON.parse(Cookies.get('utm')).campaign.toLowerCase();
+    // Return UTM values if cookie exists
+    if (Cookies.get('utm') && Cookies.get('utm') !== undefined) {
+        var utmData = JSON.parse(Cookies.get('utm'));
+        return {
+            source: utmData.source.toLowerCase(),
+            medium: utmData.medium.toLowerCase(),
+            campaign: utmData.campaign.toLowerCase(),
+            term: utmData.term.toLowerCase(),
+            id: utmData.id.toLowerCase()
+        };
+    }
+    
+    return null; // Return null if no UTM data exists
+}; trackUTM();
 
 
 //---- GOOGLE
