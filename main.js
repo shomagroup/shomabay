@@ -264,7 +264,7 @@ if (source == 'google') {
     $('[phoneNum]').attr('href', 'tel:+17868825887');
     $('[phoneTx]').text('786-882-5887');
 }
-}
+
 
 
 var newpop = 'visitus-240125';
