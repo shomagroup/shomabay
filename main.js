@@ -209,8 +209,8 @@ function trackUTM() {
 
 
 //---- GOOGLE
-if (source == 'google') {
-    if (medium == 'cpc' || medium == 'paid') {
+if (usource == 'google') {
+    if (umedium == 'cpc' || umedium == 'paid') {
         //- Paid
         $('[phoneNum]').attr('href', 'tel:+17863860647');
         $('[phoneTx]').text('786-386-0647');
@@ -220,33 +220,33 @@ if (source == 'google') {
         $('[phoneTx]').text('786-882-5350');
         //-------------
     }
-} else if (source == 'facebook') {
+} else if (usource == 'facebook') {
     //---- FACEBOOK
-    if (medium == 'paid') {
+    if (umedium == 'paid') {
         //----- FACEBOOK AD
         $('[phoneNum]').attr('href', 'tel:+17868768185');
         $('[phoneTx]').text('786-876-8185');
     }
     //-------------
-} else if (source == 'eblast') {
+} else if (usource == 'eblast') {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+17868861787');
     $('[phoneTx]').text('786-886-1787');
     //-------------
     //---- SOCIAL MEDIA ----//
-} else if (source == 'fence') {
+} else if (usource == 'fence') {
     //---- EBLAST
     $('[phoneNum]').attr('href', 'tel:+7868823098');
     $('[phoneTx]').text('786-882-3098');
     //-------------
     //---- SOCIAL MEDIA ----//
-} else if (source == 'socials') {
+} else if (usource == 'socials') {
 
     $('[phoneNum]').attr('href', 'tel:+17868826213');
     $('[phoneTx]').text('786-882-6213');
 
-} else if (source == 'printed materials') {
-    if (medium == 'shomabazaar') {
+} else if (usource == 'printed materials') {
+    if (umedium == 'shomabazaar') {
     $('[phoneNum]').attr('href', 'tel:+17869339872');
     $('[phoneTx]').text('786-933-9872');
     }
