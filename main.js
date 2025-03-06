@@ -17,7 +17,7 @@ $("input[name='ip']").val(data.ip);
 // --- actions
 $(document).ready(function() {
 // WEBSITE CODE VERSION
-let codeVer = '241001 0.0.0';
+let codeVer = '250305 0.0.0';
 console.log(codeVer);
 $('div.codever').text(codeVer);
 
