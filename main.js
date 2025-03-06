@@ -181,11 +181,11 @@ function trackUTM() {
         
         var utm_id = source + ' / ' + medium + ' / ' + campaign;
         var utm = {
-            "source": source,
-            "medium": medium,
-            "campaign": campaign,
-            "term": term,
-            "id": utm_id
+            "usource": source,
+            "umedium": medium,
+            "ucampaign": campaign,
+            "uterm": term,
+            "uid": utm_id
         };
 
         // Set cookie for 30 days
@@ -196,11 +196,11 @@ function trackUTM() {
     if (Cookies.get('utm') && Cookies.get('utm') !== undefined) {
         var utmData = JSON.parse(Cookies.get('utm'));
         return {
-            "source": utmData.source.toLowerCase(),
-            "medium": utmData.medium.toLowerCase(),
-            "campaign": utmData.campaign.toLowerCase(),
-            "term": utmData.term.toLowerCase(),
-            "id": utmData.id.toLowerCase()
+            "source": utmData.usource.toLowerCase(),
+            "medium": utmData.umedium.toLowerCase(),
+            "campaign": utmData.ucampaign.toLowerCase(),
+            "term": utmData.uterm.toLowerCase(),
+            "id": utmData.uid.toLowerCase()
         };
     }
     
