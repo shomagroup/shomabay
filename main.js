@@ -1,6 +1,3 @@
-// ----------- Define callbacks
-const url = window.location.href;
-
 // locator setup
 function locator() {
 if (navigator.geolocation) {
