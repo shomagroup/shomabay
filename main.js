@@ -1,3 +1,59 @@
+function trackUTM() {
+    // URL parameter parser
+    $.urlParam = function(name) {
+        var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
+        return results == null ? null : (results[1] || 0);
+    };
+
+    // Set UTM cookie if parameters exist in URL
+    if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('utm_source') !== undefined) {
+        var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
+        var medium = ($.urlParam('utm_medium') && $.urlParam('utm_medium') !== "" && $.urlParam('utm_medium') !== undefined) 
+            ? $.urlParam('utm_medium').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
+            : "⠀";
+        var campaign = ($.urlParam('utm_campaign') && $.urlParam('utm_campaign') !== "" && $.urlParam('utm_campaign') !== undefined) 
+            ? $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
+            : "⠀";
+        var term = ($.urlParam('utm_term') && $.urlParam('utm_term') !== "" && $.urlParam('utm_term') !== undefined) 
+            ? $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
+            : "⠀";
+        
+        var utm_id = source + ' / ' + medium + ' / ' + campaign;
+        var utm = {
+            "source": source,
+            "medium": medium,
+            "campaign": campaign,
+            "term": term,
+            "id": utm_id
+        };
+
+        // Set cookie for 30 days
+        Cookies.set("utm", JSON.stringify(utm), { expires: 30 });
+    }
+
+    // Return UTM values with error handling
+    const utmCookie = Cookies.get('utm');
+    let utmData = {};
+
+    if (utmCookie) {
+        try {
+            utmData = JSON.parse(utmCookie) || {};
+        } catch (error) {
+            console.error('Error parsing UTM cookie:', error);
+            utmData = {}; // Fallback to empty object
+        }
+    }
+
+    return {
+        "source": (utmData.source || '').toLowerCase(),
+        "medium": (utmData.medium || '').toLowerCase(),
+        "campaign": (utmData.campaign || '').toLowerCase(),
+        "term": (utmData.term || '').toLowerCase(),
+        "id": (utmData.id || '').toLowerCase()
+    };
+}
+
+// Call the function (optional, depending on your setup)
 // locator setup
 function locator() {
     if (navigator.geolocation) {
@@ -159,62 +215,7 @@ function locator() {
     $('.hidden-form-fields:not(.show) input').attr('type', 'hidden');
     $('.hidden-form-fields input').attr('readonly', 'readonly');
     
-    function trackUTM() {
-        // URL parameter parser
-        $.urlParam = function(name) {
-            var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
-            return results == null ? null : (results[1] || 0);
-        };
-    
-        // Set UTM cookie if parameters exist in URL
-        if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('utm_source') !== undefined) {
-            var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
-            var medium = ($.urlParam('utm_medium') && $.urlParam('utm_medium') !== "" && $.urlParam('utm_medium') !== undefined) 
-                ? $.urlParam('utm_medium').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
-                : "⠀";
-            var campaign = ($.urlParam('utm_campaign') && $.urlParam('utm_campaign') !== "" && $.urlParam('utm_campaign') !== undefined) 
-                ? $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
-                : "⠀";
-            var term = ($.urlParam('utm_term') && $.urlParam('utm_term') !== "" && $.urlParam('utm_term') !== undefined) 
-                ? $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
-                : "⠀";
-            
-            var utm_id = source + ' / ' + medium + ' / ' + campaign;
-            var utm = {
-                "source": source,
-                "medium": medium,
-                "campaign": campaign,
-                "term": term,
-                "id": utm_id
-            };
-    
-            // Set cookie for 30 days
-            Cookies.set("utm", JSON.stringify(utm), { expires: 30 });
-        }
-    
-        // Return UTM values with error handling
-        const utmCookie = Cookies.get('utm');
-        let utmData = {};
-    
-        if (utmCookie) {
-            try {
-                utmData = JSON.parse(utmCookie) || {};
-            } catch (error) {
-                console.error('Error parsing UTM cookie:', error);
-                utmData = {}; // Fallback to empty object
-            }
-        }
-    
-        return {
-            "source": (utmData.source || '').toLowerCase(),
-            "medium": (utmData.medium || '').toLowerCase(),
-            "campaign": (utmData.campaign || '').toLowerCase(),
-            "term": (utmData.term || '').toLowerCase(),
-            "id": (utmData.id || '').toLowerCase()
-        };
-    }
-    
-    // Call the function (optional, depending on your setup)
+ 
     trackUTM();
     
     
