@@ -192,21 +192,30 @@ function trackUTM() {
         Cookies.set("utm", JSON.stringify(utm), { expires: 30 });
     }
 
-    // Return UTM values 
-    
-    var utmCookie = Cookies.get('utm');
-    let utmData = JSON.parse(utmCookie);
-        return {
-            "source": utmData.source.toLowerCase() || "",
-            "medium": utmData.medium.toLowerCase() || "",
-            "campaign": utmData.campaign.toLowerCase() || "",
-            "term": utmData.term.toLowerCase() || "",
-            "id": utmData.id.toLowerCase() || ""
+    // Return UTM values with error handling
+    const utmCookie = Cookies.get('utm');
+    let utmData = {};
 
+    if (utmCookie) {
+        try {
+            utmData = JSON.parse(utmCookie) || {};
+        } catch (error) {
+            console.error('Error parsing UTM cookie:', error);
+            utmData = {}; // Fallback to empty object
+        }
     }
-    
-    return null; // Return null if no UTM data exists
-}; trackUTM();
+
+    return {
+        "source": (utmData.source || '').toLowerCase(),
+        "medium": (utmData.medium || '').toLowerCase(),
+        "campaign": (utmData.campaign || '').toLowerCase(),
+        "term": (utmData.term || '').toLowerCase(),
+        "id": (utmData.id || '').toLowerCase()
+    };
+}
+
+// Call the function (optional, depending on your setup)
+trackUTM();
 
 
 //---- GOOGLE
