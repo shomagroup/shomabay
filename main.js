@@ -193,8 +193,9 @@ function trackUTM() {
     }
 
     // Return UTM values 
+    
     var utmCookie = Cookies.get('utm');
-    utmData = JSON.parse(utmCookie);
+    let utmData = JSON.parse(utmCookie);
         return {
             "source": utmData.source.toLowerCase() || "",
             "medium": utmData.medium.toLowerCase() || "",
