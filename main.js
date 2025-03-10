@@ -19,7 +19,7 @@ function trackUTM() {
     return results == null ? null : (results[1] || 0);
     };
     
-// Set UTM cookie if parameters exist in URL
+    if (!Cookies.get("utm")) {
 if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('utm_source') !== undefined) {
    	var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
     var medium = ($.urlParam('utm_medium') && $.urlParam('utm_medium') !== "" && $.urlParam('utm_medium') !== undefined) 
@@ -42,6 +42,7 @@ if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('u
 // Set cookie for 30 days
      Cookies.set("utm", JSON.stringify(utm), { expires: 30 });
      }
+    }
 // Return UTM values with error handling
      var utmCookie = JSON.parse(Cookies.get('utm'));
      if (utmCookie.source == 'google') {
