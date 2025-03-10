@@ -1,59 +1,3 @@
-function trackUTM() {
-    // URL parameter parser
-    $.urlParam = function(name) {
-        var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
-        return results == null ? null : (results[1] || 0);
-    };
-
-    // Set UTM cookie if parameters exist in URL
-    if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('utm_source') !== undefined) {
-        var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
-        var medium = ($.urlParam('utm_medium') && $.urlParam('utm_medium') !== "" && $.urlParam('utm_medium') !== undefined) 
-            ? $.urlParam('utm_medium').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
-            : "⠀";
-        var campaign = ($.urlParam('utm_campaign') && $.urlParam('utm_campaign') !== "" && $.urlParam('utm_campaign') !== undefined) 
-            ? $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
-            : "⠀";
-        var term = ($.urlParam('utm_term') && $.urlParam('utm_term') !== "" && $.urlParam('utm_term') !== undefined) 
-            ? $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
-            : "⠀";
-        
-        var utm_id = source + ' / ' + medium + ' / ' + campaign;
-        var utm = {
-            "source": source,
-            "medium": medium,
-            "campaign": campaign,
-            "term": term,
-            "id": utm_id
-        };
-
-        // Set cookie for 30 days
-        Cookies.set("utm", JSON.stringify(utm), { expires: 30 });
-    }
-
-    // Return UTM values with error handling
-    const utmCookie = Cookies.get('utm');
-    let utmData = {};
-
-    if (utmCookie) {
-        try {
-            utmData = JSON.parse(utmCookie) || {};
-        } catch (error) {
-            console.error('Error parsing UTM cookie:', error);
-            utmData = {}; // Fallback to empty object
-        }
-    }
-
-    return {
-        "source": (utmData.source || '').toLowerCase(),
-        "medium": (utmData.medium || '').toLowerCase(),
-        "campaign": (utmData.campaign || '').toLowerCase(),
-        "term": (utmData.term || '').toLowerCase(),
-        "id": (utmData.id || '').toLowerCase()
-    };
-}
-
-// Call the function (optional, depending on your setup)
 // locator setup
 function locator() {
     if (navigator.geolocation) {
@@ -67,16 +11,102 @@ function locator() {
     });
     } else { $("input[name='countryISO']").val('error'); }
     }
+
+function trackUTM() {
+    // URL parameter parser
+    $.urlParam = function(name) {
+    var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
+    return results == null ? null : (results[1] || 0);
+    };
     
-    //
+// Set UTM cookie if parameters exist in URL
+if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('utm_source') !== undefined) {
+   	var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
+    var medium = ($.urlParam('utm_medium') && $.urlParam('utm_medium') !== "" && $.urlParam('utm_medium') !== undefined) 
+    ? $.urlParam('utm_medium').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
+    : "⠀";
+    var campaign = ($.urlParam('utm_campaign') && $.urlParam('utm_campaign') !== "" && $.urlParam('utm_campaign') !== undefined) 
+    ? $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
+    : "⠀";
+    var term = ($.urlParam('utm_term') && $.urlParam('utm_term') !== "" && $.urlParam('utm_term') !== undefined) 
+    ? $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
+    : "⠀";
+    var utm_id = source + ' / ' + medium + ' / ' + campaign;
+    var utm = {
+     "source": source,
+     "medium": medium,
+     "campaign": campaign,
+     "term": term,
+     "id": utm_id
+     };
+// Set cookie for 30 days
+     Cookies.set("utm", JSON.stringify(utm), { expires: 30 });
+     }
+// Return UTM values with error handling
+     var utmCookie = JSON.parse(Cookies.get('utm'));
+     if (utmCookie.source == 'google') {
+        if (utmCookie.medium == 'cpc' || utmCookie.medium == 'paid') {
+            //- Paid
+            $('[phoneNum]').attr('href', 'tel:+17863860647');
+            $('[phoneTx]').text('786-386-0647');
+        } else {
+            //- Organic
+            $('[phoneNum]').attr('href', 'tel:+17868825350');
+            $('[phoneTx]').text('786-882-5350');
+            //-------------
+        }
+    } else if (utmCookie.source == 'facebook') {
+        //---- FACEBOOK
+        if (utmCookie.medium == 'paid') {
+            //----- FACEBOOK AD
+            $('[phoneNum]').attr('href', 'tel:+17868768185');
+            $('[phoneTx]').text('786-876-8185');
+        }
+        //-------------
+    } else if (utmCookie.source == 'eblast') {
+        //---- EBLAST
+        $('[phoneNum]').attr('href', 'tel:+17868861787');
+        $('[phoneTx]').text('786-886-1787');
+        //-------------
+        //---- SOCIAL MEDIA ----//
+    } else if (utmCookie.source == 'fence') {
+        //---- EBLAST
+        $('[phoneNum]').attr('href', 'tel:+7868823098');
+        $('[phoneTx]').text('786-882-3098');
+        //-------------
+        //---- SOCIAL MEDIA ----//
+    } else if (utmCookie.source == 'socials') {
     
+        $('[phoneNum]').attr('href', 'tel:+17868826213');
+        $('[phoneTx]').text('786-882-6213');
+    
+    } else if (utmCookie.source == 'printed materials') {
+        if (utmCookie.medium == 'shomabazaar') {
+        $('[phoneNum]').attr('href', 'tel:+17869339872');
+        $('[phoneTx]').text('786-933-9872');
+        }
+        else {
+        //---- ALL PRINTED MATERIALS
+        $('[phoneNum]').attr('href', 'tel:+17868337421');
+        $('[phoneTx]').text('786-833-7421');
+        }
+        //-------------
+    } else {
+        //---- PROPERTY WEBSITE
+        $('[phoneNum]').attr('href', 'tel:+17868825887');
+        $('[phoneTx]').text('786-882-5887');
+    }
+    }
+
+
     // --- actions
     $(document).ready(function() {
     // WEBSITE CODE VERSION
     let codeVer = '250301 0.0.1';
     console.log(codeVer);
     $('div.codever').text(codeVer);
-    
+    // UTM
+    trackUTM();
     // NAV CONFIG
     $('.nav-link').on('mouseenter', function() {
     $(this).siblings('.nav-link').addClass('nothover');
@@ -214,66 +244,7 @@ function locator() {
     // HIDDEN stuff
     $('.hidden-form-fields:not(.show) input').attr('type', 'hidden');
     $('.hidden-form-fields input').attr('readonly', 'readonly');
-    
- 
-    trackUTM();
-    
-    
-    //---- GOOGLE
-    if (source == 'google') {
-        if (medium == 'cpc' || medium == 'paid') {
-            //- Paid
-            $('[phoneNum]').attr('href', 'tel:+17863860647');
-            $('[phoneTx]').text('786-386-0647');
-        } else {
-            //- Organic
-            $('[phoneNum]').attr('href', 'tel:+17868825350');
-            $('[phoneTx]').text('786-882-5350');
-            //-------------
-        }
-    } else if (source == 'facebook') {
-        //---- FACEBOOK
-        if (medium == 'paid') {
-            //----- FACEBOOK AD
-            $('[phoneNum]').attr('href', 'tel:+17868768185');
-            $('[phoneTx]').text('786-876-8185');
-        }
-        //-------------
-    } else if (source == 'eblast') {
-        //---- EBLAST
-        $('[phoneNum]').attr('href', 'tel:+17868861787');
-        $('[phoneTx]').text('786-886-1787');
-        //-------------
-        //---- SOCIAL MEDIA ----//
-    } else if (source == 'fence') {
-        //---- EBLAST
-        $('[phoneNum]').attr('href', 'tel:+7868823098');
-        $('[phoneTx]').text('786-882-3098');
-        //-------------
-        //---- SOCIAL MEDIA ----//
-    } else if (source == 'socials') {
-    
-        $('[phoneNum]').attr('href', 'tel:+17868826213');
-        $('[phoneTx]').text('786-882-6213');
-    
-    } else if (source == 'printed materials') {
-        if (medium == 'shomabazaar') {
-        $('[phoneNum]').attr('href', 'tel:+17869339872');
-        $('[phoneTx]').text('786-933-9872');
-        }
-        else {
-        //---- ALL PRINTED MATERIALS
-        $('[phoneNum]').attr('href', 'tel:+17868337421');
-        $('[phoneTx]').text('786-833-7421');
-        }
-        //-------------
-    } else {
-        //---- PROPERTY WEBSITE
-        $('[phoneNum]').attr('href', 'tel:+17868825887');
-        $('[phoneTx]').text('786-882-5887');
-    }
-    
-    
+
     
     var newpop = 'visitus-240125';
     if ( Cookies.get('ann-seen') == newpop || window.location.href.indexOf("#contact-form") !== -1) {
