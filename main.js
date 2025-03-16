@@ -44,7 +44,7 @@ if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('u
      }
     }
 // Return UTM values with error handling
-     var utmCookie = JSON.parse(Cookies.get('utm'));
+     var utmCookie = JSON.parse(Cookies.get('utm') || '{}');
      if (utmCookie.source == 'google') {
         if (utmCookie.medium == 'cpc' || utmCookie.medium == 'paid') {
             //- Paid
