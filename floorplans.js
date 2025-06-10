@@ -25,6 +25,9 @@ $('.fp-control-link').on('click', function() {
     if ($('.fp-control-link[penth]').is('.active')) {
         $('.floorplan[fp="penth"]').addClass('active');
     }
+    if ($('.fp-control-link[low-penth]').is('.active')) {
+        $('.floorplan[fp="low-penth"]').addClass('active');
+    }
 
     if (!$('.floorplan.active').length) {
         $('.floorplan').addClass('active');
