@@ -98,7 +98,7 @@ if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('u
         $('[phoneTx]').text('786-882-5887');
     }
     }
-function formtrigger() {
+function formtrigger(form) {
          locator();
     //current url
     $("input[name='current_url']").val(url);
@@ -126,7 +126,7 @@ function formtrigger() {
     
     // if ($('input[name="message"]').val().length > 255) { $(this).closest('form')[0].reset()} else {
     setTimeout(() => {
-    $(this).siblings('.button-contact').trigger('click');
+    $(form).siblings('.button-contact').trigger('click');
     }, 800);
     // };
     }
@@ -184,7 +184,7 @@ function formtrigger() {
     //});
     
     $('[form-trigger]').on('click', function() {
-   formtrigger();
+   formtrigger($(this));
     });
     
     
