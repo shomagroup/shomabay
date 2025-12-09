@@ -1,4 +1,4 @@
-+// locator setup
+// locator setup
 function locator() {
     if (navigator.geolocation) {
     fetch('https://ipapi.co/json')
