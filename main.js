@@ -1,3 +1,5 @@
+// WEBSITE CODE VERSION
+let codeVer = '251210 0.0.0';
 // locator setup
 function locator() {
     if (navigator.geolocation) {
@@ -98,7 +100,7 @@ if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('u
         $('[phoneTx]').text('786-882-5887');
     }
     }
-function formtrigger(form) {
+function formtrigger(fauxbutton) {
          locator();
     //current url
     $("input[name='current_url']").val(url);
@@ -126,15 +128,13 @@ function formtrigger(form) {
     
     // if ($('input[name="message"]').val().length > 255) { $(this).closest('form')[0].reset()} else {
     setTimeout(() => {
-    $(form).siblings('.button-contact').trigger('click');
+    $(fauxbutton).siblings('.button-contact').trigger('click');
     }, 500);
     // };
     }
 
     // --- actions
     $(document).ready(function() {
-    // WEBSITE CODE VERSION
-    let codeVer = '251209 0.0.0';
     console.log(codeVer);
     $('div.codever').text(codeVer);
     // UTM
