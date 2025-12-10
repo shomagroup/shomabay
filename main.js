@@ -127,7 +127,7 @@ function formtrigger(form) {
     // if ($('input[name="message"]').val().length > 255) { $(this).closest('form')[0].reset()} else {
     setTimeout(() => {
     $(form).siblings('.button-contact').trigger('click');
-    }, 800);
+    }, 500);
     // };
     }
 
