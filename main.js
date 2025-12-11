@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '251210 0.0.0';
+let codeVer = '251211 0.0.0';
 // locator setup
 function locator() {
     if (navigator.geolocation) {
@@ -129,7 +129,7 @@ function formtrigger(fauxbutton) {
     // if ($('input[name="message"]').val().length > 255) { $(this).closest('form')[0].reset()} else {
     setTimeout(() => {
     $(fauxbutton).siblings('.button-contact').trigger('click');
-    }, 500);
+    }, 800);
     // };
     }
 
