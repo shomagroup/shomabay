@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '251211 0.0.0';
+let codeVer = '251212 0.0.0';
 // locator setup
 function locator() {
     if (navigator.geolocation) {
@@ -21,9 +21,9 @@ function trackUTM() {
     return results == null ? null : (results[1] || 0);
     };
     
-    if (!Cookies.get("utm")) {
+    if (!Cookies.get("utm") ) {
 if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('utm_source') !== undefined) {
-   	var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ');
+   	var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, 'Direct');
     var medium = ($.urlParam('utm_medium') && $.urlParam('utm_medium') !== "" && $.urlParam('utm_medium') !== undefined) 
     ? $.urlParam('utm_medium').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
     : "⠀";
@@ -45,6 +45,8 @@ if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('u
      Cookies.set("utm", JSON.stringify(utm), { expires: 30 });
      }
     }
+
+
 // Return UTM values with error handling
      var utmCookie = JSON.parse(Cookies.get('utm') || '{}');
      if (utmCookie.source == 'google') {
@@ -101,7 +103,7 @@ if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('u
     }
     }
 function formtrigger(fauxbutton) {
-         locator();
+    locator();
     //current url
     $("input[name='current_url']").val(url);
     //get cookies into form 
@@ -242,6 +244,8 @@ function formtrigger(fauxbutton) {
     $("input[name='formPage']").val('Sales Registration');
     } else if (url.includes('/downloads') || url.includes('/descargas') || url.includes('/downloads')) {
     $("input[name='formPage']").val('Downloads');
+    } else if (url.includes('/preview')) {
+    $("input[name='formPage']").val('Preview Booking');
     } else { $("input[name='formPage']").val('Home'); }
     
     // HIDDEN stuff
