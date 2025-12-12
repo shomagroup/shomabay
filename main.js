@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '251212 0.0.1';
+let codeVer = '251212 0.0.2';
 // locator setup
 function locator() {
     if (navigator.geolocation) {
@@ -23,16 +23,21 @@ function trackUTM() {
     
     if (!Cookies.get("utm")) {
 if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('utm_source') !== undefined) {
-   	var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, 'Direct');
+   	var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, 'Direct').trim();
     var medium = ($.urlParam('utm_medium') && $.urlParam('utm_medium') !== "" && $.urlParam('utm_medium') !== undefined) 
-    ? $.urlParam('utm_medium').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
+    ? $.urlParam('utm_medium').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ').trim() 
     : "⠀";
     var campaign = ($.urlParam('utm_campaign') && $.urlParam('utm_campaign') !== "" && $.urlParam('utm_campaign') !== undefined) 
-    ? $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
+    ? $.urlParam('utm_campaign').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ').trim() 
     : "⠀";
     var term = ($.urlParam('utm_term') && $.urlParam('utm_term') !== "" && $.urlParam('utm_term') !== undefined) 
-    ? $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ') 
+    ? $.urlParam('utm_term').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, ' ').trim() 
     : "⠀";
+
+    if (source === '') {
+      return;  // Skip setting the cookie if source is empty after trimming
+    }
+
     var utm_id = source + ' / ' + medium + ' / ' + campaign;
     var utm = {
      "source": source,
