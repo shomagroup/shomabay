@@ -1,5 +1,5 @@
 // WEBSITE CODE VERSION
-let codeVer = '251212 0.0.0';
+let codeVer = '251212 0.0.1';
 // locator setup
 function locator() {
     if (navigator.geolocation) {
@@ -21,7 +21,7 @@ function trackUTM() {
     return results == null ? null : (results[1] || 0);
     };
     
-    if (!Cookies.get("utm") ) {
+    if (!Cookies.get("utm")) {
 if ($.urlParam('utm_source') && $.urlParam('utm_source') !== "" && $.urlParam('utm_source') !== undefined) {
    	var source = $.urlParam('utm_source').split('&')[0].replace(/\+/g, ' ').replace(/%20/g, 'Direct');
     var medium = ($.urlParam('utm_medium') && $.urlParam('utm_medium') !== "" && $.urlParam('utm_medium') !== undefined) 
