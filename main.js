@@ -258,7 +258,7 @@ function formtrigger(fauxbutton) {
     $('.hidden-form-fields input').attr('readonly', 'readonly');
 
     
-    var newpop = 'broker preview';
+    var newpop = 'october2026';
     if ( Cookies.get('ann-seen') == newpop || window.location.href.indexOf("#contact-form") !== -1) {
     $('.popup-announcement').addClass('close');
     } else {
